@@ -27,6 +27,16 @@ const PROMPTS = {
   'dating-im-schichtdienst-gastro': `Young chef in white kitchen jacket sitting alone on the back steps of a restaurant after midnight, holding smartphone in one hand, exhausted but reading message with subtle smile, dimly lit alley behind him with warm window light spilling out, late-night urban German city scene, authentic post-service atmosphere. ${BASE}. No text, no logos, no readable screens.`,
   'kennenlernen-online-dating-gastronomie': `Young restaurant service woman in dark uniform during her break, sitting on a wooden bench inside a cozy restaurant interior, smiling while looking at her smartphone, warm pendant lighting, blurred kitchen pass in background with one chef working, intimate moment of texting between shifts. ${BASE}. No text, no readable screens, no logos.`,
   'erstes-date-gastronomie-schichten': `Young German couple sitting across from each other at a small cafe table on a quiet weekday morning, large windows with soft daylight, two coffees and pastries on table, intimate first-date conversation atmosphere, woman in casual dress and man in plain clothes (not in chef uniform), warm cozy German cafe interior with wooden tables. ${BASE}. No text, no logos, daytime light.`,
+  'hotelfachfrau-sucht-mann': `German Hotelfachfrau (woman in elegant hotel uniform with name badge but no readable text) standing at the front desk of a 4-star Hotel in Germany during night shift, warm reception lobby lighting, marble counter, looking thoughtfully at smartphone, polished but tired expression, no guests visible. ${BASE}. No text, no logos.`,
+  'patissier-sucht-partnerin': `German Patissier (man in white chef jacket and apron) working alone at 5 AM in a quiet patisserie kitchen, soft pre-dawn light through window, dough on marble counter, hands dusted with flour, focused calm expression, intimate solo morning scene. ${BASE}. No text, no logos.`,
+  'barkeeperin-sucht-mann': `Female bartender in dark vest behind a modern cocktail bar in Germany at 1 AM, mixing a drink with shaker, bottles backlit, intimate moody bar atmosphere, confident relaxed expression, near-empty bar with one customer blurred in background. ${BASE}. No text, no readable bottle labels, no logos.`,
+  'weinprobe-als-erstes-date': `German couple at a wine tasting in a small Vinothek, both holding wine glasses up to the light, intimate eye contact between them, wooden tasting counter with bottles and tasting card, warm amber pendant light, brick wall background, intimate intimate first-date atmosphere. ${BASE}. No text, no readable labels, no logos.`,
+};
+// Story heroes (different output path)
+const STORY_PROMPTS = {
+  'erfolgsgeschichte-anna-marco-gastrosingles': `German couple in their early 30s leaning against a vintage Vinothek counter in Mainz Germany, both casually dressed in warm autumn clothing, soft laughter between them, exposed brick wall with wine racks behind, warm pendant lights, intimate everyday moment of a real couple, late afternoon. ${BASE}. No text, no logos.`,
+  'erfolgsgeschichte-tobias-lea-gastrosingles': `Hamburg couple in their 30s at a small patisserie counter, woman with flour-dusted apron holding a coffee, man in casual chef pants leaning beside her laughing, morning daylight through large bakery window, intimate everyday moment, no posing. ${BASE}. No text, no logos.`,
+  'erfolgsgeschichte-janine-daniel-gastrosingles': `Munich couple in their early 30s leaning against the back of a hotel bar in Munich after 1 AM, woman in dark bartender vest with sleeves rolled up, man in plain dress shirt, soft amber light from pendant lamps, intimate moment of quiet conversation, half-empty bar in background. ${BASE}. No text, no logos.`,
 };
 
 async function flux(prompt, a = 0) {
@@ -58,13 +68,17 @@ async function filter(buf) {
 }
 
 const args = process.argv.slice(2);
-const slugs = args.length ? args : Object.keys(PROMPTS);
+const isStory = args.includes('--stories');
+const filteredArgs = args.filter(a => a !== '--stories');
+const promptSet = isStory ? STORY_PROMPTS : PROMPTS;
+const outRoot = isStory ? 'public/images/stories' : 'public/images/articles';
+const slugs = filteredArgs.length ? filteredArgs : Object.keys(promptSet);
 
 (async () => {
   for (const slug of slugs) {
-    const prompt = PROMPTS[slug];
+    const prompt = promptSet[slug];
     if (!prompt) { console.error(`✗ ${slug}: no prompt defined`); continue; }
-    const outDir = path.join(REPO, 'public/images/articles', slug);
+    const outDir = path.join(REPO, outRoot, slug);
     const outPath = path.join(outDir, 'featuredImage.webp');
     if (fs.existsSync(outPath)) { console.log(`= ${slug} (exists)`); continue; }
     try {
