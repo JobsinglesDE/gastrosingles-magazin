@@ -1,10 +1,12 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-  storage: {
-    kind: 'github',
-    repo: 'JobsinglesDE/gastrosingles-magazin',
-  },
+  storage: process.env.KEYSTATIC_GITHUB_CLIENT_ID
+    ? {
+        kind: 'github',
+        repo: 'JobsinglesDE/gastrosingles-magazin',
+      }
+    : { kind: 'local' },
   ui: {
     brand: { name: 'Gastrosingles Magazin' },
   },
