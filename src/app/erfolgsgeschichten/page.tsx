@@ -3,11 +3,11 @@ import { SuccessStory } from '@/components/content/SuccessStory';
 
 export const metadata = {
   alternates: { canonical: '/erfolgsgeschichten' },
-  title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
-  description: 'Echte Liebesgeschichten von Gastrosingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+  title: 'Erfolgsgeschichten aus der Gastronomie',
+  description: 'Echte Liebesgeschichten von Gastrosingles.de: Köche, Sommeliers und Servicekräfte, die ihre Partner in der Gastronomie gefunden haben.',
   openGraph: {
     title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
-    description: 'Echte Liebesgeschichten von Gastrosingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+    description: 'Echte Liebesgeschichten von Gastrosingles.de: Köche, Sommeliers und Servicekräfte, die ihre Partner in der Gastronomie gefunden haben.',
     url: 'https://gastrosingles.de/magazin/erfolgsgeschichten',
     type: 'website' as const,
     siteName: 'Gastrosingles Magazin',

@@ -11,11 +11,11 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo
 const SERVICE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/service';
 
 export const metadata = {
-  title: 'Partnersuche Service & Hotelfach — Dating für Restaurantfachkräfte',
+  title: 'Partnersuche Service & Hotelfach',
   description: 'Partnersuche für Restaurantfachfrau, Hotelfachmann, Sommelier und Barkeeperin. Guides zu Schichtdienst, Nachtbar, Hotelrezeption und Weinabend-Dating.',
   alternates: { canonical: SERVICE_URL },
   openGraph: {
-    title: 'Partnersuche Service — Restaurantfach, Hotelfach, Sommelier, Bar',
+    title: 'Partnersuche Service & Hotelfach in der Gastronomie',
     description: 'Singles im Service und Hotelfach treffen. Schichtdienst, Nachtbar, Tresenwelten — hier versteht man deinen Rhythmus.',
     url: SERVICE_URL,
     type: 'website',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/kontakt' },
-  title: 'Kontakt — Gastrosingles Magazin',
+  title: 'Kontakt',
   description:
     'Kontakt zum Gastrosingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
   openGraph: {
@@ -99,7 +99,7 @@ export default function KontaktPage() {
       <h2 className="text-2xl font-bold mt-12 mb-3">Wer steckt hinter dem Magazin?</h2>
       <p className="text-foreground/70">
         Das Gastrosingles Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
-        Partnersuche für Ärzte, Pflegekräfte und Therapeuten in der DACH-Region. Die Themen reichen von
+        Partnersuche für Köche, Sommeliers, Wirte und Servicekräfte in der DACH-Region. Die Themen reichen von
         Dating-Tipps im Schichtdienst über psychologische Aspekte der Partnersuche bis zu Erfolgsgeschichten echter Paare,
         die sich über die Plattform gefunden haben.
       </p>

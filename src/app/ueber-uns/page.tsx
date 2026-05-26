@@ -5,8 +5,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
   alternates: { canonical: '/ueber-uns' },
-  title: 'Über uns — Die Geschichte hinter Gastrosingles',
-  description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Gastrosingles.de — und warum es Ärzten & Pflege hilft.',
+  title: 'Über uns — Gastrosingles Magazin',
+  description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Gastrosingles.de — und warum es Köchen, Sommeliers und Service-Kräften hilft.',
   openGraph: {
     title: 'Über uns — Die Geschichte hinter Gastrosingles',
     description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Gastrosingles.de.',
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: 'Warum eine Dating-Plattform speziell für Medizinberufe?',
-    answer: 'Ärzte, Pflegekräfte und Therapeuten arbeiten im Schichtdienst, erleben emotional belastende Situationen und haben kaum planbare Freizeit. Normale Dating-Plattformen berücksichtigen das nicht. MedicSingles.de verbindet Menschen, die diese Herausforderungen aus eigener Erfahrung kennen — und genau deshalb besser zueinander passen.',
+    answer: 'Köche, Sommeliers und Service-Kräfte arbeiten im Schichtdienst, erleben den Adrenalin-Abfall nach Mitternacht und haben kaum planbare Freizeit. Normale Dating-Plattformen berücksichtigen das nicht. Gastrosingles.de verbindet Menschen, die diese Realität aus eigener Erfahrung kennen — und genau deshalb besser zueinander passen.',
   },
   {
     question: 'Gehört MedicSingles.de zu einem grösseren Netzwerk?',
@@ -113,7 +113,7 @@ export default function UeberUns() {
           <h2 className="text-2xl font-bold mb-6">Warum MedicSingles.de?</h2>
           <div className="prose prose-lg text-foreground/80 space-y-4">
             <p>
-              Ärztinnen, Pfleger, Therapeutinnen und Sanitäter teilen eine Realität, die Aussenstehende selten verstehen: Schichtdienst, Nachtarbeit, emotionale Belastung durch den Patientenkontakt und kaum planbare Freizeit. Normale Dating-Plattformen ignorieren das.
+              Köche, Sommeliers, Servicekräfte und Wirte teilen eine Realität, die Aussenstehende selten verstehen: Schichtdienst, Nachtarbeit, Adrenalin-Abfall nach Service und kaum planbare Freizeit. Normale Dating-Plattformen ignorieren das.
             </p>
             <p>
               <strong>MedicSingles.de</strong> ist anders. Hier treffen sich Menschen, die wissen, was es heisst, nach einer langen Nachtschicht wieder aufzutanken. Die verstehen, warum ein freies Wochenende kein selbstverständlicher Luxus ist. Die wissen, dass der beste Partner jemand ist, der diese Welt kennt.
@@ -138,7 +138,7 @@ export default function UeberUns() {
               { name: 'FarmerSingles.de', desc: 'Singles in der Landwirtschaft', url: 'https://farmersingles.de' },
               { name: 'SingleBuure.ch', desc: 'Bauern-Singles in der Schweiz', url: 'https://singlebuure.ch' },
               { name: 'BlaulichtSingles.ch', desc: 'Polizei, Feuerwehr & Sanität', url: 'https://blaulichtsingles.ch' },
-              { name: 'MedicSingles.de', desc: 'Ärzte & Medizin-Singles', url: 'https://gastrosingles.de' },
+              { name: 'Gastrosingles.de', desc: 'Singles in der Gastronomie', url: 'https://gastrosingles.de' },
               { name: 'GastroSingles.de', desc: 'Gastronomie & Hotellerie', url: 'https://gastrosingles.de' },
               { name: 'HandwerkSingles.de', desc: 'Handwerker-Singles', url: 'https://handwerksingles.de' },
               { name: 'BäckerSingles.de', desc: 'Bäcker & Konditoren', url: 'https://baeckersingles.de' },

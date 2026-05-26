@@ -358,9 +358,8 @@ export function organizationJsonLd({
   });
   if (memberOfBjae) memberOf.push({
     '@type': 'Organization',
-    name: 'Bündnis Junge Ärztinnen und Ärzte',
-    alternateName: 'BJÄ',
-    url: 'https://www.buendnisjungeaerzte.org',
+    name: 'Verband der Köche Deutschlands (VKD)',
+      url: 'https://www.vkd.com',
   });
   return {
     '@context': 'https://schema.org',

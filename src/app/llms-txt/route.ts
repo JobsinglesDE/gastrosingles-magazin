@@ -22,9 +22,9 @@ export async function GET() {
 
   lines.push('# MedicSingles Magazin — gastrosingles.de');
   lines.push('');
-  lines.push('Dating-Magazin für Singles im Gesundheitswesen: Ärzte, Pflegekräfte, Therapeuten und Rettungsdienst.');
-  lines.push('Partnersuche-Tipps, Cluster-Guides für jedes Fachgebiet, Erfolgsgeschichten und TV-News');
-  lines.push("zu «Grey's Anatomy» und «In aller Freundschaft — Die jungen Ärzte».");
+  lines.push('Dating-Magazin für Singles in der Gastronomie: Köche, Sommeliers, Wirte und Servicekräfte.');
+  lines.push('Partnersuche-Tipps, Cluster-Guides für jeden Gastro-Bereich, Erfolgsgeschichten und Regional-Pages');
+  lines.push("plus regionale Kochvereine und Branchen-Treffs.");
   lines.push('');
   lines.push('## Sitemaps');
   lines.push('');
@@ -41,14 +41,6 @@ export async function GET() {
   }
   lines.push('');
 
-  lines.push("## TV-News — «Grey's Anatomy» & «In aller Freundschaft — Die jungen Ärzte»");
-  lines.push('');
-  for (const s of published.series) {
-    const url = `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`;
-    const desc = s.entry.excerpt || s.entry.seoDescription || '';
-    lines.push(`- [${s.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
-  }
-  lines.push('');
 
   lines.push('## Regionale Guides');
   lines.push('');

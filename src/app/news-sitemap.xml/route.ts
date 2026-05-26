@@ -27,18 +27,6 @@ export async function GET() {
     });
   }
 
-  for (const s of series) {
-    if (!s.entry.publishedAt) continue;
-    const pubDate = new Date(s.entry.publishedAt);
-    if (pubDate < twoDaysAgo) continue;
-
-    newsEntries.push({
-      url: `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`,
-      title: s.entry.title,
-      date: pubDate.toISOString(),
-    });
-  }
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">

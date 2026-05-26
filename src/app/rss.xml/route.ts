@@ -2,7 +2,7 @@ import { reader } from '@/lib/keystatic';
 
 const BASE = 'https://gastrosingles.de/magazin';
 const SITE_TITLE = 'Gastrosingles Magazin';
-const SITE_DESCRIPTION = 'Partnersuche für Ärzte, Pflege & Therapeuten — Guides, Erfolgsgeschichten und Dating-Tipps aus dem Gesundheitswesen.';
+const SITE_DESCRIPTION = 'Partnersuche für Köche, Sommeliers, Wirte und Servicekräfte — Guides, Erfolgsgeschichten und Dating-Tipps aus der Gastronomie.';
 
 function escapeXml(str: string): string {
   return str
@@ -29,16 +29,6 @@ export async function GET() {
       title: a.entry.title,
       description: a.entry.excerpt || '',
       date: new Date(a.entry.publishedAt).toUTCString(),
-    });
-  }
-
-  for (const s of series) {
-    if (s.entry.status === 'draft' || !s.entry.publishedAt) continue;
-    items.push({
-      url: `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`,
-      title: s.entry.title,
-      description: s.entry.excerpt || '',
-      date: new Date(s.entry.publishedAt).toUTCString(),
     });
   }
 

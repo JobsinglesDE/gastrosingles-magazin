@@ -11,7 +11,7 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo
 const KOECHE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/koeche';
 
 export const metadata = {
-  title: 'Partnersuche Köche — Dating trotz Schichtdienst und Service',
+  title: 'Partnersuche für Köche',
   description: 'Partnersuche für Köche und Gastronomie-Profis: Guides zu Online-Dating, erstem Date nach Service, Sommelier, Sous Chef, Wirt, Hochzeit im Restaurant.',
   alternates: { canonical: KOECHE_URL },
   openGraph: {

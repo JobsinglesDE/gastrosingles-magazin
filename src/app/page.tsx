@@ -12,8 +12,8 @@ import { MatchQuiz } from '@/components/ui/MatchQuiz';
 
 export const metadata = {
   alternates: { canonical: '/' },
-  title: { absolute: '❤️ Gastrosingles — Partnersuche für Ärzte & Pflege' },
-  description: 'Partnersuche für Ärzte, Pflege & Therapeuten. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Klinikalltag.',
+  title: { absolute: 'Partnersuche in der Gastronomie ❤️' },
+  description: 'Partnersuche für Köche, Sommeliers, Wirte und Servicekräfte. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Service-Alltag.',
 };
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
@@ -21,7 +21,6 @@ const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'
 export default async function HomePage() {
   const allArticles = await reader.collections.articles.all();
   const allStories = await reader.collections.stories.all();
-  const allSeries = await reader.collections.series.all();
 
   const byDateDesc = <T extends { entry: { publishedAt?: string | null } }>(a: T, b: T) =>
     (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || '');
@@ -31,13 +30,6 @@ export default async function HomePage() {
     .sort(byDateDesc);
 
   const stories = [...allStories].sort(byDateDesc);
-
-  const seriesSorted = allSeries
-    .filter((s) => s.entry.status === 'published')
-    .sort(byDateDesc);
-  const tvNewsGreys = seriesSorted.filter((s) => s.entry.seriesId === 'greys-anatomy').slice(0, 2);
-  const tvNewsJunge = seriesSorted.filter((s) => s.entry.seriesId === 'junge-aerzte').slice(0, 1);
-  const tvNews = [...tvNewsGreys, ...tvNewsJunge];
 
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
@@ -53,7 +45,7 @@ export default async function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-startseite.webp"
-            alt="Gastrosingles — Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte"
+            alt="Gastrosingles — Köche, Sommeliers, Wirte und Servicekräfte"
             width={1920}
             height={1080}
             className="w-full h-full object-cover"
@@ -65,10 +57,10 @@ export default async function HomePage() {
         </div>
         <div className="relative max-w-4xl mx-auto px-6 flex flex-col justify-end min-h-[420px] md:min-h-[560px] pb-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-2 drop-shadow-lg text-center">
-            Medic<span className="text-brand-orange">singles</span>
+            Gastro<span className="text-brand-orange">singles</span>
           </h1>
           <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow text-center">
-            Das Magazin für Singles im Gesundheitswesen
+            Das Magazin für Singles in der Gastronomie
           </p>
         </div>
       </section>
@@ -78,12 +70,12 @@ export default async function HomePage() {
           as="h2"
           title="Gastrosingles"
           texts={[
-            "Echte Liebe in der Medizin",
+            "Echte Liebe in der Gastronomie",
             "Schichtdienst trifft Herz",
-            "Kittel sucht Match",
-            "Stethoskop & Liebe",
-            "Medizin verbindet",
-            "Heilberuf trifft Beziehung",
+            "Kochjacke sucht Match",
+            "Pass & Liebe",
+            "Service verbindet",
+            "Branche trifft Beziehung",
             "Gastrosingles",
           ]}
         />
@@ -119,9 +111,9 @@ export default async function HomePage() {
         <section className="max-w-4xl mx-auto px-6 py-12">
           <AnimatedStats
             items={[
-              { value: 25000, suffix: '+', label: 'Singles im Gesundheitswesen' },
-              { value: 90, suffix: '%', label: 'Heilberufe' },
-              { value: 115, suffix: '', label: 'Erfolgspaare' },
+              { value: 25000, suffix: '+', label: 'Singles in der Gastronomie' },
+              { value: 115, suffix: '', label: 'VKD-Kochvereine deutschlandweit' },
+              { value: 6100, suffix: '+', label: 'Branchen-Mitglieder' },
             ]}
           />
         </section>
@@ -150,33 +142,6 @@ export default async function HomePage() {
         </ScrollReveal>
       )}
 
-      {tvNews.length > 0 && (
-        <ScrollReveal>
-          <section className="max-w-6xl mx-auto px-6 py-12">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold">TV News</h2>
-              <Link href="/tv-news" className="text-brand-orange hover:underline text-sm font-semibold">
-                Alle TV News &rarr;
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {tvNews.map((article) => (
-                <ArticleCard
-                  key={article.slug}
-                  title={article.entry.title}
-                  excerpt={article.entry.excerpt}
-                  href={`/tv-news/${article.entry.seriesId}/${article.slug}`}
-                  image={article.entry.featuredImage || undefined}
-                  imageAlt={article.entry.featuredImageAlt || undefined}
-                  category={article.entry.seriesId === 'junge-aerzte' ? 'Die jungen Ärzte' : "Grey's Anatomy"}
-                  date={article.entry.publishedAt || undefined}
-                />
-              ))}
-            </div>
-          </section>
-        </ScrollReveal>
-      )}
-
       {carouselItems.length > 3 && (
         <ScrollReveal>
           <CarouselCards title="Mehr entdecken" items={carouselItems.slice(3)} />
@@ -195,9 +160,9 @@ export default async function HomePage() {
         <section className="text-center py-12 px-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Bereit für die Partnersuche?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Singles im Gesundheitswesen — Ärzte, Pflege, Therapeuten und Rettung — warten auf dich.
+            Singles in der Gastronomie — Köche, Sommeliers, Service und Hotelfach — warten auf dich.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

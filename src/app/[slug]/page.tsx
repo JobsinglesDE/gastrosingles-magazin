@@ -208,7 +208,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
 
         {/* Pillar Backlink */}
         {article.specialization && ['arzt', 'pflege', 'therapeut', 'rettung'].includes(article.specialization) && (
-          <PillarBacklinkCard specialization={article.specialization as 'arzt' | 'pflege' | 'therapeut' | 'rettung'} />
+          <PillarBacklinkCard specialization={article.specialization || undefined} />
         )}
       </div>
 

@@ -16,11 +16,11 @@ const BASE_URL = 'https://gastrosingles.de/magazin';
 
 export const metadata: Metadata = {
   title: {
-    default: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
+    default: 'Partnersuche in der Gastronomie ❤️',
     template: '%s ❤️',
   },
   description:
-    'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst. Jetzt kostenlos zu Gastrosingles.de.',
+    'Magazin für Köche, Sommeliers, Wirte und Servicekräfte. Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst.',
   metadataBase: new URL(BASE_URL),
   alternates: {
     types: {
@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
-    description: 'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Dating-Tipps für den Schichtdienst.',
+    title: 'Partnersuche in der Gastronomie ❤️',
+    description: 'Magazin für Köche, Sommeliers, Wirte und Servicekräfte. Partnersuche-Guides, Erfolgsgeschichten und Dating-Tipps für den Schichtdienst.',
     url: BASE_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
     locale: 'de_DE',
-    images: [{ url: `${BASE_URL}/images/hero-startseite.webp`, width: 1920, height: 1080, alt: 'Gastrosingles — Partnersuche für Ärzte, Pflege und Therapeuten' }],
+    images: [{ url: `${BASE_URL}/images/hero-startseite.webp`, width: 1920, height: 1080, alt: 'Gastrosingles — Partnersuche für Köche, Sommeliers, Servicekräfte und Wirte' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
-    description: 'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides und Dating-Tipps für den Schichtdienst.',
+    title: 'Partnersuche in der Gastronomie ❤️',
+    description: 'Magazin für Köche, Sommeliers und Servicekräfte. Partnersuche-Guides und Dating-Tipps für den Schichtdienst.',
     images: [`${BASE_URL}/images/hero-startseite.webp`],
   },
   verification: {

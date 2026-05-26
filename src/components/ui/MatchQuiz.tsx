@@ -11,7 +11,7 @@ interface Question {
 const questions: Question[] = [
   {
     q: 'Was ist dein Beruf in der Medizin?',
-    options: ['Arzt / Ärztin', 'Pflege & Rettung', 'Therapeut / Therapeutin', 'Anderer Heilberuf'],
+    options: ['Koch / Köchin', 'Service & Bar', 'Sommelier / Patissier', 'Wirt / Hotelfach'],
   },
   {
     q: 'Dein ideales erstes Date?',
@@ -24,17 +24,17 @@ const questions: Question[] = [
 ];
 
 const results: Record<string, { title: string; emoji: string; text: string }> = {
-  'Arzt / Ärztin': {
+  'Koch / Köchin': {
     title: 'Der Heiler mit Herz',
     emoji: '🩺',
     text: 'Du gibst täglich alles für andere — jetzt ist Zeit für jemanden, der auch für dich da ist.',
   },
-  'Pflege & Rettung': {
+  'Service & Bar': {
     title: 'Der Lebensretter',
     emoji: '💙',
     text: 'Empathie ist deine Superkraft. Du brauchst jemanden, der auch für dich da ist, wenn du nach Hause kommst.',
   },
-  'Therapeut / Therapeutin': {
+  'Sommelier / Patissier': {
     title: 'Der Zuhörer',
     emoji: '🧠',
     text: 'Du verstehst Menschen tief — und verdienst jemanden, der auch dich wirklich versteht.',
