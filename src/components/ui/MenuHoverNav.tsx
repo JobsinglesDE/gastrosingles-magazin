@@ -17,28 +17,15 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Partnersuche',
     href: '/singles-partnersuche',
     dropdown: [
-      { label: 'Für Ärzte', href: '/singles-partnersuche/aerzte', description: 'Dating als Arzt oder Ärztin' },
-      { label: 'Für Pflegekräfte', href: '/singles-partnersuche/pflege', description: 'Liebe trotz Schichtdienst' },
-      { label: 'Für Therapeuten', href: '/singles-partnersuche/therapeuten', description: 'Partnersuche im Heilberuf' },
-      { label: 'Für Rettungsdienst', href: '/singles-partnersuche/rettung', description: 'Dating im Einsatzalltag' },
+      { label: 'Für Köche', href: '/singles-partnersuche/koeche', description: 'Dating trotz Schichtdienst und Service' },
+      { label: 'Für Service & Hotelfach', href: '/singles-partnersuche/service', description: 'Restaurantfach, Sommelier, Bar, Hotel' },
     ],
   },
   {
     label: 'Singles Regional',
     href: '/singles-regional',
     dropdown: [
-      { label: 'Ärztestammtische', href: '/singles-regional/aerztestammtische', description: 'Lokale Mediziner-Treffen finden' },
-      { label: 'Unikliniken', href: '/singles-regional/unikliniken', description: 'Universitätskliniken & Maximalversorger' },
       { label: 'Kochvereine', href: '/singles-regional/kochvereine', description: 'VKD-Zweigvereine nach Bundesland' },
-      { label: 'Junge Fachgesellschaften', href: '/singles-regional/junge-fachgesellschaften', description: 'JADE, JUNGE DGIM, Young DGK & Co.' },
-    ],
-  },
-  {
-    label: 'TV Serien',
-    href: '/tv-news',
-    dropdown: [
-      { label: "Grey's Anatomy", href: '/tv-news/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
-      { label: 'Junge Ärzte', href: '/tv-news/junge-aerzte', description: 'In aller Freundschaft' },
     ],
   },
   { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },

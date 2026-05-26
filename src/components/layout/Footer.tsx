@@ -48,8 +48,8 @@ export function Footer() {
                 </h3>
               </div>
               <p className="text-sm text-white/75 leading-relaxed">
-                Das Magazin für Ärzte, Pflegepersonal und Therapeuten.
-                Partnersuche, Tipps für den Schichtdienst und echte Erfolgsgeschichten aus der Medizin.
+                Das Magazin für Köche, Sommeliers, Wirte und Servicekräfte.
+                Partnersuche, Tipps für den Schichtdienst und echte Erfolgsgeschichten aus der Gastronomie.
               </p>
             </div>
 
@@ -62,14 +62,14 @@ export function Footer() {
                 <Link href="/singles-partnersuche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Partnersuche-Hub
                 </Link>
-                <Link href="/singles-partnersuche/aerzte" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Für Ärzte
+                <Link href="/singles-partnersuche/koeche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Für Köche
                 </Link>
-                <Link href="/singles-partnersuche/pflege" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Für Pflegekräfte
+                <Link href="/singles-partnersuche/service" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Für Service & Hotelfach
                 </Link>
-                <Link href="/singles-partnersuche/therapeuten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Für Therapeuten
+                <Link href="/singles-regional/kochvereine" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Kochvereine (VKD)
                 </Link>
                 <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Erfolgsgeschichten
