@@ -47,7 +47,7 @@ const PILLARS = [
   {
     title: 'Ärztekammern',
     excerpt: '17 Landesärztekammern und Bezirkskammern. Fortbildungen, Junge-Ärzte-Foren, Versorgungswerk-Events: strukturierte Anlässe für Mediziner, die fachliche Pflicht mit Privatleben verbinden wollen.',
-    href: '/singles-regional/aerztekammern',
+    href: '/singles-regional/kochvereine',
     icon: '🏛️',
     color: '#0F8B8D',
   },
@@ -198,7 +198,7 @@ export default function SinglesRegionalHub() {
             </p>
             <p>
               <strong className="text-foreground">Du machst gerade Facharzt-Vorbereitung oder bist
-              fertig.</strong> <a href="/singles-regional/aerztekammern" className="text-brand-orange hover:underline">Kammer-Pflichtfortbildungen</a> lassen sich gut
+              fertig.</strong> <a href="/singles-regional/kochvereine" className="text-brand-orange hover:underline">VKD-Veranstaltungen</a> lassen sich gut
               als Anlass nutzen. Welche Landesärztekammer welche Format-Mischung anbietet
               (Hybrid, Präsenz, Akademie-Wochenende), zeigen wir pro Bundesland.
             </p>

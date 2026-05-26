@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 
-type Pillar = 'aerztekammern' | 'aerztestammtische';
+type Pillar = 'kochvereine' | 'gastroStammtische';
 
 interface Props {
   currentPillar: Pillar;
@@ -11,12 +11,12 @@ interface Props {
 }
 
 const PILLAR_META: Record<Pillar, { heading: string; text: string; cta: string }> = {
-  aerztekammern: {
+  kochvereine: {
     heading: 'Ärztekammern — Der komplette Überblick',
     text: 'Alle 17 Landesärztekammern und Bezirkskammern für Mediziner-Singles — Bundesland für Bundesland.',
     cta: 'Zur Kammer-Übersicht →',
   },
-  aerztestammtische: {
+  gastroStammtische: {
     heading: 'Ärztestammtische — Mediziner-Treffen vor Ort',
     text: 'JADE, Marburger Bund, ÄKV-Stammtische und lokale Initiativen — wo sich Mediziner offline treffen.',
     cta: 'Zur Stammtisch-Übersicht →',
@@ -24,12 +24,12 @@ const PILLAR_META: Record<Pillar, { heading: string; text: string; cta: string }
 };
 
 const CROSS_PILLAR_META: Record<Pillar, { heading: string; text: string; cta: string }> = {
-  aerztekammern: {
+  kochvereine: {
     heading: 'Auch interessant: Ärztestammtisch in dieser Region',
     text: 'Informelles Networking ergänzt die formelle Kammer. JADE-Stammtisch, MB-Junges-Netzwerk und lokale Treffen vor Ort.',
     cta: 'Zum Stammtisch →',
   },
-  aerztestammtische: {
+  gastroStammtische: {
     heading: 'Auch interessant: Ärztekammer dieser Region',
     text: 'Die Kammer ergänzt den Stammtisch um offizielle Fortbildungen, Delegiertenversammlungen und Authority-Networking.',
     cta: 'Zur Kammer →',
@@ -38,7 +38,7 @@ const CROSS_PILLAR_META: Record<Pillar, { heading: string; text: string; cta: st
 
 export function RegionalPillarBacklink({ currentPillar, bundesland, bundeslandName, stadt }: Props) {
   const ownPillar = PILLAR_META[currentPillar];
-  const otherPillar = currentPillar === 'aerztekammern' ? 'aerztestammtische' : 'aerztekammern';
+  const otherPillar = currentPillar === 'kochvereine' ? 'gastroStammtische' : 'kochvereine';
   const cross = CROSS_PILLAR_META[currentPillar];
   const ownPillarHref = `/singles-regional/${currentPillar}`;
   const ownBLHref = `/singles-regional/${currentPillar}/${bundesland}`;

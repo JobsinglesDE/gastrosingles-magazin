@@ -94,7 +94,7 @@ export default async function StammtischStadtPage({ params }: { params: Params }
   const author = await reader.collections.authors.read('tommy-honold');
 
   // Verwandte Pages: Ärztekammer gleiche Stadt + 3 Nachbar-Stammtische
-  const allKammern = await reader.collections.aerztekammern.all();
+  const allKammern = await reader.collections.kochvereine.all();
   const matchingKammer = allKammern.find(
     (k) => k.entry.status === 'published' && k.entry.bundesland === bundesland && k.entry.stadt === stadt,
   );
@@ -226,7 +226,7 @@ export default async function StammtischStadtPage({ params }: { params: Params }
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {matchingKammer && (
                 <Link
-                  href={`/singles-regional/aerztekammern/${matchingKammer.entry.bundesland}/${matchingKammer.entry.stadt}`}
+                  href={`/singles-regional/kochvereine/${matchingKammer.entry.bundesland}/${matchingKammer.entry.stadt}`}
                   className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
                 >
                   <div className="text-xs uppercase text-foreground/50 mb-1">Ärztekammer in {stadt}</div>
@@ -250,7 +250,7 @@ export default async function StammtischStadtPage({ params }: { params: Params }
         )}
 
         <RegionalPillarBacklink
-          currentPillar="aerztestammtische"
+          currentPillar="gastroStammtische"
           bundesland={bundesland}
           bundeslandName={blName}
           stadt={stadt}

@@ -14,7 +14,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, kammerOrgJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, vereinOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
@@ -43,19 +43,19 @@ function extractH2s(content: any): { label: string; id: string }[] {
 }
 
 export async function generateStaticParams() {
-  const all = await reader.collections.aerztekammern.all();
+  const all = await reader.collections.kochvereine.all();
   return all
     .filter((a) => a.entry.status === 'published')
     .map((a) => ({ bundesland: a.entry.bundesland, stadt: a.entry.stadt }));
 }
 
 async function findEntry(bundesland: string, stadt: string) {
-  const all = await reader.collections.aerztekammern.all();
+  const all = await reader.collections.kochvereine.all();
   const found = all.find(
     (a) => a.entry.status === 'published' && a.entry.bundesland === bundesland && a.entry.stadt === stadt
   );
   if (!found) return null;
-  const full = await reader.collections.aerztekammern.read(found.slug, { resolveLinkedFiles: true });
+  const full = await reader.collections.kochvereine.read(found.slug, { resolveLinkedFiles: true });
   return full ? { slug: found.slug, entry: full } : null;
 }
 
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const entry = await findEntry(bundesland, stadt);
   if (!entry) return {};
   const e = entry.entry;
-  const url = `${BASE_URL}/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const url = `${BASE_URL}/singles-regional/kochvereine/${bundesland}/${stadt}`;
   const title = e.seoTitle || e.title;
   const description = e.seoDescription || e.excerpt;
   const image = e.featuredImage ? `${BASE_URL}${e.featuredImage}` : `${BASE_URL}/logos/jobsingles-logo.png`;
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-export default async function KammerStadtPage({ params }: { params: Params }) {
+export default async function KochvereinStadtPage({ params }: { params: Params }) {
   const { bundesland, stadt } = await params;
   if (!BUNDESLAENDER[bundesland]) notFound();
   const entry = await findEntry(bundesland, stadt);
@@ -89,24 +89,24 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
 
   const e = entry.entry;
   const blName = bundeslandName(bundesland);
-  const url = `${BASE_URL}/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const url = `${BASE_URL}/singles-regional/kochvereine/${bundesland}/${stadt}`;
   const tocItems = extractH2s(e.content);
 
   // Default-Author Tommy Honold (gleicher Pattern wie Articles)
   const author = await reader.collections.authors.read('tommy-honold');
 
-  // Verwandte Pages: Ärztestammtisch gleiche Stadt + 3 Nachbar-Kammern
+  // Verwandte Pages: Gastro-Stammtisch gleiche Stadt + 3 Nachbar-Kochvereine
   const allStamm = await reader.collections.aerztestammtische.all();
   const matchingStammtisch = allStamm.find(
     (s) => s.entry.status === 'published' && s.entry.bundesland === bundesland && s.entry.stadt === stadt,
   );
-  const allKammern = await reader.collections.aerztekammern.all();
-  const sameBundesland = allKammern
+  const allVereine = await reader.collections.kochvereine.all();
+  const sameBundesland = allVereine
     .filter((k) => k.entry.status === 'published' && k.entry.bundesland === bundesland && k.entry.stadt !== stadt);
-  const otherBundesland = allKammern
+  const otherBundesland = allVereine
     .filter((k) => k.entry.status === 'published' && k.entry.bundesland !== bundesland)
     .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''));
-  const nearbyKammern = [...sameBundesland, ...otherBundesland].slice(0, 3);
+  const nearbyVereine = [...sameBundesland, ...otherBundesland].slice(0, 3);
 
   return (
     <>
@@ -122,22 +122,22 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
       <JsonLd
-        data={kammerOrgJsonLd({
-          name: e.kammerName || e.title,
+        data={vereinOrgJsonLd({
+          name: e.verbandsname || e.title,
           url,
           webseite: e.webseite || undefined,
           address: e.sitzAdresse || undefined,
           bundesland: blName,
           mitgliederzahl: e.mitgliederzahl || undefined,
-          kammerTyp: e.kammerTyp || undefined,
+          mutterverband: e.mutterverband || undefined,
         })}
       />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Magazin', url: BASE_URL },
           { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Ärztekammern', url: `${BASE_URL}/singles-regional/aerztekammern` },
-          { name: blName, url: `${BASE_URL}/singles-regional/aerztekammern/${bundesland}` },
+          { name: 'Kochvereine', url: `${BASE_URL}/singles-regional/kochvereine` },
+          { name: blName, url: `${BASE_URL}/singles-regional/kochvereine/${bundesland}` },
           { name: e.title, url },
         ])}
       />
@@ -145,7 +145,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
       <ClusterHero
         title={e.title}
         excerpt={e.excerpt}
-        category="Ärztekammer"
+        category="Kochverein"
         image={e.featuredImage || undefined}
         imageAlt={e.featuredImageAlt || undefined}
         imageCredit={e.featuredImageCredit || undefined}
@@ -157,17 +157,17 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <Breadcrumbs items={[
           { label: 'Singles Regional', href: '/singles-regional' },
-          { label: 'Ärztekammern', href: '/singles-regional/aerztekammern' },
-          { label: blName, href: `/singles-regional/aerztekammern/${bundesland}` },
-          { label: e.title, href: `/singles-regional/aerztekammern/${bundesland}/${stadt}` },
+          { label: 'Kochvereine', href: '/singles-regional/kochvereine' },
+          { label: blName, href: `/singles-regional/kochvereine/${bundesland}` },
+          { label: e.title, href: `/singles-regional/kochvereine/${bundesland}/${stadt}` },
         ]} />
 
         <ArticleByline publishedAt={e.publishedAt || undefined} />
 
-        {/* Kammer-Fakten Box */}
+        {/* Vereins-Fakten Box */}
         <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-8">
           <div className="bg-surface-dark rounded-xl p-6 text-white/90 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-            {e.kammerName && <div><span className="text-white/50">Kammer:</span> {e.kammerName}</div>}
+            {e.verbandsname && <div><span className="text-white/50">Verein:</span> {e.verbandsname}</div>}
             {e.mitgliederzahl && <div><span className="text-white/50">Mitglieder:</span> {e.mitgliederzahl}</div>}
             {e.sitzAdresse && <div className="sm:col-span-2"><span className="text-white/50">Sitz:</span> {e.sitzAdresse}</div>}
             {e.webseite && (
@@ -192,7 +192,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
                 <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
-                <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+                <HeartButton href={`https://gastrosingles.de/?AID=GastroMagazin-verein-${stadt}`}>
                   Jetzt kostenfrei anmelden
                 </HeartButton>
               </div>
@@ -204,8 +204,8 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
         <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-12">
           <div className="py-10 px-6 bg-surface-dark text-white text-center">
             <p className="text-lg font-bold mb-2">Genug gelesen?</p>
-            <p className="text-white/60 text-sm mb-5">Finde Mediziner-Singles in {blName}.</p>
-            <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+            <p className="text-white/60 text-sm mb-5">Finde Gastro-Singles in {blName}.</p>
+            <HeartButton href={`https://gastrosingles.de/?AID=GastroMagazin-verein-${stadt}`}>
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </div>
@@ -231,7 +231,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
           />
         )}
 
-        {(matchingStammtisch || nearbyKammern.length > 0) && (
+        {(matchingStammtisch || nearbyVereine.length > 0) && (
           <section className="mt-16">
             <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
               Verwandte Seiten
@@ -246,14 +246,14 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
                   <div className="text-base font-bold text-foreground">{matchingStammtisch.entry.title}</div>
                 </Link>
               )}
-              {nearbyKammern.map((k) => (
+              {nearbyVereine.map((k) => (
                 <Link
                   key={k.slug}
-                  href={`/singles-regional/aerztekammern/${k.entry.bundesland}/${k.entry.stadt}`}
+                  href={`/singles-regional/kochvereine/${k.entry.bundesland}/${k.entry.stadt}`}
                   className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
                 >
                   <div className="text-xs uppercase text-foreground/50 mb-1">
-                    Kammer {bundeslandName(k.entry.bundesland)}
+                    Verein {bundeslandName(k.entry.bundesland)}
                   </div>
                   <div className="text-base font-bold text-foreground">{k.entry.title}</div>
                 </Link>
@@ -263,7 +263,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
         )}
 
         <RegionalPillarBacklink
-          currentPillar="aerztekammern"
+          currentPillar="kochvereine"
           bundesland={bundesland}
           bundeslandName={blName}
           stadt={stadt}
@@ -272,7 +272,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
 
       {/* Bottom CTA */}
       <section className="text-center py-16 px-6">
-        <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+        <HeartButton href={`https://gastrosingles.de/?AID=GastroMagazin-verein-${stadt}`}>
           Jetzt kostenfrei mitmachen
         </HeartButton>
       </section>

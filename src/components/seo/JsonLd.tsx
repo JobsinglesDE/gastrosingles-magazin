@@ -284,14 +284,14 @@ export function hospitalJsonLd({
   };
 }
 
-export function kammerOrgJsonLd({
+export function vereinOrgJsonLd({
   name,
   url,
   webseite,
   address,
   bundesland,
   mitgliederzahl,
-  kammerTyp,
+  mutterverband,
 }: {
   name: string;
   url: string;
@@ -299,12 +299,12 @@ export function kammerOrgJsonLd({
   address?: string;
   bundesland: string;
   mitgliederzahl?: string;
-  kammerTyp?: string;
+  mutterverband?: string;
 }) {
   const members = parseIntFromText(mitgliederzahl);
   return {
     '@context': 'https://schema.org',
-    '@type': ['MedicalOrganization', 'GovernmentOrganization'],
+    '@type': ['Organization', 'LocalBusiness'],
     name,
     url,
     ...(webseite ? { sameAs: [webseite] } : {}),
@@ -327,7 +327,7 @@ export function kammerOrgJsonLd({
       '@type': 'AdministrativeArea',
       name: bundesland,
     },
-    ...(kammerTyp ? { additionalType: kammerTyp } : {}),
+    ...(mutterverband ? { parentOrganization: { '@type': 'Organization', name: mutterverband } } : {}),
   };
 }
 

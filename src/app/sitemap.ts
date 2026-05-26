@@ -5,13 +5,13 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://gastrosingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG] = await Promise.all([
+  const [articles, regional, series, stories, authors, kochvereine, aerztestammtische, unikliniken, jungeFG] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
     reader.collections.stories.all(),
     reader.collections.authors.all(),
-    reader.collections.aerztekammern.all(),
+    reader.collections.kochvereine.all(),
     reader.collections.aerztestammtische.all(),
     reader.collections.unikliniken.all(),
     reader.collections.jungeFachgesellschaften.all(),
@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/regional`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional`, priority: 0.7, changeFrequency: 'monthly' },
-    { url: `${BASE}/singles-regional/aerztekammern`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/kochvereine`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/aerztestammtische`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/unikliniken`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/junge-fachgesellschaften`, priority: 0.7, changeFrequency: 'monthly' },
@@ -83,14 +83,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Ärztekammern: per-bundesland pillar + per-stadt detail
-  const kammerBundeslaender = [...new Set(aerztekammern.map((a) => a.entry.bundesland))];
+  const kammerBundeslaender = [...new Set(kochvereine.map((a) => a.entry.bundesland))];
   const kammerBundeslandPages: MetadataRoute.Sitemap = kammerBundeslaender.map((b) => ({
-    url: `${BASE}/singles-regional/aerztekammern/${b}`,
+    url: `${BASE}/singles-regional/kochvereine/${b}`,
     priority: 0.6,
     changeFrequency: 'monthly',
   }));
-  const kammerPages: MetadataRoute.Sitemap = aerztekammern.map((a) => ({
-    url: `${BASE}/singles-regional/aerztekammern/${a.entry.bundesland}/${a.entry.stadt}`,
+  const kammerPages: MetadataRoute.Sitemap = kochvereine.map((a) => ({
+    url: `${BASE}/singles-regional/kochvereine/${a.entry.bundesland}/${a.entry.stadt}`,
     lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
     priority: 0.6,
     changeFrequency: 'monthly',

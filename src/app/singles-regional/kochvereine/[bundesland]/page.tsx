@@ -16,37 +16,37 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const { bundesland } = await params;
   if (!BUNDESLAENDER[bundesland]) return {};
   const name = bundeslandName(bundesland);
-  const url = `https://gastrosingles.de/magazin/singles-regional/aerztekammern/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/kochvereine/${bundesland}`;
   return {
-    title: `Ärztekammer ${name} — Singles-Networking für Mediziner`,
-    description: `Landesärztekammer ${name} und Bezirkskammern: Mitgliederzahlen, Top-Events, wie Mediziner-Singles diese für Networking nutzen.`,
+    title: `Kochverein ${name} — Singles-Networking für Gastro-Profis`,
+    description: `Kochvereine in ${name}: Mitgliederzahlen, Top-Events, wie Gastro-Singles diese für Networking nutzen.`,
     alternates: { canonical: url },
     openGraph: { url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
   };
 }
 
-export default async function KammerBundeslandPage({ params }: { params: Promise<{ bundesland: string }> }) {
+export default async function KochvereinBundeslandPage({ params }: { params: Promise<{ bundesland: string }> }) {
   const { bundesland } = await params;
   if (!BUNDESLAENDER[bundesland]) notFound();
 
-  const all = await reader.collections.aerztekammern.all();
+  const all = await reader.collections.kochvereine.all();
   const inBL = all
     .filter((a) => a.entry.status === 'published' && a.entry.bundesland === bundesland)
-    .sort((a, b) => (a.entry.kammerTyp === 'landes' ? -1 : 1));
+    .sort((a, b) => (a.entry.mutterverband === 'vkd' ? -1 : 1));
 
   const blName = bundeslandName(bundesland);
-  const url = `https://gastrosingles.de/magazin/singles-regional/aerztekammern/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/kochvereine/${bundesland}`;
 
   return (
     <>
       <JsonLd
         data={collectionPageJsonLd({
-          name: `Ärztekammer ${blName}`,
-          description: `Kammer-Pages für ${blName}.`,
+          name: `Kochverein ${blName}`,
+          description: `Kochvereine in ${blName}.`,
           url,
           items: inBL.map((a) => ({
             name: a.entry.title,
-            url: `https://gastrosingles.de/magazin/singles-regional/aerztekammern/${bundesland}/${a.entry.stadt}`,
+            url: `https://gastrosingles.de/magazin/singles-regional/kochvereine/${bundesland}/${a.entry.stadt}`,
           })),
         })}
       />
@@ -54,7 +54,7 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
         data={breadcrumbJsonLd([
           { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
           { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
-          { name: 'Ärztekammern', url: 'https://gastrosingles.de/magazin/singles-regional/aerztekammern' },
+          { name: 'Kochvereine', url: 'https://gastrosingles.de/magazin/singles-regional/kochvereine' },
           { name: blName, url },
         ])}
       />
@@ -64,10 +64,10 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="text-7xl mb-4">{bundeslandEmoji(bundesland)}</div>
           <h1 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">
-            Ärztekammer <span className="text-brand-orange-text">{blName}</span>
+            Kochverein <span className="text-brand-orange-text">{blName}</span>
           </h1>
           <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Landeskammer und Bezirkskammern in {blName} — Mediziner-Networking mit Liebes-Potenzial.
+            VKD-Zweigvereine in {blName} — Gastro-Networking mit Liebes-Potenzial.
           </p>
         </div>
       </section>
@@ -75,8 +75,8 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
       <div className="max-w-6xl mx-auto px-6 mt-6">
         <Breadcrumbs items={[
           { label: 'Singles Regional', href: '/singles-regional' },
-          { label: 'Ärztekammern', href: '/singles-regional/aerztekammern' },
-          { label: blName, href: `/singles-regional/aerztekammern/${bundesland}` },
+          { label: 'Kochvereine', href: '/singles-regional/kochvereine' },
+          { label: blName, href: `/singles-regional/kochvereine/${bundesland}` },
         ]} />
       </div>
 
@@ -87,7 +87,7 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
               Pages für {blName} sind in Vorbereitung. Während wir die Recherche finalisieren —
               Gastrosingles.de wartet nicht.
             </p>
-            <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztekammern">
+            <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-kochvereine">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -96,7 +96,7 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
         <ScrollReveal>
           <section className="max-w-6xl mx-auto px-6 py-12">
             <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-              Kammern in {blName}
+              Kochvereine in {blName}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {inBL.map((a) => (
@@ -104,10 +104,10 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
                   key={a.slug}
                   title={a.entry.title}
                   excerpt={a.entry.excerpt}
-                  href={`/singles-regional/aerztekammern/${bundesland}/${a.entry.stadt}`}
+                  href={`/singles-regional/kochvereine/${bundesland}/${a.entry.stadt}`}
                   image={a.entry.featuredImage || undefined}
                   imageAlt={a.entry.featuredImageAlt || undefined}
-                  category={a.entry.kammerTyp === 'landes' ? 'Landeskammer' : 'Bezirkskammer'}
+                  category={a.entry.mutterverband === 'vkd' ? 'VKD-Zweigverein' : 'Kochverein'}
                   date={a.entry.publishedAt || undefined}
                 />
               ))}
@@ -119,10 +119,10 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
           <Link
-            href="/singles-regional/aerztekammern"
+            href="/singles-regional/kochvereine"
             className="text-brand-orange-text hover:underline text-sm"
           >
-            ← zurück zur Kammern-Übersicht
+            ← zurück zur Kochvereine-Uebersicht
           </Link>
         </section>
       </ScrollReveal>
@@ -131,9 +131,9 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Direkt zu den Singles in {blName}?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Lokale Mediziner-Singles auf Gastrosingles.de finden.
+            Lokale Gastro-Singles auf Gastrosingles.de finden.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztekammern">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-kochvereine">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
