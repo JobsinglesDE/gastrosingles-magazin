@@ -8,18 +8,18 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 
-const PFLEGE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/pflege';
+const PFLEGE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/pflege';
 
 export const metadata = {
   title: 'Partnersuche Pflege — Dating trotz Schichtdienst',
-  description: 'Partnersuche für Pflegekräfte trotz Dreischicht und Dienstplan. Guides für Online-Dating, erstes Date und Beziehung im Pflegealltag — Medicsingles.de.',
+  description: 'Partnersuche für Pflegekräfte trotz Dreischicht und Dienstplan. Guides für Online-Dating, erstes Date und Beziehung im Pflegealltag — Gastrosingles.de.',
   alternates: { canonical: PFLEGE_URL },
   openGraph: {
     title: 'Partnersuche Pflege — Liebe im Schichtdienst',
     description: 'Singles aus Pflege und Pflegeberufen. Hier versteht man deinen Dienstplan ohne Erklärungen.',
     url: PFLEGE_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -128,7 +128,7 @@ const SECTIONS_AFTER_CTA = [
 
 export default async function PflegePillar() {
   const articles = await reader.collections.articles.all();
-  const annaMark = articles.find((a) => a.slug === 'erfolgsgeschichte-anna-mark-medicsingles');
+  const annaMark = articles.find((a) => a.slug === 'erfolgsgeschichte-anna-mark-gastrosingles');
 
   function getSectionArticles(slugs: string[]) {
     return slugs
@@ -142,7 +142,7 @@ export default async function PflegePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin/${a!.slug}`,
     }));
 
   return (
@@ -157,8 +157,8 @@ export default async function PflegePillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
           { name: 'Für Pflegekräfte', url: PFLEGE_URL },
         ])}
       />
@@ -200,7 +200,7 @@ export default async function PflegePillar() {
                 Spontane Verabredungen? Fehlanzeige. Verständnis für den Beruf? Selten.
               </p>
               <p className="text-base leading-relaxed mt-4">
-                Medicsingles.de ist anders. Hier triffst du Menschen, die den Pflegealltag kennen —
+                Gastrosingles.de ist anders. Hier triffst du Menschen, die den Pflegealltag kennen —
                 weil sie ihn selbst leben oder ihn zumindest wertschätzen. Keine Erklärungen mehr,
                 warum du am Wochenende arbeitest. Echte Partnerschaft — mit jemandem, der deinen
                 Rhythmus nicht toleriert, sondern versteht.
@@ -213,7 +213,7 @@ export default async function PflegePillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-pflege">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -259,7 +259,7 @@ export default async function PflegePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Pflege-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
+              <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-pflege">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -335,7 +335,7 @@ export default async function PflegePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Krankenschwestern, Pfleger und Pflegefachkräfte — echte Menschen, die deinen Alltag teilen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-pflege">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

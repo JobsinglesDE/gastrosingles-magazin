@@ -7,8 +7,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
-const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner';
-const BASE = 'https://medicsingles.de/magazin';
+const URL = 'https://gastrosingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner';
+const BASE = 'https://gastrosingles.de/magazin';
 
 const FAQ = [
   {
@@ -53,7 +53,7 @@ export const metadata = {
   openGraph: {
     title: 'Mediziner-Summer-Schools im Überblick',
     description: 'Welche Junge FG veranstaltet welche Summer School in Deutschland — Format, Termine, Anmeldung.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE',
   },
 };
 
@@ -177,7 +177,7 @@ export default function SummerSchoolsPage() {
 
       <ScrollReveal>
         <section className="text-center py-16 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-summer-schools">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-summer-schools">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

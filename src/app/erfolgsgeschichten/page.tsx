@@ -4,13 +4,13 @@ import { SuccessStory } from '@/components/content/SuccessStory';
 export const metadata = {
   alternates: { canonical: '/erfolgsgeschichten' },
   title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
-  description: 'Echte Liebesgeschichten von Medicsingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+  description: 'Echte Liebesgeschichten von Gastrosingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
   openGraph: {
     title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
-    description: 'Echte Liebesgeschichten von Medicsingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
-    url: 'https://medicsingles.de/magazin/erfolgsgeschichten',
+    description: 'Echte Liebesgeschichten von Gastrosingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+    url: 'https://gastrosingles.de/magazin/erfolgsgeschichten',
     type: 'website' as const,
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de_DE',
   },
 };
@@ -38,7 +38,7 @@ export default async function Erfolgsgeschichten() {
       <section className="max-w-3xl mx-auto px-6 pb-4">
         <div className="space-y-4 text-foreground/75 leading-relaxed">
           <p>
-            Echte Paare, die sich über Medicsingles.de gefunden haben. Keine Werbesprüche, keine inszenierten Models —
+            Echte Paare, die sich über Gastrosingles.de gefunden haben. Keine Werbesprüche, keine inszenierten Models —
             sondern Menschen, die im Berufsalltag mit Schichtdienst, Notaufnahme und 60-Stunden-Wochen leben. Ihre Geschichten
             zeigen, dass Partnersuche im medizinischen Umfeld funktioniert, auch wenn die Rahmenbedingungen unvorhersehbar sind.
           </p>

@@ -43,7 +43,7 @@ const FAQ = [
   },
 ];
 
-const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften';
+const PILLAR_URL = 'https://gastrosingles.de/magazin/singles-regional/junge-fachgesellschaften';
 
 export const metadata = {
   title: 'Junge Fachgesellschaften: Nachwuchs-Foren',
@@ -52,7 +52,7 @@ export const metadata = {
   openGraph: {
     title: 'Junge Fachgesellschaften — Mediziner-Nachwuchs vernetzt',
     description: 'Pro Fachrichtung: Junges Forum, Stammtisch-Format, Altersgrenze, BJÄ-Status. Wo Mediziner-Singles auf Augenhöhe netzwerken.',
-    url: PILLAR_URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: PILLAR_URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE',
   },
 };
 
@@ -87,8 +87,8 @@ export default async function JungeFachgesellschaftenPillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
           { name: 'Junge Fachgesellschaften', url: PILLAR_URL },
         ])}
       />
@@ -139,7 +139,7 @@ export default async function JungeFachgesellschaftenPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-junge-fg">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-junge-fg">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -435,10 +435,10 @@ export default async function JungeFachgesellschaftenPillar() {
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber direkt zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Mediziner-Singles aus jedem Fachgebiet auf Medicsingles.de — Profil in zwei Minuten,
+            Mediziner-Singles aus jedem Fachgebiet auf Gastrosingles.de — Profil in zwei Minuten,
             erste Nachricht noch heute.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-junge-fg">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-junge-fg">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

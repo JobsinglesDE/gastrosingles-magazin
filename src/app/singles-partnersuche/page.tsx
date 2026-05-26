@@ -9,7 +9,7 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 
-const HUB_URL = 'https://medicsingles.de/magazin/singles-partnersuche';
+const HUB_URL = 'https://gastrosingles.de/magazin/singles-partnersuche';
 
 export const metadata = {
   title: 'Partnersuche Medizin — Hub für alle Heilberufe',
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Für Ärzte, Pflegekräfte, Therapeuten und Rettungsdienst. Die Hub-Seite mit Guides, Tipps und echten Erfolgsgeschichten.',
     url: HUB_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -67,7 +67,7 @@ export default async function SinglesPartnersuche() {
 
   const pillarItems = PILLARS.map((p) => ({
     name: p.title,
-    url: `https://medicsingles.de/magazin${p.href}`,
+    url: `https://gastrosingles.de/magazin${p.href}`,
   }));
 
   const highlightSlugs = [
@@ -92,7 +92,7 @@ export default async function SinglesPartnersuche() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
           { name: 'Singles & Partnersuche', url: HUB_URL },
         ])}
       />
@@ -163,7 +163,7 @@ export default async function SinglesPartnersuche() {
                 halbherzige Matches und Partner, die den Beruf nie wirklich verstehen.
               </p>
               <p className="mt-4 leading-relaxed text-gray-300">
-                Medicsingles.de ist anders. Hier triffst du Menschen, die deinen Alltag aus
+                Gastrosingles.de ist anders. Hier triffst du Menschen, die deinen Alltag aus
                 eigener Erfahrung kennen — oder ihn zumindest respektieren. Kein Grundkurs in
                 Medizin, keine Entschuldigungen für deine Dienste. Echte Verbindungen, die
                 halten, weil sie auf Verständnis aufgebaut sind. Wähl deine Berufsgruppe und
@@ -177,7 +177,7 @@ export default async function SinglesPartnersuche() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -217,7 +217,7 @@ export default async function SinglesPartnersuche() {
               <p className="text-lg font-semibold">
                 Jetzt Medizin-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+              <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -260,7 +260,7 @@ export default async function SinglesPartnersuche() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich — echte Menschen, echter Alltag, echte Verbindungen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

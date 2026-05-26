@@ -1,7 +1,7 @@
 import { reader } from '@/lib/keystatic';
 import { getArticleUrl } from '@/lib/routes';
 
-const BASE = 'https://medicsingles.de/magazin';
+const BASE = 'https://gastrosingles.de/magazin';
 
 export async function GET() {
   const [articles, regional, series, stories] = await Promise.all([
@@ -20,7 +20,7 @@ export async function GET() {
 
   const lines: string[] = [];
 
-  lines.push('# MedicSingles Magazin — medicsingles.de');
+  lines.push('# MedicSingles Magazin — gastrosingles.de');
   lines.push('');
   lines.push('Dating-Magazin für Singles im Gesundheitswesen: Ärzte, Pflegekräfte, Therapeuten und Rettungsdienst.');
   lines.push('Partnersuche-Tipps, Cluster-Guides für jedes Fachgebiet, Erfolgsgeschichten und TV-News');
@@ -71,8 +71,8 @@ export async function GET() {
 
   lines.push('## Kontakt');
   lines.push('');
-  lines.push('- Website: https://medicsingles.de');
-  lines.push('- Magazin: https://medicsingles.de/magazin');
+  lines.push('- Website: https://gastrosingles.de');
+  lines.push('- Magazin: https://gastrosingles.de/magazin');
   lines.push('- Netzwerk: JobSingles.de — Dating für Berufe');
   lines.push('');
 

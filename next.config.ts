@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'medicsingles.de',
+        hostname: 'gastrosingles.de',
       },
     ],
     // Reduzierte Device-Sizes → weniger srcset-Varianten pro Bild → kleiner byte-weight
@@ -60,7 +60,7 @@ const nextConfig: NextConfig = {
       {
         key: 'Content-Security-Policy',
         value: [
-          "default-src 'self' https://medicsingles.de https://*.vercel.app",
+          "default-src 'self' https://gastrosingles.de https://*.vercel.app",
           "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://*.googletagmanager.com https://www.instagram.com https://*.cdninstagram.com",
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: https: blob:",

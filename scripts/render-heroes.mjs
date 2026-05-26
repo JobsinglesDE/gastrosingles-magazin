@@ -2,7 +2,7 @@
 /**
  * medic-render-heroes.mjs
  *
- * Render Hero-Bilder für Medicsingles Sprint 1 (W2 Stammtische + W3 Unikliniken).
+ * Render Hero-Bilder für Gastrosingles Sprint 1 (W2 Stammtische + W3 Unikliniken).
  * - FLUX.2-pro via Together.ai
  * - Filter 1+3 (Warm Classic + Film Grain)
  * - Thematischer Prompt aus mdoc-Frontmatter (stadt, klinikName/traegerName)
@@ -21,7 +21,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 import sharp from 'sharp';
 
-const REPO = '/docker/projects/medicsingles-magazin';
+const REPO = '/docker/projects/gastrosingles-magazin';
 const W = 1200, H = 640;
 const TOGETHER_API_KEY = process.env.TOGETHER_API_KEY;
 const CONCURRENCY = parseInt(process.env.CONCURRENCY || '3', 10);

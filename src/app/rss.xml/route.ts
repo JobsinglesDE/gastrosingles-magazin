@@ -1,7 +1,7 @@
 import { reader } from '@/lib/keystatic';
 
-const BASE = 'https://medicsingles.de/magazin';
-const SITE_TITLE = 'Medicsingles Magazin';
+const BASE = 'https://gastrosingles.de/magazin';
+const SITE_TITLE = 'Gastrosingles Magazin';
 const SITE_DESCRIPTION = 'Partnersuche für Ärzte, Pflege & Therapeuten — Guides, Erfolgsgeschichten und Dating-Tipps aus dem Gesundheitswesen.';
 
 function escapeXml(str: string): string {

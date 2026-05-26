@@ -98,10 +98,10 @@ const markdocConfig = {
         const attrs: Record<string, string> = { href };
         if (node.attributes.title) attrs.title = node.attributes.title;
         // External links: nofollow noopener noreferrer + target=_blank
-        // Nur medicsingles.de (eigene Domain) bleibt follow. Alle anderen externen Links —
+        // Nur gastrosingles.de (eigene Domain) bleibt follow. Alle anderen externen Links —
         // auch zu Netzwerk-Sites wie jobsingles/seeside aus Content — werden nofollow,
         // damit Link-Equity nicht inflationär verschenkt wird.
-        const isExternal = /^https?:\/\//i.test(rawHref) && !/^https?:\/\/(www\.)?medicsingles\.de/i.test(rawHref);
+        const isExternal = /^https?:\/\//i.test(rawHref) && !/^https?:\/\/(www\.)?gastrosingles\.de/i.test(rawHref);
         if (isExternal) {
           attrs.rel = 'nofollow noopener noreferrer';
           attrs.target = '_blank';

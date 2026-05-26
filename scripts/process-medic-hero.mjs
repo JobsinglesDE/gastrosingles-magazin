@@ -13,6 +13,6 @@ const out = await sharp(upscaled)
   .composite([{ input: grainBuf, blend: 'soft-light', tile: false }])
   .webp({ quality: 88, effort: 5 })
   .toBuffer();
-const target = '/docker/projects/medicsingles-magazin/public/images/hero-tv-news.webp';
+const target = '/docker/projects/gastrosingles-magazin/public/images/hero-tv-news.webp';
 fs.writeFileSync(target, out);
 console.log('saved', target, out.length, 'bytes');

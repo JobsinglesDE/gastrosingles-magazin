@@ -5,14 +5,14 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
   alternates: { canonical: '/ueber-uns' },
-  title: 'Über uns — Die Geschichte hinter Medicsingles',
-  description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Medicsingles.de — und warum es Ärzten & Pflege hilft.',
+  title: 'Über uns — Die Geschichte hinter Gastrosingles',
+  description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Gastrosingles.de — und warum es Ärzten & Pflege hilft.',
   openGraph: {
-    title: 'Über uns — Die Geschichte hinter Medicsingles',
-    description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Medicsingles.de.',
-    url: 'https://medicsingles.de/magazin/ueber-uns',
+    title: 'Über uns — Die Geschichte hinter Gastrosingles',
+    description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Gastrosingles.de.',
+    url: 'https://gastrosingles.de/magazin/ueber-uns',
     type: 'website' as const,
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de_DE',
   },
 };
@@ -138,7 +138,7 @@ export default function UeberUns() {
               { name: 'FarmerSingles.de', desc: 'Singles in der Landwirtschaft', url: 'https://farmersingles.de' },
               { name: 'SingleBuure.ch', desc: 'Bauern-Singles in der Schweiz', url: 'https://singlebuure.ch' },
               { name: 'BlaulichtSingles.ch', desc: 'Polizei, Feuerwehr & Sanität', url: 'https://blaulichtsingles.ch' },
-              { name: 'MedicSingles.de', desc: 'Ärzte & Medizin-Singles', url: 'https://medicsingles.de' },
+              { name: 'MedicSingles.de', desc: 'Ärzte & Medizin-Singles', url: 'https://gastrosingles.de' },
               { name: 'GastroSingles.de', desc: 'Gastronomie & Hotellerie', url: 'https://gastrosingles.de' },
               { name: 'HandwerkSingles.de', desc: 'Handwerker-Singles', url: 'https://handwerksingles.de' },
               { name: 'BäckerSingles.de', desc: 'Bäcker & Konditoren', url: 'https://baeckersingles.de' },
@@ -180,7 +180,7 @@ export default function UeberUns() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

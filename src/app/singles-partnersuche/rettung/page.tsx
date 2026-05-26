@@ -9,7 +9,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 
-const RETTUNG_URL = 'https://medicsingles.de/magazin/singles-partnersuche/rettung';
+const RETTUNG_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/rettung';
 
 export const metadata = {
   title: 'Partnersuche Rettung — Dating für Sanitäter & Notärzte',
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Dating im Wechselschicht-Rhythmus. Partner finden, die Adrenalin-Abfall und Einsatz-Stille verstehen.',
     url: RETTUNG_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -116,7 +116,7 @@ export default async function RettungPillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin/${a!.slug}`,
     }));
 
   return (
@@ -131,8 +131,8 @@ export default async function RettungPillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
           { name: 'Für Rettungsdienst', url: RETTUNG_URL },
         ])}
       />
@@ -176,7 +176,7 @@ export default async function RettungPillar() {
                 Menschen, die trotzdem bleiben — weil sie wissen, was du jeden Tag leistest.
               </p>
               <p className="text-base leading-relaxed mt-4">
-                Medicsingles.de ist anders. Hier triffst du Menschen, die den Rettungsalltag
+                Gastrosingles.de ist anders. Hier triffst du Menschen, die den Rettungsalltag
                 kennen oder ihn zumindest wertschätzen. Keine Erklärungen, warum du nach einem
                 Einsatz zwei Stunden nichts sagst. Echte Verbindungen zwischen Menschen, die
                 wissen: Wer im RTW fährt, bringt mehr mit als einen Dienstplan.
@@ -189,7 +189,7 @@ export default async function RettungPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -275,7 +275,7 @@ export default async function RettungPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Rettungssanitäter, Notfallsanitäter und Menschen, die deinen 12/24-Rhythmus kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const { bundesland } = await params;
   if (!BUNDESLAENDER[bundesland]) return {};
   const name = bundeslandName(bundesland);
-  const url = `https://medicsingles.de/magazin/singles-regional/aerztestammtische/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/aerztestammtische/${bundesland}`;
   return {
     title: `Ärztestammtische ${name} — JADE, MB-Junges-Netzwerk und lokale Mediziner-Treffen`,
     description: `Mediziner-Stammtische in ${name}: aktive Gruppen, Frequenz, Anmeldung und wie Singles im Heilberuf einsteigen.`,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE' },
+    openGraph: { url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
   };
 }
 
@@ -35,7 +35,7 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
     .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''));
 
   const blName = bundeslandName(bundesland);
-  const url = `https://medicsingles.de/magazin/singles-regional/aerztestammtische/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/aerztestammtische/${bundesland}`;
 
   return (
     <>
@@ -46,15 +46,15 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
           url,
           items: inBL.map((a) => ({
             name: a.entry.title,
-            url: `https://medicsingles.de/magazin/singles-regional/aerztestammtische/${bundesland}/${a.entry.stadt}`,
+            url: `https://gastrosingles.de/magazin/singles-regional/aerztestammtische/${bundesland}/${a.entry.stadt}`,
           })),
         })}
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Ärztestammtische', url: 'https://medicsingles.de/magazin/singles-regional/aerztestammtische' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
+          { name: 'Ärztestammtische', url: 'https://gastrosingles.de/magazin/singles-regional/aerztestammtische' },
           { name: blName, url },
         ])}
       />
@@ -87,7 +87,7 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
               Stammtisch-Recherche für {blName} läuft noch. Die Stammtisch-Landschaft ist regional sehr
               unterschiedlich — wir validieren jeden Eintrag bevor er hier landet.
             </p>
-            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+            <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztestammtische">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -131,9 +131,9 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Direkt zu den Singles in {blName}?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Lokale Mediziner-Singles auf Medicsingles.de finden.
+            Lokale Mediziner-Singles auf Gastrosingles.de finden.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -43,26 +43,26 @@ export function articleJsonLd({
     description,
     url,
     ...(image && {
-      image: image.startsWith('http') ? [image] : [`https://medicsingles.de${image.startsWith('/') ? '' : '/'}${image}`],
+      image: image.startsWith('http') ? [image] : [`https://gastrosingles.de${image.startsWith('/') ? '' : '/'}${image}`],
     }),
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
     author: {
       '@type': 'Person',
       name: authorName || 'Tommy Honold',
-      url: authorUrl || 'https://medicsingles.de/magazin/autor/tommy-honold',
+      url: authorUrl || 'https://gastrosingles.de/magazin/autor/tommy-honold',
       sameAs: [
         'https://www.facebook.com/thomashonold1/',
-        'https://medicsingles.de/magazin/autor/tommy-honold',
+        'https://gastrosingles.de/magazin/autor/tommy-honold',
       ],
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Medicsingles Magazin',
-      url: 'https://medicsingles.de/magazin',
+      name: 'Gastrosingles Magazin',
+      url: 'https://gastrosingles.de/magazin',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://medicsingles.de/magazin/logos/jobsingles-logo.png',
+        url: 'https://gastrosingles.de/magazin/logos/jobsingles-logo.png',
         width: 200,
         height: 200,
       },
@@ -124,8 +124,8 @@ export function videoJsonLd({
     embedUrl: `https://www.youtube.com/embed/${videoId}`,
     publisher: {
       '@type': 'Organization',
-      name: 'Medicsingles Magazin',
-      url: 'https://medicsingles.de/magazin',
+      name: 'Gastrosingles Magazin',
+      url: 'https://gastrosingles.de/magazin',
     },
   };
 }
@@ -183,8 +183,8 @@ export function collectionPageJsonLd({
     inLanguage: 'de-CH',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Medicsingles Magazin',
-      url: 'https://medicsingles.de/magazin',
+      name: 'Gastrosingles Magazin',
+      url: 'https://gastrosingles.de/magazin',
     },
     mainEntity: {
       '@type': 'ItemList',

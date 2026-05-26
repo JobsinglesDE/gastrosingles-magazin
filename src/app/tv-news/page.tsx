@@ -7,7 +7,7 @@ export const metadata = {
   title: "TV Serien — Grey's Anatomy & Junge Ärzte",
   description: "Hintergrund-Storys zu Grey's Anatomy und Junge Ärzte: Darsteller, Privatleben, Drehorte, neue Staffeln und Dating-Perspektiven aus dem Klinikalltag.",
   openGraph: {
-    title: "TV Serien — Grey's Anatomy & Junge Ärzte | Medicsingles Magazin",
+    title: "TV Serien — Grey's Anatomy & Junge Ärzte | Gastrosingles Magazin",
     description: "Hintergrund-Storys zu Grey's Anatomy und In aller Freundschaft — Die jungen Ärzte.",
     images: [{ url: '/images/hero-tv-news.webp', width: 2880, height: 1536, alt: 'Chirurgin im OP und Klinik-Arzt im Korridor — Split-Frame zu Grey’s Anatomy und Junge Ärzte' }],
   },

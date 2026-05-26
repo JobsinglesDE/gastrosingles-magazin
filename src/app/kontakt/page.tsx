@@ -3,15 +3,15 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/kontakt' },
-  title: 'Kontakt — Medicsingles Magazin',
+  title: 'Kontakt — Gastrosingles Magazin',
   description:
-    'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
+    'Kontakt zum Gastrosingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
   openGraph: {
-    title: 'Kontakt — Medicsingles Magazin',
-    description: 'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt und Werbung.',
-    url: 'https://medicsingles.de/magazin/kontakt',
+    title: 'Kontakt — Gastrosingles Magazin',
+    description: 'Kontakt zum Gastrosingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt und Werbung.',
+    url: 'https://gastrosingles.de/magazin/kontakt',
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de_DE',
   },
 };
@@ -20,7 +20,7 @@ export default function KontaktPage() {
   return (
     <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
       <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-4">
-        Kontakt zum Medicsingles Magazin
+        Kontakt zum Gastrosingles Magazin
       </h1>
       <p className="text-lg text-foreground/70 mb-12 leading-relaxed">
         Redaktionelle Anfragen, Themen-Vorschläge, Korrekturen oder Pressekontakt — schreib uns. Wir antworten innerhalb
@@ -36,10 +36,10 @@ export default function KontaktPage() {
           <p className="text-foreground/70">
             E-Mail:{' '}
             <a
-              href="mailto:redaktion@medicsingles.de"
+              href="mailto:redaktion@gastrosingles.de"
               className="text-brand-orange hover:underline"
             >
-              redaktion@medicsingles.de
+              redaktion@gastrosingles.de
             </a>
           </p>
           <p className="text-sm text-foreground/55 mt-2">
@@ -66,19 +66,19 @@ export default function KontaktPage() {
           <ul className="text-foreground/70 space-y-1">
             <li>
               →{' '}
-              <a href="https://medicsingles.de/hilfe/" className="text-brand-orange hover:underline">
+              <a href="https://gastrosingles.de/hilfe/" className="text-brand-orange hover:underline">
                 Hilfe &amp; Support
               </a>
             </li>
             <li>
               →{' '}
-              <a href="https://medicsingles.de/datenschutz.html" className="text-brand-orange hover:underline">
+              <a href="https://gastrosingles.de/datenschutz.html" className="text-brand-orange hover:underline">
                 Datenschutz / Cookies
               </a>
             </li>
             <li>
               →{' '}
-              <a href="https://medicsingles.de/impressum.html" className="text-brand-orange hover:underline">
+              <a href="https://gastrosingles.de/impressum.html" className="text-brand-orange hover:underline">
                 Impressum &amp; AGB
               </a>
             </li>
@@ -89,8 +89,8 @@ export default function KontaktPage() {
           <h2 className="text-xl font-bold mb-2">Presse &amp; Kooperationen</h2>
           <p className="text-foreground/70">
             Pressekontakt, Gastbeiträge, Werbe-Anfragen, Kooperationen mit Verbänden oder Behörden — gleicher Mail-Kanal:{' '}
-            <a href="mailto:redaktion@medicsingles.de" className="text-brand-orange hover:underline">
-              redaktion@medicsingles.de
+            <a href="mailto:redaktion@gastrosingles.de" className="text-brand-orange hover:underline">
+              redaktion@gastrosingles.de
             </a>
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function KontaktPage() {
 
       <h2 className="text-2xl font-bold mt-12 mb-3">Wer steckt hinter dem Magazin?</h2>
       <p className="text-foreground/70">
-        Das Medicsingles Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
+        Das Gastrosingles Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
         Partnersuche für Ärzte, Pflegekräfte und Therapeuten in der DACH-Region. Die Themen reichen von
         Dating-Tipps im Schichtdienst über psychologische Aspekte der Partnersuche bis zu Erfolgsgeschichten echter Paare,
         die sich über die Plattform gefunden haben.

@@ -20,8 +20,8 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/api/', '/keystatic/'],
     },
     sitemap: [
-      'https://medicsingles.de/magazin/sitemap.xml',
-      'https://medicsingles.de/magazin/news-sitemap.xml',
+      'https://gastrosingles.de/magazin/sitemap.xml',
+      'https://gastrosingles.de/magazin/news-sitemap.xml',
     ],
   };
 }

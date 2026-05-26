@@ -7,8 +7,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
 
-const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/bjae-buendnis-junge-aerzte';
-const BASE = 'https://medicsingles.de/magazin';
+const URL = 'https://gastrosingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/bjae-buendnis-junge-aerzte';
+const BASE = 'https://gastrosingles.de/magazin';
 
 const FAQ = [
   {
@@ -40,7 +40,7 @@ export const metadata = {
   openGraph: {
     title: 'BJÄ — politische Stimme junger Mediziner',
     description: 'Bündnis Junge Ärzte: Mitglieder, Ziele, Geschichte seit 2013 — und welche Junge FG zu welcher Karriere passt.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE',
   },
 };
 
@@ -151,9 +151,9 @@ export default function BjaePage() {
 
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Die BJÄ-Mitglieder im Medicsingles-Cluster</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Die BJÄ-Mitglieder im Gastrosingles-Cluster</h2>
           <p className="text-foreground/70 mb-6 leading-relaxed">
-            Diese Jungen Fachgesellschaften sind im BJÄ organisiert und auf Medicsingles mit eigener Detailseite vertreten:
+            Diese Jungen Fachgesellschaften sind im BJÄ organisiert und auf Gastrosingles mit eigener Detailseite vertreten:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {BJAE_MEMBERS.map((m) => (
@@ -204,7 +204,7 @@ export default function BjaePage() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Mediziner-Singles aus jedem BJÄ-Mitglieds-Fach — auf Augenhöhe, ohne Erklärungs-Overhead.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-bjae">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-bjae">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

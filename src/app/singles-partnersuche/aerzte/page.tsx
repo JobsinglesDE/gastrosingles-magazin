@@ -8,7 +8,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 
-const AERZTE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/aerzte';
+const AERZTE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/aerzte';
 
 export const metadata = {
   title: 'Partnersuche Ärzte — Dating trotz Klinikalltag',
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Singles im Arztberuf treffen — Schichtdienst, OP, Klinikalltag. Hier versteht man deinen Beruf ohne Erklärungen.',
     url: AERZTE_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -65,7 +65,7 @@ const SECTIONS = [
       'dating-profil-aerzte-pflegekraefte',
       'erste-nachricht-dating-app-mediziner',
       'dating-sicherheit-diskretion-arzt',
-      'medicsingles-vs-tinder-nischen-dating',
+      'gastrosingles-vs-tinder-nischen-dating',
     ],
   },
   {
@@ -156,7 +156,7 @@ export default async function AerztePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin/${a!.slug}`,
     }));
 
   return (
@@ -171,8 +171,8 @@ export default async function AerztePillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
           { name: 'Für Ärzte', url: AERZTE_URL },
         ])}
       />
@@ -216,7 +216,7 @@ export default async function AerztePillar() {
                 eine Partnerschaft, die sich wie eine zusätzliche Nachtschicht anfühlt.
               </p>
               <p className="text-base leading-relaxed mt-4">
-                Medicsingles.de ist anders. Hier triffst du Menschen, die deinen Alltag kennen —
+                Gastrosingles.de ist anders. Hier triffst du Menschen, die deinen Alltag kennen —
                 weil sie ihn selbst leben oder zumindest wertschätzen. Keine Erklärungen, kein
                 Rechtfertigen deiner Arbeitszeiten. Echte Verbindungen zwischen Menschen, die
                 wissen, was der Beruf verlangt. Meld dich an — dein Match wartet.
@@ -229,7 +229,7 @@ export default async function AerztePillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -275,7 +275,7 @@ export default async function AerztePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Ärzte-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
+              <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerzte">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -351,7 +351,7 @@ export default async function AerztePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Ärzte-Singles warten — Menschen, die deinen Alltag kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

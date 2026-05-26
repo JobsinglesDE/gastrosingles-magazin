@@ -38,13 +38,13 @@ export function Footer() {
               <div className="flex items-center gap-3 mb-4">
                 <Image
                   src="/logos/jobsingles-logo.png"
-                  alt="Medicsingles Magazin"
+                  alt="Gastrosingles Magazin"
                   width={36}
                   height={36}
                   className="rounded-lg"
                 />
                 <h3 className="font-bold text-lg text-white tracking-tight">
-                  <span>Medicsingles</span><span className="text-brand-orange"> Magazin</span>
+                  <span>Gastrosingles</span><span className="text-brand-orange"> Magazin</span>
                 </h3>
               </div>
               <p className="text-sm text-white/75 leading-relaxed">
@@ -86,7 +86,7 @@ export function Footer() {
                 <a href="https://jobsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Jobsingles.de — Das Netzwerk
                 </a>
-                <a href="https://www.youtube.com/@Medicsingles" target="_blank" rel="me noopener" className="text-sm text-white/75 hover:text-brand-orange transition-colors flex items-center gap-1.5">
+                <a href="https://www.youtube.com/@Gastrosingles" target="_blank" rel="me noopener" className="text-sm text-white/75 hover:text-brand-orange transition-colors flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
                   YouTube-Kanal
                 </a>
@@ -102,16 +102,16 @@ export function Footer() {
                 Service
               </h4>
               <nav className="flex flex-col gap-2">
-                <a href="https://medicsingles.de/hilfe/" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/hilfe/" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Hilfe & Support
                 </a>
-                <a href="https://medicsingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Premium-Mitgliedschaft kündigen
                 </a>
-                <a href="https://medicsingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Datenschutz
                 </a>
-                <a href="https://medicsingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Impressum / AGB
                 </a>
                 <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
@@ -128,7 +128,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/70">
-            © {currentYear} Medicsingles.de — Alle Rechte vorbehalten.
+            © {currentYear} Gastrosingles.de — Alle Rechte vorbehalten.
           </p>
           <p className="text-xs text-white/70">
             Made with <span className="text-brand-orange">❤</span> by{' '}

@@ -16,7 +16,7 @@ export function AuthorBio({ name, slug, role, bio, avatar, socialLinks }: Author
       {avatar ? (
         <img width="600" height="400"
           src={withBasePath(avatar)}
-          alt={`${name} — Autor beim Medicsingles Magazin`}
+          alt={`${name} — Autor beim Gastrosingles Magazin`}
           itemProp="image"
           className="w-16 h-16 rounded-full object-cover shrink-0 ring-2 ring-brand-orange/20"
         />

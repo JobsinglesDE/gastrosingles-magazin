@@ -1,6 +1,6 @@
 import { reader } from '@/lib/keystatic';
 
-const BASE = 'https://medicsingles.de/magazin';
+const BASE = 'https://gastrosingles.de/magazin';
 
 export async function GET() {
   const [articles, series] = await Promise.all([

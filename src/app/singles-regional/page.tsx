@@ -7,7 +7,7 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
-const HUB_URL = 'https://medicsingles.de/magazin/singles-regional';
+const HUB_URL = 'https://gastrosingles.de/magazin/singles-regional';
 
 export const metadata = {
   title: 'Singles Regional: Stammtische, Unikliniken & Kammern',
@@ -18,7 +18,7 @@ export const metadata = {
     description: 'Stammtisch, Uniklinik oder Kammer. Drei Pillars für regionale Mediziner-Begegnungen, sortiert nach Bundesland.',
     url: HUB_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -68,10 +68,10 @@ const FAQ = [
   },
   {
     question: 'Meine Stadt fehlt. Was tun?',
-    answer: 'Wir bauen das Netzwerk nach Aktivität: Regionen mit dokumentierter Community-Aktivität kommen zuerst. Wenn dein Bundesland "In Vorbereitung" zeigt, sind wir gerade dran. Über das Kontaktformular auf medicsingles.de kannst du deine Stadt priorisieren lassen.',
+    answer: 'Wir bauen das Netzwerk nach Aktivität: Regionen mit dokumentierter Community-Aktivität kommen zuerst. Wenn dein Bundesland "In Vorbereitung" zeigt, sind wir gerade dran. Über das Kontaktformular auf gastrosingles.de kannst du deine Stadt priorisieren lassen.',
   },
   {
-    question: 'Brauche ich eine Medicsingles-Anmeldung, um Stammtische zu finden?',
+    question: 'Brauche ich eine Gastrosingles-Anmeldung, um Stammtische zu finden?',
     answer: 'Nein. Die Pillar-Pages und alle Detailseiten sind frei lesbar. Eine kostenfreie Anmeldung lohnt sich nur, wenn du danach direkt mit anderen Mediziner-Singles in Kontakt treten willst, statt auf den nächsten Stammtisch zu warten.',
   },
 ];
@@ -81,15 +81,15 @@ export default function SinglesRegionalHub() {
     <>
       <JsonLd
         data={collectionPageJsonLd({
-          name: 'Singles Regional — Medicsingles',
+          name: 'Singles Regional — Gastrosingles',
           description: 'Regionale Mediziner-Netzwerke: Ärztestammtische, Unikliniken und Ärztekammern in jedem Bundesland.',
           url: HUB_URL,
-          items: PILLARS.map((p) => ({ name: p.title, url: `https://medicsingles.de/magazin${p.href}` })),
+          items: PILLARS.map((p) => ({ name: p.title, url: `https://gastrosingles.de/magazin${p.href}` })),
         })}
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
           { name: 'Singles Regional', url: HUB_URL },
         ])}
       />
@@ -144,7 +144,7 @@ export default function SinglesRegionalHub() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-regional">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-regional">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -204,7 +204,7 @@ export default function SinglesRegionalHub() {
             </p>
             <p>
               <strong className="text-foreground">Du willst nicht mehr warten.</strong> Direkt auf
-              Medicsingles.de anmelden. Die Pillars helfen, wenn du offline weitergehen willst —
+              Gastrosingles.de anmelden. Die Pillars helfen, wenn du offline weitergehen willst —
               für den ersten Kontakt geht es online schneller.
             </p>
           </div>
@@ -227,9 +227,9 @@ export default function SinglesRegionalHub() {
           <h2 className="text-2xl font-bold mb-4">Bereit für dein lokales Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Mediziner-Singles aus deiner Region. Stammtisch, Klinik, Kammer oder direkt auf
-            Medicsingles.de.
+            Gastrosingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-regional">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-regional">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

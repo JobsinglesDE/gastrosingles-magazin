@@ -17,14 +17,14 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logos/jobsingles-logo.png"
-            alt="Medicsingles Magazin"
+            alt="Gastrosingles Magazin"
             width={44}
             height={44}
             priority
             className="rounded-lg"
           />
           <span className="font-bold text-xl text-foreground tracking-tight">
-            <span>Medicsingles</span><span className="text-brand-orange-text"> Magazin</span>
+            <span>Gastrosingles</span><span className="text-brand-orange-text"> Magazin</span>
           </span>
         </Link>
 

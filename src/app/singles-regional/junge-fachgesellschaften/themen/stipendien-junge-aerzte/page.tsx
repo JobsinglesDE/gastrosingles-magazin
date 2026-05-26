@@ -7,8 +7,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
-const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/stipendien-junge-aerzte';
-const BASE = 'https://medicsingles.de/magazin';
+const URL = 'https://gastrosingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/stipendien-junge-aerzte';
+const BASE = 'https://gastrosingles.de/magazin';
 
 const FAQ = [
   {
@@ -57,7 +57,7 @@ export const metadata = {
   openGraph: {
     title: 'Stipendien für junge Ärzte: alle Programme der Jungen FGs',
     description: 'Reise-, Forschungs- und Hospitationsstipendien junger Fachgesellschaften — sortiert nach Fach.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE',
   },
 };
 
@@ -179,7 +179,7 @@ export default function StipendienPage() {
 
       <ScrollReveal>
         <section className="text-center py-16 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-stipendien">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-stipendien">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

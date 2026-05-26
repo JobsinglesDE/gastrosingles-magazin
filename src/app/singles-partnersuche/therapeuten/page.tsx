@@ -9,7 +9,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 
-const THERAPEUTEN_URL = 'https://medicsingles.de/magazin/singles-partnersuche/therapeuten';
+const THERAPEUTEN_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/therapeuten';
 
 export const metadata = {
   title: 'Partnersuche Therapeuten — Dating für Psychologen',
@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Dating als Therapeut, Psychologe oder Coach — zwischen Empathie, Abgrenzung und echter Nähe.',
     url: THERAPEUTEN_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -130,7 +130,7 @@ export default async function TherapeutenPillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin/${a!.slug}`,
     }));
 
   return (
@@ -145,8 +145,8 @@ export default async function TherapeutenPillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
           { name: 'Für Therapeuten', url: THERAPEUTEN_URL },
         ])}
       />
@@ -189,7 +189,7 @@ export default async function TherapeutenPillar() {
                 eigene Antworten.
               </p>
               <p className="text-base leading-relaxed mt-4">
-                Auf Medicsingles.de triffst du Menschen, die dein Berufsfeld verstehen oder es
+                Auf Gastrosingles.de triffst du Menschen, die dein Berufsfeld verstehen oder es
                 zumindest wertschätzen. Kein Erklärungsmarathon über Supervisionen, Fortbildungen
                 und emotionale Last. Echte Verbindungen zwischen Menschen, die wissen, dass
                 Therapieräume Türen haben — und du privat eine andere Person bist.
@@ -202,7 +202,7 @@ export default async function TherapeutenPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -285,9 +285,9 @@ export default async function TherapeutenPillar() {
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Bereit für dein Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Psychologische Fachkräfte und Singles, die dein Feld verstehen — auf Medicsingles.de.
+            Psychologische Fachkräfte und Singles, die dein Feld verstehen — auf Gastrosingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

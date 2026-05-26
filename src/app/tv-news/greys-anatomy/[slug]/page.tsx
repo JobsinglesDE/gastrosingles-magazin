@@ -16,7 +16,7 @@ import { AuthorBio } from '@/components/ui/AuthorBio';
 const SERIES_ID = 'greys-anatomy';
 const SERIES_LABEL = "Grey's Anatomy";
 const SERIES_PATH = `/tv-news/${SERIES_ID}`;
-const SITE_BASE = 'https://medicsingles.de/magazin';
+const SITE_BASE = 'https://gastrosingles.de/magazin';
 
 function toId(text: string) {
   return text.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -162,7 +162,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
         )}
 
         <div className="text-center py-8">
-          <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-${SERIES_ID}`}>
+          <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-${SERIES_ID}`}>
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

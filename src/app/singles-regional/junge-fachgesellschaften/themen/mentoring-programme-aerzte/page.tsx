@@ -7,8 +7,8 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
-const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte';
-const BASE = 'https://medicsingles.de/magazin';
+const URL = 'https://gastrosingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte';
+const BASE = 'https://gastrosingles.de/magazin';
 
 const FAQ = [
   {
@@ -52,7 +52,7 @@ export const metadata = {
   openGraph: {
     title: 'Mediziner-Mentoring in Deutschland — Programme',
     description: 'Strukturierte Mentoring-Programme der Jungen Fachgesellschaften — von Anästhesie bis Urologie.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE',
   },
 };
 
@@ -163,7 +163,7 @@ export default function MentoringPage() {
 
       <ScrollReveal>
         <section className="text-center py-16 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-mentoring">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-mentoring">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -32,7 +32,7 @@ const FAQ = [
   },
 ];
 
-const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztestammtische';
+const PILLAR_URL = 'https://gastrosingles.de/magazin/singles-regional/aerztestammtische';
 
 export const metadata = {
   title: 'Ärztestammtische Deutschland: JADE, MB, ÄKV-Runden',
@@ -43,7 +43,7 @@ export const metadata = {
     description: 'JADE-Stammtisch, MB-Junges-Netzwerk, lokale ÄKV-Treffen. Pro Bundesland und Stadt aufgelistet.',
     url: PILLAR_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -77,8 +77,8 @@ export default async function AerztestammtischePillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
           { name: 'Ärztestammtische', url: PILLAR_URL },
         ])}
       />
@@ -127,7 +127,7 @@ export default async function AerztestammtischePillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -296,9 +296,9 @@ export default async function AerztestammtischePillar() {
           <h2 className="text-2xl font-bold mb-4">Lieber gleich zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Mediziner-Singles in deiner Region. Wenn das Warten auf den nächsten Stammtisch zu
-            lang dauert, geht es direkt auf Medicsingles.de schneller.
+            lang dauert, geht es direkt auf Gastrosingles.de schneller.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

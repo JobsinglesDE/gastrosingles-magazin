@@ -9,7 +9,7 @@ export const metadata = {
   title: 'In aller Freundschaft — Die jungen Ärzte',
   description: 'Die jungen Ärzte: Darsteller hinter der ARD-Serie, neue Staffeln und was die jungen Mediziner privat machen. News, Drehorte und Hintergründe.',
   openGraph: {
-    title: 'In aller Freundschaft — Die jungen Ärzte | Medicsingles Magazin',
+    title: 'In aller Freundschaft — Die jungen Ärzte | Gastrosingles Magazin',
     description: 'Die Darsteller hinter der ARD-Serie und das Privatleben der jungen Mediziner.',
   },
 };

@@ -9,7 +9,7 @@ export const metadata = {
   title: "Grey's Anatomy — News & Hintergründe",
   description: "Grey's Anatomy: Ellen Pompeo, die Darsteller und das Privatleben der Stars aus Grey Sloan Memorial — neue Staffeln, Drehorte und Dating-Perspektiven.",
   openGraph: {
-    title: "Grey's Anatomy — News & Hintergründe | Medicsingles Magazin",
+    title: "Grey's Anatomy — News & Hintergründe | Gastrosingles Magazin",
     description: "Ellen Pompeo und das Privatleben der Stars aus Grey Sloan Memorial.",
   },
 };

@@ -17,7 +17,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, kammerOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
-const BASE_URL = 'https://medicsingles.de/magazin';
+const BASE_URL = 'https://gastrosingles.de/magazin';
 type Params = Promise<{ bundesland: string; stadt: string }>;
 
 function toId(text: string) {
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: { params: Params }) {
     openGraph: {
       title, description, url, type: 'article',
       images: [{ url: image, width: 1200, height: 630, alt: title }],
-      siteName: 'Medicsingles Magazin', locale: 'de_DE',
+      siteName: 'Gastrosingles Magazin', locale: 'de_DE',
     },
     twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
@@ -192,7 +192,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
                 <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
-                <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+                <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
                   Jetzt kostenfrei anmelden
                 </HeartButton>
               </div>
@@ -205,7 +205,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
           <div className="py-10 px-6 bg-surface-dark text-white text-center">
             <p className="text-lg font-bold mb-2">Genug gelesen?</p>
             <p className="text-white/60 text-sm mb-5">Finde Mediziner-Singles in {blName}.</p>
-            <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+            <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </div>
@@ -272,7 +272,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
 
       {/* Bottom CTA */}
       <section className="text-center py-16 px-6">
-        <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
+        <HeartButton href={`https://gastrosingles.de/?AID=MedicMagazin-kammer-${stadt}`}>
           Jetzt kostenfrei mitmachen
         </HeartButton>
       </section>

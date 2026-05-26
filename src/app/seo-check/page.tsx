@@ -82,7 +82,7 @@ export default function SeoCheckPage() {
           <p className="mb-2">Diesen Link in deine Browser-Lesezeichenleiste ziehen. Dann beim Editieren in Keystatic <strong>einmal anklicken</strong> → öffnet automatisch den Score für den aktuellen Artikel:</p>
           <p className="my-3">
             <a
-              href={`javascript:(function(){var m=location.pathname.match(/\\/keystatic\\/.*\\/collection\\/([^/]+)\\/item\\/([^/?#]+)/);if(!m){alert('Kein Keystatic-Artikel-URL gefunden.');return;}var t=decodeURIComponent(m[1]);var s=decodeURIComponent(m[2]);window.open('https://medicsingles.de/magazin/seo-check?type='+t+'&slug='+encodeURIComponent(s),'seocheck','width=520,height=900');})();`}
+              href={`javascript:(function(){var m=location.pathname.match(/\\/keystatic\\/.*\\/collection\\/([^/]+)\\/item\\/([^/?#]+)/);if(!m){alert('Kein Keystatic-Artikel-URL gefunden.');return;}var t=decodeURIComponent(m[1]);var s=decodeURIComponent(m[2]);window.open('https://gastrosingles.de/magazin/seo-check?type='+t+'&slug='+encodeURIComponent(s),'seocheck','width=520,height=900');})();`}
               className="inline-block px-4 py-2 bg-brand-orange text-white rounded font-bold no-underline"
               onClick={(e) => e.preventDefault()}
             >

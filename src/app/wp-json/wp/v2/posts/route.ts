@@ -3,7 +3,7 @@ import { reader } from '@/lib/keystatic';
 
 export const dynamic = 'force-dynamic';
 
-const SITE = 'https://medicsingles.de';
+const SITE = 'https://gastrosingles.de';
 
 export async function GET() {
   const [allArticles, allStories] = await Promise.all([

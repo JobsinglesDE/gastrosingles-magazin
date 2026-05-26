@@ -32,7 +32,7 @@ const FAQ = [
   },
 ];
 
-const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/unikliniken';
+const PILLAR_URL = 'https://gastrosingles.de/magazin/singles-regional/unikliniken';
 
 export const metadata = {
   title: 'Unikliniken Deutschland: Mediziner-Singles am Campus',
@@ -43,7 +43,7 @@ export const metadata = {
     description: 'Pro Bundesland: Klinik-Sitz, Bettenzahl, Forschungsschwerpunkte und wie Mediziner-Singles diese Häuser jenseits der Dienstpläne nutzen.',
     url: PILLAR_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -77,8 +77,8 @@ export default async function UniklinikenPillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
           { name: 'Unikliniken', url: PILLAR_URL },
         ])}
       />
@@ -128,7 +128,7 @@ export default async function UniklinikenPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -291,10 +291,10 @@ export default async function UniklinikenPillar() {
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber direkt zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Mediziner-Singles aus jedem Bundesland auf Medicsingles.de — Profil in zwei Minuten,
+            Mediziner-Singles aus jedem Bundesland auf Gastrosingles.de — Profil in zwei Minuten,
             erste Nachricht noch heute.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

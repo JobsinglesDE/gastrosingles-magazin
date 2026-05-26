@@ -11,7 +11,7 @@ interface BreadcrumbsProps {
   baseUrl?: string;
 }
 
-export function Breadcrumbs({ items, baseUrl = 'https://medicsingles.de/magazin' }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, baseUrl = 'https://gastrosingles.de/magazin' }: BreadcrumbsProps) {
   const allItems = [{ label: 'Magazin', href: '/' }, ...items];
 
   return (

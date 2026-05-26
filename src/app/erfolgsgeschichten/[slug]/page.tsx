@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!story) return {};
   const title = story.seoTitle || story.title;
   const description = story.seoDescription || story.excerpt;
-  const url = `https://medicsingles.de/magazin/erfolgsgeschichten/${slug}`;
+  const url = `https://gastrosingles.de/magazin/erfolgsgeschichten/${slug}`;
   return {
     title,
     description,
@@ -45,7 +45,7 @@ export default async function StoryDetail({ params }: { params: Promise<{ slug: 
         data={articleJsonLd({
           title: story.title,
           description: story.excerpt,
-          url: `https://medicsingles.de/magazin/erfolgsgeschichten/${slug}`,
+          url: `https://gastrosingles.de/magazin/erfolgsgeschichten/${slug}`,
           image: story.featuredImage || undefined,
           datePublished: story.publishedAt || undefined,
         })}
@@ -66,7 +66,7 @@ export default async function StoryDetail({ params }: { params: Promise<{ slug: 
                 width={600}
                 height={400}
                 src={withBasePath(story.featuredImage)}
-                alt={story.featuredImageAlt || `${story.couple} — Erfolgsgeschichte medicsingles.de`}
+                alt={story.featuredImageAlt || `${story.couple} — Erfolgsgeschichte gastrosingles.de`}
                 className="w-full max-w-sm aspect-square object-cover"
               />
               <div className="p-3 text-center">

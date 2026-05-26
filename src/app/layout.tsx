@@ -12,15 +12,15 @@ const roboto = Roboto({
   subsets: ['latin'],
 });
 
-const BASE_URL = 'https://medicsingles.de/magazin';
+const BASE_URL = 'https://gastrosingles.de/magazin';
 
 export const metadata: Metadata = {
   title: {
-    default: '❤️ Medicsingles — Partnersuche im Gesundheitswesen',
+    default: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
     template: '%s ❤️',
   },
   description:
-    'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst. Jetzt kostenlos zu Medicsingles.de.',
+    'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst. Jetzt kostenlos zu Gastrosingles.de.',
   metadataBase: new URL(BASE_URL),
   alternates: {
     types: {
@@ -28,17 +28,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '❤️ Medicsingles — Partnersuche im Gesundheitswesen',
+    title: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
     description: 'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Dating-Tipps für den Schichtdienst.',
     url: BASE_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de_DE',
-    images: [{ url: `${BASE_URL}/images/hero-startseite.webp`, width: 1920, height: 1080, alt: 'Medicsingles — Partnersuche für Ärzte, Pflege und Therapeuten' }],
+    images: [{ url: `${BASE_URL}/images/hero-startseite.webp`, width: 1920, height: 1080, alt: 'Gastrosingles — Partnersuche für Ärzte, Pflege und Therapeuten' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '❤️ Medicsingles — Partnersuche im Gesundheitswesen',
+    title: '❤️ Gastrosingles — Partnersuche im Gesundheitswesen',
     description: 'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides und Dating-Tipps für den Schichtdienst.',
     images: [`${BASE_URL}/images/hero-startseite.webp`],
   },

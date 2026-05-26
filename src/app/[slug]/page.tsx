@@ -40,7 +40,7 @@ function extractH2s(content: any): { label: string; id: string }[] {
   return items;
 }
 
-const BASE_URL = 'https://medicsingles.de/magazin';
+const BASE_URL = 'https://gastrosingles.de/magazin';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url,
       type: 'article',
       images: [{ url: image, width: 1256, height: 710, alt: title }],
-      siteName: 'Medicsingles Magazin',
+      siteName: 'Gastrosingles Magazin',
       locale: 'de_DE',
     },
     twitter: {
@@ -156,7 +156,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
                 <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
-                <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+                <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
                   Jetzt kostenfrei anmelden
                 </HeartButton>
               </div>
@@ -169,7 +169,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
           <div className="py-10 px-6 bg-surface-dark text-white text-center">
             <p className="text-lg font-bold mb-2">Genug gelesen?</p>
             <p className="text-white/60 text-sm mb-5">Finde Singles, die deinen Alltag verstehen.</p>
-            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+            <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </div>
@@ -219,7 +219,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
 
       {/* Bottom CTA */}
       <section className="text-center py-16 px-6">
-        <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+        <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
           Jetzt kostenfrei mitmachen
         </HeartButton>
       </section>

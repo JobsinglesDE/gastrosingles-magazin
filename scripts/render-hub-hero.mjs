@@ -22,5 +22,5 @@ const styled = await sharp(imgBuf)
   .gamma(1.05)
   .composite([{ input: grainBuf, blend: 'overlay', opacity: 0.13 }])
   .webp({ quality: 85 }).toBuffer();
-fs.writeFileSync('/docker/projects/medicsingles-magazin/public/images/hubs/junge-fachgesellschaften.webp', styled);
+fs.writeFileSync('/docker/projects/gastrosingles-magazin/public/images/hubs/junge-fachgesellschaften.webp', styled);
 console.log(`✓ Hub hero rendered: ${(styled.length/1024).toFixed(0)} KB`);

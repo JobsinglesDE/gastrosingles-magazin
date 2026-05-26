@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const { bundesland } = await params;
   if (!BUNDESLAENDER[bundesland]) return {};
   const name = bundeslandName(bundesland);
-  const url = `https://medicsingles.de/magazin/singles-regional/unikliniken/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/unikliniken/${bundesland}`;
   return {
     title: `Unikliniken ${name} — Singles-Networking für Mediziner`,
     description: `Universitätskliniken und Maximalversorger in ${name}: Bettenzahlen, Forschungsschwerpunkte, wie Mediziner-Singles diese Häuser für echte Begegnungen nutzen.`,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE' },
+    openGraph: { url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
   };
 }
 
@@ -35,7 +35,7 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
     .sort((a, b) => (a.entry.klinikTyp === 'uniklinikum' ? -1 : 1));
 
   const blName = bundeslandName(bundesland);
-  const url = `https://medicsingles.de/magazin/singles-regional/unikliniken/${bundesland}`;
+  const url = `https://gastrosingles.de/magazin/singles-regional/unikliniken/${bundesland}`;
 
   return (
     <>
@@ -46,15 +46,15 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
           url,
           items: inBL.map((a) => ({
             name: a.entry.title,
-            url: `https://medicsingles.de/magazin/singles-regional/unikliniken/${bundesland}/${a.entry.stadt}`,
+            url: `https://gastrosingles.de/magazin/singles-regional/unikliniken/${bundesland}/${a.entry.stadt}`,
           })),
         })}
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Unikliniken', url: 'https://medicsingles.de/magazin/singles-regional/unikliniken' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
+          { name: 'Unikliniken', url: 'https://gastrosingles.de/magazin/singles-regional/unikliniken' },
           { name: blName, url },
         ])}
       />
@@ -85,9 +85,9 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
           <section className="max-w-3xl mx-auto px-6 py-16 text-center">
             <p className="text-lg text-foreground/70 mb-6">
               Pages für {blName} sind in Vorbereitung. Während wir die Recherche finalisieren —
-              Medicsingles.de wartet nicht.
+              Gastrosingles.de wartet nicht.
             </p>
-            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+            <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-unikliniken">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -131,9 +131,9 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Direkt zu den Singles in {blName}?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Lokale Mediziner-Singles auf Medicsingles.de finden.
+            Lokale Mediziner-Singles auf Gastrosingles.de finden.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

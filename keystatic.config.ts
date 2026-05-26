@@ -3,10 +3,10 @@ import { config, fields, collection } from '@keystatic/core';
 export default config({
   storage: {
     kind: 'github',
-    repo: 'JobsinglesDE/medicsingles-magazin',
+    repo: 'JobsinglesDE/gastrosingles-magazin',
   },
   ui: {
-    brand: { name: 'Medicsingles Magazin' },
+    brand: { name: 'Gastrosingles Magazin' },
   },
   collections: {
     articles: collection({

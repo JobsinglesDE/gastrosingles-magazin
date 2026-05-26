@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { reader } from '@/lib/keystatic';
 import { getArticleUrl } from '@/lib/routes';
 
-const BASE = 'https://medicsingles.de/magazin';
+const BASE = 'https://gastrosingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG] = await Promise.all([

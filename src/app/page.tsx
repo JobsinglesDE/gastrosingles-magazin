@@ -12,7 +12,7 @@ import { MatchQuiz } from '@/components/ui/MatchQuiz';
 
 export const metadata = {
   alternates: { canonical: '/' },
-  title: { absolute: '❤️ Medicsingles — Partnersuche für Ärzte & Pflege' },
+  title: { absolute: '❤️ Gastrosingles — Partnersuche für Ärzte & Pflege' },
   description: 'Partnersuche für Ärzte, Pflege & Therapeuten. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Klinikalltag.',
 };
 
@@ -53,7 +53,7 @@ export default async function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-startseite.webp"
-            alt="Medicsingles — Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte"
+            alt="Gastrosingles — Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte"
             width={1920}
             height={1080}
             className="w-full h-full object-cover"
@@ -76,7 +76,7 @@ export default async function HomePage() {
       <ScrollReveal>
         <PillarHero
           as="h2"
-          title="Medicsingles"
+          title="Gastrosingles"
           texts={[
             "Echte Liebe in der Medizin",
             "Schichtdienst trifft Herz",
@@ -84,7 +84,7 @@ export default async function HomePage() {
             "Stethoskop & Liebe",
             "Medizin verbindet",
             "Heilberuf trifft Beziehung",
-            "Medicsingles",
+            "Gastrosingles",
           ]}
         />
       </ScrollReveal>
@@ -197,7 +197,7 @@ export default async function HomePage() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Singles im Gesundheitswesen — Ärzte, Pflege, Therapeuten und Rettung — warten auf dich.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

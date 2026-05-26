@@ -8,7 +8,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS } from '@/lib/bundeslaender';
 
-const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztekammern';
+const PILLAR_URL = 'https://gastrosingles.de/magazin/singles-regional/aerztekammern';
 
 export const metadata = {
   title: 'Ärztekammern Deutschland: alle 17 Landeskammern',
@@ -19,7 +19,7 @@ export const metadata = {
     description: 'Pro Bundesland: Kammer-Sitz, Mitgliederzahl, Top-Events und wie Mediziner-Singles diese nutzen.',
     url: PILLAR_URL,
     type: 'website',
-    siteName: 'Medicsingles Magazin',
+    siteName: 'Gastrosingles Magazin',
     locale: 'de-DE',
   },
 };
@@ -53,8 +53,8 @@ export default async function AerztekammernPillar() {
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
+          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
+          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
           { name: 'Ärztekammern', url: PILLAR_URL },
         ])}
       />
@@ -101,7 +101,7 @@ export default async function AerztekammernPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztekammern">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztekammern">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -174,9 +174,9 @@ export default async function AerztekammernPillar() {
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber direkt zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Mediziner-Singles aus jedem Bundesland — auf Medicsingles.de.
+            Mediziner-Singles aus jedem Bundesland — auf Gastrosingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztekammern">
+          <HeartButton href="https://gastrosingles.de/?AID=MedicMagazin-aerztekammern">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

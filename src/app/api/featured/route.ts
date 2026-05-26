@@ -11,9 +11,9 @@ export async function GET() {
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt || '',
-      url: `https://medicsingles.de/magazin/${a.slug}/`,
+      url: `https://gastrosingles.de/magazin/${a.slug}/`,
       image: a.entry.featuredImage
-        ? `https://medicsingles.de/magazin${a.entry.featuredImage}`
+        ? `https://gastrosingles.de/magazin${a.entry.featuredImage}`
         : '',
       category: a.entry.category,
     }));
