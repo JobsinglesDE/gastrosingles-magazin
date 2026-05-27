@@ -42,7 +42,7 @@ const results: Record<string, { title: string; emoji: string; text: string }> = 
   'default': {
     title: 'Der Allrounder',
     emoji: '⭐',
-    text: 'Du weisst, was du willst. Medizin-Singles auf MedicSingles.de verstehen deinen Alltag.',
+    text: 'Du weisst, was du willst. Gastro-Singles auf Gastrosingles.de verstehen deinen Alltag.',
   },
 };
 

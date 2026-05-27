@@ -20,7 +20,7 @@ export async function GET() {
 
   const lines: string[] = [];
 
-  lines.push('# MedicSingles Magazin — gastrosingles.de');
+  lines.push('# Gastrosingles Magazin — gastrosingles.de');
   lines.push('');
   lines.push('Dating-Magazin für Singles in der Gastronomie: Köche, Sommeliers, Wirte und Servicekräfte.');
   lines.push('Partnersuche-Tipps, Cluster-Guides für jeden Gastro-Bereich, Erfolgsgeschichten und Regional-Pages');

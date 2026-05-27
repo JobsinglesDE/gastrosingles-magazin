@@ -34,7 +34,7 @@ ${newsEntries.map((e) => `  <url>
     <loc>${e.url}</loc>
     <news:news>
       <news:publication>
-        <news:name>MedicSingles Magazin</news:name>
+        <news:name>Gastrosingles Magazin</news:name>
         <news:language>de</news:language>
       </news:publication>
       <news:publication_date>${e.date}</news:publication_date>

@@ -59,7 +59,7 @@ export default function KontaktPage() {
         </div>
 
         <div className="rounded-2xl border border-foreground/10 p-6 bg-foreground/5">
-          <h2 className="text-xl font-bold mb-2">Plattform MedicSingles.de</h2>
+          <h2 className="text-xl font-bold mb-2">Plattform Gastrosingles.de</h2>
           <p className="text-foreground/70 mb-2">
             Fragen zu Mitgliedschaft, Profil, Premium oder Datenschutz auf der Dating-Plattform:
           </p>
