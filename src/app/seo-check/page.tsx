@@ -33,7 +33,7 @@ function scoreBg(score: number): string {
 
 export default function SeoCheckPage() {
   const [type, setType] = useState<(typeof TYPES)[number]>('articles');
-  const [slug, setSlug] = useState('partnersuche-medizin');
+  const [slug, setSlug] = useState('partnersuche-koeche');
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);

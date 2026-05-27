@@ -234,55 +234,6 @@ function parseIntFromText(s?: string): number | undefined {
   return m ? parseInt(m[1], 10) : undefined;
 }
 
-export function hospitalJsonLd({
-  name,
-  url,
-  webseite,
-  address,
-  bundesland,
-  bettenzahl,
-  trägerschaft,
-  klinikTyp,
-}: {
-  name: string;
-  url: string;
-  webseite?: string;
-  address?: string;
-  bundesland: string;
-  bettenzahl?: string;
-  trägerschaft?: string;
-  klinikTyp?: string;
-}) {
-  const beds = parseIntFromText(bettenzahl);
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Hospital',
-    name,
-    url,
-    ...(webseite ? { sameAs: [webseite] } : {}),
-    ...(address ? {
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: address,
-        addressRegion: bundesland,
-        addressCountry: 'DE',
-      },
-    } : {
-      address: {
-        '@type': 'PostalAddress',
-        addressRegion: bundesland,
-        addressCountry: 'DE',
-      },
-    }),
-    ...(beds ? { numberOfBeds: { '@type': 'QuantitativeValue', value: beds } } : {}),
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: bundesland,
-    },
-    ...(trägerschaft ? { ownershipFundingInfo: trägerschaft } : {}),
-    ...(klinikTyp ? { additionalType: klinikTyp } : {}),
-  };
-}
 
 export function vereinOrgJsonLd({
   name,

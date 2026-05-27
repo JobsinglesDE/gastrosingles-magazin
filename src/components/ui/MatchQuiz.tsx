@@ -10,7 +10,7 @@ interface Question {
 
 const questions: Question[] = [
   {
-    q: 'Was ist dein Beruf in der Medizin?',
+    q: 'Was ist dein Beruf in der Gastronomie?',
     options: ['Koch / Köchin', 'Service & Bar', 'Sommelier / Patissier', 'Wirt / Hotelfach'],
   },
   {
@@ -25,19 +25,19 @@ const questions: Question[] = [
 
 const results: Record<string, { title: string; emoji: string; text: string }> = {
   'Koch / Köchin': {
-    title: 'Der Heiler mit Herz',
-    emoji: '🩺',
-    text: 'Du gibst täglich alles für andere — jetzt ist Zeit für jemanden, der auch für dich da ist.',
+    title: 'Der Perfektionist am Pass',
+    emoji: '👨‍🍳',
+    text: 'Du gibst täglich alles am Herd — jetzt ist Zeit für jemanden, der dich nach Service auffängt.',
   },
   'Service & Bar': {
-    title: 'Der Lebensretter',
-    emoji: '💙',
-    text: 'Empathie ist deine Superkraft. Du brauchst jemanden, der auch für dich da ist, wenn du nach Hause kommst.',
+    title: 'Der Gastgeber mit Herz',
+    emoji: '🍸',
+    text: 'Empathie ist deine Superkraft. Du brauchst jemanden, der auch für dich da ist, wenn du nach Mitternacht heimkommst.',
   },
   'Sommelier / Patissier': {
-    title: 'Der Zuhörer',
-    emoji: '🧠',
-    text: 'Du verstehst Menschen tief — und verdienst jemanden, der auch dich wirklich versteht.',
+    title: 'Der feine Genießer',
+    emoji: '🍷',
+    text: 'Du verstehst Geschmack und Menschen tief — und verdienst jemanden, der diese Welt mit dir teilt.',
   },
   'default': {
     title: 'Der Allrounder',

@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Erfolgsgeschichten aus der Gastronomie',
   description: 'Echte Liebesgeschichten von Gastrosingles.de: Köche, Sommeliers und Servicekräfte, die ihre Partner in der Gastronomie gefunden haben.',
   openGraph: {
-    title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
+    title: 'Erfolgsgeschichten — Liebespaare aus der Gastronomie',
     description: 'Echte Liebesgeschichten von Gastrosingles.de: Köche, Sommeliers und Servicekräfte, die ihre Partner in der Gastronomie gefunden haben.',
     url: 'https://gastrosingles.de/magazin/erfolgsgeschichten',
     type: 'website' as const,
@@ -30,7 +30,7 @@ export default async function Erfolgsgeschichten() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 particle-text">Erfolgsgeschichten</h1>
           <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-            Echte Paare. Echte Geschichten. So findet Medizin die Liebe.
+            Echte Paare. Echte Geschichten. So findet die Gastronomie die Liebe.
           </p>
         </div>
       </section>
@@ -39,8 +39,8 @@ export default async function Erfolgsgeschichten() {
         <div className="space-y-4 text-foreground/75 leading-relaxed">
           <p>
             Echte Paare, die sich über Gastrosingles.de gefunden haben. Keine Werbesprüche, keine inszenierten Models —
-            sondern Menschen, die im Berufsalltag mit Schichtdienst, Notaufnahme und 60-Stunden-Wochen leben. Ihre Geschichten
-            zeigen, dass Partnersuche im medizinischen Umfeld funktioniert, auch wenn die Rahmenbedingungen unvorhersehbar sind.
+            sondern Menschen, die im Berufsalltag mit Schichtdienst, Spätservice und 60-Stunden-Wochen leben. Ihre Geschichten
+            zeigen, dass Partnersuche in der Gastronomie funktioniert, auch wenn die Rahmenbedingungen unvorhersehbar sind.
           </p>
           <p>
             Jede Erfolgsgeschichte stammt aus einem persönlichen Gespräch mit dem Paar — freigegeben für die Veröffentlichung.
