@@ -1,0 +1,97 @@
+{
+  "researched": "2026-05-27",
+  "source_strategy": "Wikimedia Commons CC-BY-SA Portraits — alle 10 Köche haben dedizierte Commons-Kategorien mit klar lizenzierten Pressebildern. Eigene Pressebereiche (z.B. tim-raue.com/presse, frankrosin.de) sind meist mit Login/Anmeldung geschützt; Wikimedia Commons CC-BY-SA ist die rechtssicherste offen verfügbare Quelle.",
+  "license_note": "Bei CC-BY-SA Pflicht: Foto-Credit mit Fotografenname + Lizenz + Link zu Commons-Datei. featuredImageCredit-String unten enthält das bereits.",
+  "koeche": [
+    {
+      "slug": "tim-maelzer",
+      "name": "Tim Mälzer",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/2023_NDR-Talk-Show_-_Tim_Maelzer_-_by_2eight_-_9SC5061.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2023_NDR-Talk-Show_-_Tim_Maelzer_-_by_2eight_-_9SC5061.jpg",
+      "credit_line": "Foto: Stefan Brending / Wikimedia Commons (CC BY-SA 3.0 DE)",
+      "alt_text": "Tim Mälzer — Pressefoto Hamburger Sternekoch und TV-Moderator (Kitchen Impossible)",
+      "notes": "Hochauflösendes Portrait aus NDR Talk Show 2023 (1000. Folge). Fotograf Stefan Brending (User: 2eight), CC BY-SA 3.0 DE. Offizielle Wikipedia-Bebilderung."
+    },
+    {
+      "slug": "frank-rosin",
+      "name": "Frank Rosin",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/0961_Frank_Rosin.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:0961_Frank_Rosin.JPG",
+      "credit_line": "Foto: Udo Grimberg / Wikimedia Commons (CC BY-SA 3.0 DE)",
+      "alt_text": "Frank Rosin — Pressefoto Sternekoch aus Dorsten (Rosins Restaurants)",
+      "notes": "Studioportrait 2011 von Udo Grimberg (Chester100), CC BY-SA 3.0 DE. 2848x3352 px, sehr hohe Auflösung. Wird als Hauptbild auf de.wikipedia genutzt."
+    },
+    {
+      "slug": "steffen-henssler",
+      "name": "Steffen Henssler",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Steffen_Henssler_Portrait.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Steffen_Henssler_Portrait.jpg",
+      "credit_line": "Foto: Ali Salehi / Wikimedia Commons (CC BY-SA 3.0)",
+      "alt_text": "Steffen Henssler — Pressefoto Hamburger TV-Koch (Grill den Henssler)",
+      "notes": "Studio-Portrait 2012 von Ali Salehi, CC BY-SA 3.0 Unported. Freigabe über Wikimedia VRT-Ticket #2013052310008415 — explizit als Pressefoto freigegeben."
+    },
+    {
+      "slug": "nelson-mueller",
+      "name": "Nelson Müller",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Nelson_M%C3%BCller_%282014%29.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nelson_M%C3%BCller_(2014).jpg",
+      "credit_line": "Foto: StagiaireMGIMO / Wikimedia Commons (CC BY-SA 3.0)",
+      "alt_text": "Nelson Müller — Pressefoto Sternekoch und ZDF-TV-Koch (Restaurant Schote, Essen)",
+      "notes": "Pressekonferenz Metropole Ruhr / Munich Real Estate Expo 2014. CC BY-SA 3.0 Unported."
+    },
+    {
+      "slug": "sarah-wiener",
+      "name": "Sarah Wiener",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Sarah_Wiener.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sarah_Wiener.jpg",
+      "credit_line": "Foto: Animagus / Wikimedia Commons (CC BY-SA 3.0)",
+      "alt_text": "Sarah Wiener — Pressefoto deutsch-österreichische TV-Köchin und Gründerin der Sarah-Wiener-Stiftung",
+      "notes": "Portrait 2014 von Animagus, CC BY-SA 3.0 Unported. Auflösung niedrig (299x448), für Hero-Bild ggf. nicht optimal — Alternative: ROMY2011 a20 Sarah Wiener.jpg in gleicher Kategorie."
+    },
+    {
+      "slug": "cornelia-poletto",
+      "name": "Cornelia Poletto",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Cornelia_Poletto_2014.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cornelia_Poletto_2014.jpg",
+      "credit_line": "Foto: Oliver Lassen / Wikimedia Commons (CC BY-SA 3.0)",
+      "alt_text": "Cornelia Poletto — Pressefoto Hamburger Sterneköchin und NDR-TV-Köchin",
+      "notes": "Professionelles Portrait 2014 von Oliver Lassen, Canon 1Ds Mark III, 1969x2953 px. Freigabe via Wikimedia VRT. Hochwertig + Hauptbild de.wikipedia."
+    },
+    {
+      "slug": "lea-linster",
+      "name": "Léa Linster",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Lea_Linster_signs_one_of_her_cookbooks.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lea_Linster_signs_one_of_her_cookbooks.JPG",
+      "credit_line": "Foto: Rudolf Simon / Wikimedia Commons (CC BY-SA 3.0 / GFDL)",
+      "alt_text": "Léa Linster — Pressefoto Luxemburger Sterneköchin und Bocuse d'Or-Gewinnerin 1989",
+      "notes": "Portrait 2007 bei Buchsignierung, dual-lizenziert CC BY-SA 3.0 + GFDL. Hauptbild auf mehreren Wikipedia-Sprachversionen."
+    },
+    {
+      "slug": "johann-lafer",
+      "name": "Johann Lafer",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/2012-10-02-Lafer-1259.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:2012-10-02-Lafer-1259.jpg",
+      "credit_line": "Foto: Michael Lucan / Wikimedia Commons (CC BY-SA 3.0 DE)",
+      "alt_text": "Johann Lafer — Pressefoto österreichischer Sternekoch und ZDF-TV-Koch (Stromburg)",
+      "notes": "Portrait München Viktualienmarkt 2012 von Michael Lucan, CC BY-SA 3.0 DE. 1800x1200 px."
+    },
+    {
+      "slug": "tim-raue",
+      "name": "Tim Raue",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Tim_Raue_IMG_0804_%2831147513582%29.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Tim_Raue_IMG_0804_(31147513582).jpg",
+      "credit_line": "Foto: City Foodsters / Wikimedia Commons (CC BY 2.0)",
+      "alt_text": "Tim Raue — Pressefoto Berliner 2-Sterne-Koch (Restaurant Tim Raue, Netflix Chef's Table)",
+      "notes": "Portrait OAD 2016 Top 100+ Restaurants Event Kopenhagen, CC BY 2.0 (nur Attribution, keine ShareAlike-Pflicht). Canon 6D, 4104x2736 px."
+    },
+    {
+      "slug": "christian-rach",
+      "name": "Christian Rach",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Christian_Rach_2012-04-20.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Christian_Rach_2012-04-20.jpg",
+      "credit_line": "Foto: Superbass / Wikimedia Commons (CC BY-SA 3.0)",
+      "alt_text": "Christian Rach — Pressefoto Hamburger TV-Koch und Restauranttester (RTL Rachs Restaurantschule)",
+      "notes": "Portrait nach Kölner Treff (WDR) 2012 von Superbass, CC BY-SA 3.0 Unported. Hauptbild de.wikipedia."
+    }
+  ]
+}
