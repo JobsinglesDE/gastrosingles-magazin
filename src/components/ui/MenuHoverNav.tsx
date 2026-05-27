@@ -28,7 +28,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Promiköche', href: '/promikoeche', description: 'Übersicht: Tim Mälzer, Frank Rosin, Tim Raue & 7 mehr' },
       { label: 'DEHOGA & Branche', href: '/dehoga', description: 'Branchenverband-Hub + alle 16 Landesverbände' },
       { label: 'Messen-Übersicht', href: '/messen', description: 'Internorga, Intergastra, Anuga & 5 weitere' },
-      { label: 'Berufsbilder', href: '/koch', description: 'Koch, Sommelier, Patissier, Küchenchef u.v.m.' },
+      { label: 'Berufsbilder', href: '/berufsbilder', description: 'Übersicht: 18 Gastro-Berufe — Küche, Service, Bar, Hotel' },
     ],
   },
   {
