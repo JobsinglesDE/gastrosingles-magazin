@@ -25,9 +25,9 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Gastro-News',
     href: '/gastro-news',
     dropdown: [
-      { label: 'Promiköche Deutschland', href: '/promikoeche-deutschland', description: 'Tim Mälzer, Frank Rosin, Tim Raue & Co. im Porträt' },
+      { label: 'Promiköche', href: '/promikoeche', description: 'Übersicht: Tim Mälzer, Frank Rosin, Tim Raue & 7 mehr' },
       { label: 'DEHOGA & Branche', href: '/dehoga', description: 'Branchenverband-Hub + alle 16 Landesverbände' },
-      { label: 'Messen-Übersicht', href: '/internorga', description: 'Internorga, Intergastra, Anuga & Co.' },
+      { label: 'Messen-Übersicht', href: '/messen', description: 'Internorga, Intergastra, Anuga & 5 weitere' },
       { label: 'Berufsbilder', href: '/koch', description: 'Koch, Sommelier, Patissier, Küchenchef u.v.m.' },
     ],
   },
