@@ -106,8 +106,8 @@ export default function KontaktPage() {
 
       <h2 className="text-2xl font-bold mt-10 mb-3">Themenvorschläge willkommen</h2>
       <p className="text-foreground/70">
-        Wir nehmen Themen-Vorschläge gerne entgegen — vor allem wenn sie aus erster Hand kommen: aus dem Krankenhaus-Alltag,
-        aus der Notaufnahme, aus dem Beziehungsalltag mit Doppelschicht. Anonymität ist möglich, alle Geschichten werden
+        Wir nehmen Themen-Vorschläge gerne entgegen — vor allem wenn sie aus erster Hand kommen: aus dem Küchen-Alltag,
+        aus dem Service nach Mitternacht, aus dem Beziehungsalltag mit Schichtdienst. Anonymität ist möglich, alle Geschichten werden
         nur mit ausdrücklicher Freigabe veröffentlicht.
       </p>
 

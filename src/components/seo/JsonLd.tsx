@@ -352,7 +352,7 @@ export function organizationJsonLd({
 }) {
   const memberOf: any[] = [];
   if (parentName) memberOf.push({
-    '@type': 'MedicalOrganization',
+    '@type': 'Organization',
     name: parentName,
     ...(parentUrl ? { url: parentUrl } : {}),
   });
@@ -363,7 +363,7 @@ export function organizationJsonLd({
   });
   return {
     '@context': 'https://schema.org',
-    '@type': 'MedicalOrganization',
+    '@type': 'Organization',
     name,
     ...(alternateName ? { alternateName } : {}),
     ...(url ? { url } : {}),
