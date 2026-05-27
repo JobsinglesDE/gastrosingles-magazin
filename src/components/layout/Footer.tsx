@@ -5,13 +5,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-white/90 relative overflow-visible">
+    <footer className="bg-brand-orange text-white/95 relative overflow-visible">
       {/* Animated gradient accent line */}
       <div className="animated-gradient-line h-[3px]" />
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-10">
         {/* Inner content area — slightly lighter surface */}
-        <div className="relative rounded-2xl p-8 md:p-10" style={{ background: '#166062' }}>
+        <div className="relative rounded-2xl p-8 md:p-10" style={{ background: '#D86600' }}>
           {/* Tape left — fast senkrecht, zerrissene Ränder, dunkelgrau */}
           <div
             className="absolute -top-10 left-24 w-9 h-20 hidden md:block z-10"
@@ -44,7 +44,7 @@ export function Footer() {
                   className="rounded-lg"
                 />
                 <h3 className="font-bold text-lg text-white tracking-tight">
-                  <span>Gastrosingles</span><span className="text-brand-orange"> Magazin</span>
+                  <span>Gastrosingles</span><span className="text-white/80"> Magazin</span>
                 </h3>
               </div>
               <p className="text-sm text-white/75 leading-relaxed">
@@ -59,19 +59,19 @@ export function Footer() {
                 Magazin
               </h4>
               <nav className="flex flex-col gap-2">
-                <Link href="/singles-partnersuche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-partnersuche" className="text-sm text-white/75 hover:text-white transition-colors">
                   Partnersuche-Hub
                 </Link>
-                <Link href="/singles-partnersuche/koeche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-partnersuche/koeche" className="text-sm text-white/75 hover:text-white transition-colors">
                   Für Köche
                 </Link>
-                <Link href="/singles-partnersuche/service" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-partnersuche/service" className="text-sm text-white/75 hover:text-white transition-colors">
                   Für Service & Hotelfach
                 </Link>
-                <Link href="/singles-regional/kochvereine" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-regional/kochvereine" className="text-sm text-white/75 hover:text-white transition-colors">
                   Kochvereine (VKD)
                 </Link>
-                <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-white transition-colors">
                   Erfolgsgeschichten
                 </Link>
               </nav>
@@ -83,10 +83,10 @@ export function Footer() {
                 Netzwerk
               </h4>
               <nav className="flex flex-col gap-2">
-                <a href="https://jobsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://jobsingles.de" className="text-sm text-white/75 hover:text-white transition-colors">
                   Jobsingles.de — Das Netzwerk
                 </a>
-                <a href="https://www.youtube.com/@Gastrosingles" target="_blank" rel="me noopener" className="text-sm text-white/75 hover:text-brand-orange transition-colors flex items-center gap-1.5">
+                <a href="https://www.youtube.com/@Gastrosingles" target="_blank" rel="me noopener" className="text-sm text-white/75 hover:text-white transition-colors flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
                   YouTube-Kanal
                 </a>
@@ -102,22 +102,22 @@ export function Footer() {
                 Service
               </h4>
               <nav className="flex flex-col gap-2">
-                <a href="https://gastrosingles.de/hilfe/" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/hilfe/" className="text-sm text-white/75 hover:text-white transition-colors">
                   Hilfe & Support
                 </a>
-                <a href="https://gastrosingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-white transition-colors">
                   Premium-Mitgliedschaft kündigen
                 </a>
-                <a href="https://gastrosingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-white transition-colors">
                   Datenschutz
                 </a>
-                <a href="https://gastrosingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://gastrosingles.de/impressum.html" className="text-sm text-white/75 hover:text-white transition-colors">
                   Impressum / AGB
                 </a>
-                <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-white transition-colors">
                   Über uns
                 </Link>
-                <Link href="/kontakt" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/kontakt" className="text-sm text-white/75 hover:text-white transition-colors">
                   Kontakt
                 </Link>
               </nav>
@@ -131,12 +131,12 @@ export function Footer() {
             © {currentYear} Gastrosingles.de — Alle Rechte vorbehalten.
           </p>
           <p className="text-xs text-white/70">
-            Made with <span className="text-brand-orange">❤</span> by{' '}
+            Made with <span className="text-white">❤</span> by{' '}
             <a
               href="https://seeside.ai"
               target="_blank"
               rel="noopener"
-              className="text-white/60 underline hover:text-brand-orange transition-colors"
+              className="text-white/60 underline hover:text-white transition-colors"
             >
               seeside.ai
             </a>
