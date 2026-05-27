@@ -94,7 +94,7 @@ const slugs = args.length
     const fm = parseFM(mdocPath);
     if (!fm) { console.error(`✗ ${slug}: frontmatter missing`); continue; }
     const outDir = path.join(REPO, 'public/images/kochvereine', slug);
-    const outPath = path.join(outDir, 'featuredImage.webp');
+    const outPath = path.join(outDir, `${slug}.webp`);
     if (fs.existsSync(outPath)) { console.log(`= ${slug} (exists)`); continue; }
     const prompt = buildPrompt(slug, fm);
     try {

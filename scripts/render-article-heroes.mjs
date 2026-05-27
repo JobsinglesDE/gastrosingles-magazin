@@ -79,7 +79,7 @@ const slugs = filteredArgs.length ? filteredArgs : Object.keys(promptSet);
     const prompt = promptSet[slug];
     if (!prompt) { console.error(`✗ ${slug}: no prompt defined`); continue; }
     const outDir = path.join(REPO, outRoot, slug);
-    const outPath = path.join(outDir, 'featuredImage.webp');
+    const outPath = path.join(outDir, `${slug}.webp`);
     if (fs.existsSync(outPath)) { console.log(`= ${slug} (exists)`); continue; }
     try {
       console.log(`→ ${slug} rendering ...`);
