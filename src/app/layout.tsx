@@ -45,10 +45,16 @@ export const metadata: Metadata = {
   verification: {
     google: 'sBM54LsgZvWu9O8S8sMGQ4cGZqqMCyVWuxg7rBSyVos',
   },
-  // icons werden von Next.js Convention Files in src/app/ generiert:
-  // - favicon.ico (16+32 multi-size)
-  // - icon.png (192x192)
-  // - apple-icon.png (180x180)
+  // Icons unter /magazin/images/icons/ — ICONY-Proxy whitelistet /images/* (top-level
+  // /magazin/icon.png oder /magazin/favicon.ico würden vom Proxy mit 404 geblockt).
+  // src/app/favicon.ico bleibt für lokale dev/SDK-Tools als Fallback liegen.
+  icons: {
+    icon: [
+      { url: '/magazin/images/icons/icon-192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    shortcut: '/magazin/images/icons/favicon.ico',
+    apple: '/magazin/images/icons/apple-icon-180.png',
+  },
 };
 
 export default function RootLayout({
