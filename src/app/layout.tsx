@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: [`${BASE_URL}/images/hero-startseite.webp`],
   },
   verification: {
-    google: ['wX9Cm671l9E8x5f5BB72cAo-r_RcVHKKk3Eu0rr-fZM', 'QGrCPnN_tCvvrSaaq7sPx_oKm8k1mDUAzO4ZlI0iRa0', 'sBM54LsgZvWu9O8S8sMGQ4cGZqqMCyVWuxg7rBSyVos'],
+    google: 'sBM54LsgZvWu9O8S8sMGQ4cGZqqMCyVWuxg7rBSyVos',
   },
   icons: {
     icon: [
