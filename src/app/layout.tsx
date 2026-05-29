@@ -45,13 +45,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'sBM54LsgZvWu9O8S8sMGQ4cGZqqMCyVWuxg7rBSyVos',
   },
-  icons: {
-    icon: [
-      { url: '/magazin/logos/jobsingles-logo.png', type: 'image/png' },
-    ],
-    shortcut: '/magazin/logos/jobsingles-logo.png',
-    apple: '/magazin/logos/jobsingles-logo.png',
-  },
+  // icons werden von Next.js Convention Files in src/app/ generiert:
+  // - favicon.ico (16+32 multi-size)
+  // - icon.png (192x192)
+  // - apple-icon.png (180x180)
 };
 
 export default function RootLayout({
