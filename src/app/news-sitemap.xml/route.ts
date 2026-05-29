@@ -9,8 +9,10 @@ export async function GET() {
   ]);
 
   // News-Sitemap: nur Artikel der letzten 2 Tage (Google-Anforderung)
+  // setHours(0,0,0,0) damit Datum-Vergleich nicht durch Tagesuhrzeit Same-Day-Posts wegfiltert
   const twoDaysAgo = new Date();
   twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+  twoDaysAgo.setHours(0, 0, 0, 0);
 
   type NewsEntry = { url: string; title: string; date: string };
   const newsEntries: NewsEntry[] = [];
