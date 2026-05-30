@@ -72,6 +72,8 @@ export default async function PromikoecheHub() {
       />
 
       <PillarHero
+        image={withBasePath('/images/hubs/promikoeche-hero.webp')}
+        imageAlt="Promiköche Deutschland — Tim Mälzer, Frank Rosin, Steffen Henssler, Tim Raue, Nelson Müller, Sarah Wiener, Cornelia Poletto, Léa Linster, Johann Lafer und Christian Rach"
         title="Promiköche Deutschland"
         texts={[
           '10 TV-Köche im Porträt',
