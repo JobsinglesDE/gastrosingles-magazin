@@ -21,6 +21,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/ueber-uns`, priority: 0.5, changeFrequency: 'monthly' },
     { url: `${BASE}/kontakt`, priority: 0.5, changeFrequency: 'monthly' },
+    { url: `${BASE}/gastro-news`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/promikoeche`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/messen`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/berufsbilder`, priority: 0.7, changeFrequency: 'monthly' },
   ];
 
   const articlePages: MetadataRoute.Sitemap = articles
