@@ -1,0 +1,527 @@
+[
+  {
+    "source": "/anuga",
+    "destination": "/berufsbilder/anuga",
+    "permanent": true
+  },
+  {
+    "source": "/barkeeper",
+    "destination": "/berufsbilder/barkeeper",
+    "permanent": true
+  },
+  {
+    "source": "/barkeeperin-sucht-mann",
+    "destination": "/singles-partnersuche/barkeeperin-sucht-mann",
+    "permanent": true
+  },
+  {
+    "source": "/beziehung-mit-koch-realitaet",
+    "destination": "/singles-partnersuche/beziehung-mit-koch-realitaet",
+    "permanent": true
+  },
+  {
+    "source": "/biofach",
+    "destination": "/berufsbilder/biofach",
+    "permanent": true
+  },
+  {
+    "source": "/chef-de-partie",
+    "destination": "/berufsbilder/chef-de-partie",
+    "permanent": true
+  },
+  {
+    "source": "/chef-de-rang",
+    "destination": "/berufsbilder/chef-de-rang",
+    "permanent": true
+  },
+  {
+    "source": "/christian-rach-frau",
+    "destination": "/tv-koch-shows/promi-koeche/christian-rach-frau",
+    "permanent": true
+  },
+  {
+    "source": "/christian-rach-restaurant",
+    "destination": "/tv-koch-shows/promi-koeche/christian-rach-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/christian-rach-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/christian-rach-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/christian-rach",
+    "destination": "/tv-koch-shows/promi-koeche/christian-rach",
+    "permanent": true
+  },
+  {
+    "source": "/commis-de-cuisine",
+    "destination": "/berufsbilder/commis-de-cuisine",
+    "permanent": true
+  },
+  {
+    "source": "/cornelia-poletto-mann",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-mann",
+    "permanent": true
+  },
+  {
+    "source": "/cornelia-poletto-restaurant",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/cornelia-poletto-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/cornelia-poletto",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto",
+    "permanent": true
+  },
+  {
+    "source": "/dating-im-schichtdienst-gastro",
+    "destination": "/singles-partnersuche/dating-im-schichtdienst-gastro",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-baden-wuerttemberg",
+    "destination": "/berufsbilder/dehoga-baden-wuerttemberg",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-bayern",
+    "destination": "/berufsbilder/dehoga-bayern",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-berlin",
+    "destination": "/berufsbilder/dehoga-berlin",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-brandenburg",
+    "destination": "/berufsbilder/dehoga-brandenburg",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-bremen",
+    "destination": "/berufsbilder/dehoga-bremen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-hamburg",
+    "destination": "/berufsbilder/dehoga-hamburg",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-hessen",
+    "destination": "/berufsbilder/dehoga-hessen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-mecklenburg-vorpommern",
+    "destination": "/berufsbilder/dehoga-mecklenburg-vorpommern",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-niedersachsen",
+    "destination": "/berufsbilder/dehoga-niedersachsen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-nrw",
+    "destination": "/berufsbilder/dehoga-nrw",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-rheinland-pfalz",
+    "destination": "/berufsbilder/dehoga-rheinland-pfalz",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-saarland",
+    "destination": "/berufsbilder/dehoga-saarland",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-sachsen-anhalt",
+    "destination": "/berufsbilder/dehoga-sachsen-anhalt",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-sachsen",
+    "destination": "/berufsbilder/dehoga-sachsen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-schleswig-holstein",
+    "destination": "/berufsbilder/dehoga-schleswig-holstein",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-thueringen",
+    "destination": "/berufsbilder/dehoga-thueringen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga",
+    "destination": "/berufsbilder/dehoga",
+    "permanent": true
+  },
+  {
+    "source": "/entremetier",
+    "destination": "/berufsbilder/entremetier",
+    "permanent": true
+  },
+  {
+    "source": "/erstes-date-gastronomie-schichten",
+    "destination": "/singles-partnersuche/erstes-date-gastronomie-schichten",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin-abgenommen",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-abgenommen",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin-familie",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-familie",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin-restaurant",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin-vermoegen",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin",
+    "permanent": true
+  },
+  {
+    "source": "/garde-manger",
+    "destination": "/berufsbilder/garde-manger",
+    "permanent": true
+  },
+  {
+    "source": "/gastro-vision",
+    "destination": "/berufsbilder/gastro-vision",
+    "permanent": true
+  },
+  {
+    "source": "/grill-den-henssler-restaurant",
+    "destination": "/tv-koch-shows/grill-den-henssler/grill-den-henssler-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/hochzeit-im-restaurant",
+    "destination": "/singles-partnersuche/hochzeit-im-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/hogatec",
+    "destination": "/berufsbilder/hogatec",
+    "permanent": true
+  },
+  {
+    "source": "/hotelfachfrau-sucht-mann",
+    "destination": "/singles-partnersuche/hotelfachfrau-sucht-mann",
+    "permanent": true
+  },
+  {
+    "source": "/hotelfachfrau",
+    "destination": "/berufsbilder/hotelfachfrau",
+    "permanent": true
+  },
+  {
+    "source": "/hotelfachmann",
+    "destination": "/berufsbilder/hotelfachmann",
+    "permanent": true
+  },
+  {
+    "source": "/igeho",
+    "destination": "/berufsbilder/igeho",
+    "permanent": true
+  },
+  {
+    "source": "/intergastra",
+    "destination": "/berufsbilder/intergastra",
+    "permanent": true
+  },
+  {
+    "source": "/internorga",
+    "destination": "/berufsbilder/internorga",
+    "permanent": true
+  },
+  {
+    "source": "/johann-lafer-frau",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer-frau",
+    "permanent": true
+  },
+  {
+    "source": "/johann-lafer-restaurant",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/johann-lafer-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/johann-lafer",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer",
+    "permanent": true
+  },
+  {
+    "source": "/kennenlernen-online-dating-gastronomie",
+    "destination": "/singles-partnersuche/kennenlernen-online-dating-gastronomie",
+    "permanent": true
+  },
+  {
+    "source": "/koch",
+    "destination": "/berufsbilder/koch",
+    "permanent": true
+  },
+  {
+    "source": "/kuechenchef",
+    "destination": "/berufsbilder/kuechenchef",
+    "permanent": true
+  },
+  {
+    "source": "/lea-linster-restaurant",
+    "destination": "/tv-koch-shows/promi-koeche/lea-linster-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/lea-linster-sohn",
+    "destination": "/tv-koch-shows/promi-koeche/lea-linster-sohn",
+    "permanent": true
+  },
+  {
+    "source": "/lea-linster-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/lea-linster-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/lea-linster",
+    "destination": "/tv-koch-shows/promi-koeche/lea-linster",
+    "permanent": true
+  },
+  {
+    "source": "/maitre-d-hotel",
+    "destination": "/berufsbilder/maitre-d-hotel",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller-herkunft",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-herkunft",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller-privat",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-privat",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller-restaurant",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-barkeeper",
+    "destination": "/singles-partnersuche/partnersuche-barkeeper",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-koeche",
+    "destination": "/singles-partnersuche/partnersuche-koeche",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-restaurantfachkraft",
+    "destination": "/singles-partnersuche/partnersuche-restaurantfachkraft",
+    "permanent": true
+  },
+  {
+    "source": "/patissier-sucht-partnerin",
+    "destination": "/singles-partnersuche/patissier-sucht-partnerin",
+    "permanent": true
+  },
+  {
+    "source": "/patissier",
+    "destination": "/berufsbilder/patissier",
+    "permanent": true
+  },
+  {
+    "source": "/promikoeche-deutschland",
+    "destination": "/tv-koch-shows/promi-koeche/promikoeche-deutschland",
+    "permanent": true
+  },
+  {
+    "source": "/restaurantfachfrau",
+    "destination": "/berufsbilder/restaurantfachfrau",
+    "permanent": true
+  },
+  {
+    "source": "/restaurantfachmann",
+    "destination": "/berufsbilder/restaurantfachmann",
+    "permanent": true
+  },
+  {
+    "source": "/sarah-wiener-familie",
+    "destination": "/tv-koch-shows/promi-koeche/sarah-wiener-familie",
+    "permanent": true
+  },
+  {
+    "source": "/sarah-wiener-politik",
+    "destination": "/tv-koch-shows/promi-koeche/sarah-wiener-politik",
+    "permanent": true
+  },
+  {
+    "source": "/sarah-wiener-vermoegen",
+    "destination": "/tv-koch-shows/promi-koeche/sarah-wiener-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/sarah-wiener",
+    "destination": "/tv-koch-shows/promi-koeche/sarah-wiener",
+    "permanent": true
+  },
+  {
+    "source": "/saucier",
+    "destination": "/berufsbilder/saucier",
+    "permanent": true
+  },
+  {
+    "source": "/sommelier-sucht-frau",
+    "destination": "/singles-partnersuche/sommelier-sucht-frau",
+    "permanent": true
+  },
+  {
+    "source": "/sommelier",
+    "destination": "/berufsbilder/sommelier",
+    "permanent": true
+  },
+  {
+    "source": "/sous-chef-sucht-frau",
+    "destination": "/singles-partnersuche/sous-chef-sucht-frau",
+    "permanent": true
+  },
+  {
+    "source": "/sous-chef",
+    "destination": "/berufsbilder/sous-chef",
+    "permanent": true
+  },
+  {
+    "source": "/steffen-henssler-privat",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-privat",
+    "permanent": true
+  },
+  {
+    "source": "/steffen-henssler-vermoegen",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/steffen-henssler",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler",
+    "permanent": true
+  },
+  {
+    "source": "/sueffa",
+    "destination": "/berufsbilder/sueffa",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-auszeit-kitchen-impossible-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-auszeit-kitchen-impossible-2026",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-familie",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-familie",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-privat",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-privat",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-restaurant",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-vermoegen",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-frau",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-frau",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-los-angeles",
+    "destination": "/tv-koch-shows/promi-koeche/tim-raue-los-angeles",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-restaurant",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-vermoegen",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-raue",
+    "permanent": true
+  },
+  {
+    "source": "/weinprobe-als-erstes-date",
+    "destination": "/singles-partnersuche/weinprobe-als-erstes-date",
+    "permanent": true
+  },
+  {
+    "source": "/wirt-sucht-frau",
+    "destination": "/singles-partnersuche/wirt-sucht-frau",
+    "permanent": true
+  },
+  {
+    "source": "/wirt",
+    "destination": "/berufsbilder/wirt",
+    "permanent": true
+  },
+  {
+    "source": "/promikoeche",
+    "destination": "/tv-koch-shows/promi-koeche",
+    "permanent": true
+  }
+]

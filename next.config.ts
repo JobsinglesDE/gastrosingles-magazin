@@ -1,4 +1,10 @@
 import type { NextConfig } from 'next';
+import { readFileSync } from 'node:fs';
+
+// Generierte 301-Redirects (alte flache /{slug} → neue Hub-Prefix-URLs).
+// Erzeugt von scripts/gen-redirects.mjs.
+const generatedRedirects: { source: string; destination: string; permanent: boolean }[] =
+  JSON.parse(readFileSync(new URL('./redirects.generated.json', import.meta.url), 'utf8'));
 
 const nextConfig: NextConfig = {
   basePath: '/magazin',
@@ -23,33 +29,7 @@ const nextConfig: NextConfig = {
     qualities: [60, 75, 85],
   },
   async redirects() {
-    return [
-      {
-        source: '/partnersuche-medizin',
-        destination: '/singles-partnersuche',
-        permanent: true,
-      },
-      {
-        source: '/partnersuche-aerzte',
-        destination: '/singles-partnersuche/aerzte',
-        permanent: true,
-      },
-      {
-        source: '/partnersuche-pflege',
-        destination: '/singles-partnersuche/pflege',
-        permanent: true,
-      },
-      {
-        source: '/partnersuche-therapeuten',
-        destination: '/singles-partnersuche/therapeuten',
-        permanent: true,
-      },
-      {
-        source: '/partnersuche-rettung',
-        destination: '/singles-partnersuche/rettung',
-        permanent: true,
-      },
-    ];
+    return [...generatedRedirects];
   },
   async headers() {
     const securityHeaders = [
