@@ -10,17 +10,10 @@ export type Hub = {
   seoDescription: string; // meta description, ≤160 Zeichen
 };
 
-// Sektion 1: TV & Shows — show-basiert
+// Sektion 1: TV & Shows — show-basiert.
+// Nur Hubs mit echtem Content (kein Thin Content). Content-Lücken (DFS-Volumen, 0 Artikel):
+//   küchenschlacht 110k, the-taste 27k → künftige Spokes, NICHT als leerer Hub.
 export const SHOW_HUBS: Record<string, Hub> = {
-  'kuechenschlacht': {
-    slug: 'tv-koch-shows/kuechenschlacht',
-    title: 'Die Küchenschlacht ❤️ — Köche, Kandidaten & Single-News',
-    description:
-      'Alles rund um Die Küchenschlacht: die Profiköche, Kandidaten und wer hinter den Herden Single ist.',
-    seoTitle: 'Die Küchenschlacht ❤️ Köche & Kandidaten',
-    seoDescription:
-      'Die Küchenschlacht: Profiköche, Kandidaten und Single-Geschichten aus der ZDF-Kochshow — täglich frisch.',
-  },
   'kitchen-impossible': {
     slug: 'tv-koch-shows/kitchen-impossible',
     title: 'Kitchen Impossible ❤️ — Mälzer & die Kochduelle',
@@ -39,14 +32,23 @@ export const SHOW_HUBS: Record<string, Hub> = {
     seoDescription:
       'Grill den Henssler: Steffen Henssler, die prominenten Gegner und das Leben hinter der Kochshow.',
   },
-  'the-taste': {
-    slug: 'tv-koch-shows/the-taste',
-    title: 'The Taste ❤️ — Juroren, Kandidaten & Liebe',
+  'rosins-restaurants': {
+    slug: 'tv-koch-shows/rosins-restaurants',
+    title: 'Rosins Restaurants ❤️ — Frank Rosin & die Rettung',
     description:
-      'The Taste: die vier Coaches, die Kandidaten und wer in der Kochshow das Single-Leben hinter sich lässt.',
-    seoTitle: 'The Taste ❤️ Coaches & Kandidaten',
+      'Rosins Restaurants: Frank Rosin rettet kriselnde Lokale — die Show, der Koch und sein Privatleben.',
+    seoTitle: 'Rosins Restaurants ❤️ Frank Rosin',
     seoDescription:
-      'The Taste: Juroren, Kandidaten und Single-Geschichten aus der Sat.1-Kochshow im Überblick.',
+      'Rosins Restaurants: Frank Rosins Lokal-Rettungen, sein Werdegang und das Leben hinter der Kabel-eins-Show.',
+  },
+  'promi-koeche': {
+    slug: 'tv-koch-shows/promi-koeche',
+    title: 'Promi-Köche ❤️ — Porträts, Vermögen & Privatleben',
+    description:
+      'Die bekanntesten Promi-Köche im Porträt: Johann Lafer, Cornelia Poletto, Sarah Wiener & Co. — Karriere, Vermögen und Privatleben.',
+    seoTitle: 'Promi-Köche ❤️ Porträts & Vermögen',
+    seoDescription:
+      'Promi-Köche im Porträt: Lafer, Poletto, Rach, Linster, Wiener — Karriere, Restaurants, Vermögen und Privatleben.',
   },
 };
 

@@ -1,4 +1,5 @@
 import { reader } from '@/lib/keystatic';
+import { articleHref } from '@/lib/routes';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -248,7 +249,7 @@ export default async function KoechePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={articleHref(article)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -296,7 +297,7 @@ export default async function KoechePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={articleHref(article)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}

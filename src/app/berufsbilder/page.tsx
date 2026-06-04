@@ -1,20 +1,23 @@
 import Link from 'next/link';
+import { articleHref } from '@/lib/routes';
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
+import { SECTION_HUBS } from '@/lib/hubs';
 
 const HUB_URL = 'https://gastrosingles.de/magazin/berufsbilder';
+const HUB = SECTION_HUBS['berufsbilder'];
 
 export const metadata = {
-  title: 'Berufsbilder Gastronomie — Übersicht aller Berufe',
-  description: 'Alle Gastro-Berufe im Überblick: Koch, Sommelier, Patissier, Küchenchef, Chef de Partie, Maître d\'Hôtel, Hotelfachfrau, Restaurantfachfrau, Saucier, Entremetier und mehr.',
+  title: HUB.seoTitle,
+  description: HUB.seoDescription,
   alternates: { canonical: HUB_URL },
   openGraph: {
-    title: 'Berufsbilder Gastronomie — Übersicht',
-    description: 'Die 18 wichtigsten Berufe in der Gastronomie im Überblick mit Aufgaben, Gehalt und Single-Realität.',
+    title: HUB.seoTitle,
+    description: HUB.seoDescription,
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
@@ -130,7 +133,7 @@ export default async function BerufsbilderHub() {
               {g.berufe.map((a) => (
                 <Link
                   key={a.slug}
-                  href={`/${a.slug}`}
+                  href={articleHref(a)}
                   className="group block bg-surface rounded-2xl overflow-hidden border border-foreground/10 hover:border-primary/50 transition-colors"
                 >
                   {a.entry.featuredImage && (

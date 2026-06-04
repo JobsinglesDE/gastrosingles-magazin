@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { articleHref } from '@/lib/routes';
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
@@ -6,16 +7,17 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { SINGLE_HUB } from '@/lib/hubs';
 
 const HUB_URL = 'https://gastrosingles.de/magazin/singles-partnersuche';
 
 export const metadata = {
-  title: 'Partnersuche Gastronomie',
-  description: 'Partnersuche in der Gastronomie: Guides für Köche, Sommeliers, Wirte und Servicekräfte. Dating trotz Schichtdienst, Service-Stunden und Sonntags-Service.',
+  title: SINGLE_HUB.seoTitle,
+  description: SINGLE_HUB.seoDescription,
   alternates: { canonical: HUB_URL },
   openGraph: {
-    title: 'Partnersuche Gastronomie — Hub für Köche & Service',
-    description: 'Für Köche, Sommeliers, Wirte und Service-Kräfte. Die Hub-Seite mit Guides, Tipps und echten Erfolgsgeschichten.',
+    title: SINGLE_HUB.seoTitle,
+    description: SINGLE_HUB.seoDescription,
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
@@ -125,7 +127,7 @@ export default async function SinglesPartnersuche() {
                   key={a.slug}
                   title={a.entry.title}
                   excerpt={a.entry.excerpt}
-                  href={`/${a.slug}`}
+                  href={articleHref(a)}
                   image={a.entry.featuredImage || undefined}
                   imageAlt={a.entry.featuredImageAlt || undefined}
                   category={a.entry.category}

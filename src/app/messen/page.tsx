@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { articleHref } from '@/lib/routes';
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -95,7 +96,7 @@ export default async function MessenHub() {
             {messenArticles.map((a) => (
               <Link
                 key={a.slug}
-                href={`/${a.slug}`}
+                href={articleHref(a)}
                 className="group block bg-surface rounded-2xl overflow-hidden border border-foreground/10 hover:border-primary/50 transition-colors"
               >
                 {a.entry.featuredImage && (

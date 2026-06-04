@@ -24,3 +24,14 @@ export function getArticleUrl(
       return `/singles-partnersuche/${slug}`;
   }
 }
+
+/** Bequemer Helfer: URL aus einem Keystatic-Collection-Item ({slug, entry}). */
+export function articleHref(item: {
+  slug: string;
+  entry: { category: string; show?: string; position?: string };
+}): string {
+  return getArticleUrl(item.slug, item.entry.category, {
+    show: item.entry.show,
+    position: item.entry.position,
+  });
+}

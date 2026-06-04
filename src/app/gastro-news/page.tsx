@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { articleHref } from '@/lib/routes';
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -148,7 +149,7 @@ export default async function GastroNewsHub() {
             {promiArticles.map((a) => (
               <Link
                 key={a.slug}
-                href={`/${a.slug}`}
+                href={articleHref(a)}
                 className="group block"
               >
                 {a.entry.featuredImage && (
@@ -173,7 +174,7 @@ export default async function GastroNewsHub() {
           <ul className="divide-y divide-foreground/10">
             {recentArticles.map((a) => (
               <li key={a.slug} className="py-5">
-                <Link href={`/${a.slug}`} className="group flex gap-4 items-start">
+                <Link href={articleHref(a)} className="group flex gap-4 items-start">
                   {a.entry.featuredImage && (
                     <img
                       width="200" height="140"

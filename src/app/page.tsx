@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { articleHref } from '@/lib/routes';
 import Image from 'next/image';
 import { reader } from '@/lib/keystatic';
 import { ArticleCard } from '@/components/content/ArticleCard';
@@ -90,7 +91,7 @@ export default async function HomePage() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/${article.slug}`}
+                href={articleHref(article)}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 date={article.entry.publishedAt || undefined}
