@@ -35,7 +35,7 @@ export async function GET() {
   lines.push('## Partnersuche & Dating');
   lines.push('');
   for (const a of published.articles) {
-    const url = `${BASE}${getArticleUrl(a.slug, a.entry.type, a.entry.series)}`;
+    const url = `${BASE}${getArticleUrl(a.slug, a.entry.category, { show: a.entry.show, position: a.entry.position })}`;
     const desc = a.entry.excerpt || a.entry.seoDescription || '';
     lines.push(`- [${a.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
   }

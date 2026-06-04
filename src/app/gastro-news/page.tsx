@@ -68,7 +68,7 @@ export default async function GastroNewsHub() {
     .filter((a) => a.entry.status === 'published')
     .filter((a) => {
       const cat = a.entry.category;
-      return cat === 'gossip-promikoeche' || cat === 'karriere' || a.entry.type === 'pillar' || a.entry.type === 'berufsbild' || a.entry.type === 'news' || PROMIS.includes(a.slug);
+      return cat === 'tv-koch-shows' || cat === 'berufsbilder' || a.entry.type === 'pillar' || a.entry.type === 'berufsbild' || a.entry.type === 'news' || PROMIS.includes(a.slug);
     })
     .sort((a, b) => {
       const da = a.entry.publishedAt || '';

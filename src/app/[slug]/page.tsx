@@ -99,7 +99,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt,
-      href: getArticleUrl(a.slug, a.entry.type, a.entry.series),
+      href: getArticleUrl(a.slug, a.entry.category, { show: a.entry.show, position: a.entry.position }),
       image: a.entry.featuredImage || undefined,
       category: a.entry.category,
     }));
