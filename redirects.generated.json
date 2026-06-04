@@ -265,6 +265,11 @@
     "permanent": true
   },
   {
+    "source": "/johann-lafer-krebs",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer-krebs",
+    "permanent": true
+  },
+  {
     "source": "/johann-lafer-restaurant",
     "destination": "/tv-koch-shows/promi-koeche/johann-lafer-restaurant",
     "permanent": true
