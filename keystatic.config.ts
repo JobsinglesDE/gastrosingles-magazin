@@ -181,6 +181,55 @@ export default config({
       },
     }),
 
+    persons: collection({
+      label: 'Köche (Personen-Hubs)',
+      slugField: 'slug',
+      path: 'content/persons/*',
+      columns: ['name', 'role'],
+      schema: {
+        slug: fields.slug({ name: { label: 'Slug' } }),
+        name: fields.text({ label: 'Name' }),
+        role: fields.text({ label: 'Rolle (z.B. TV-Koch, Sternekoch)' }),
+        status: fields.select({
+          label: 'Status',
+          defaultValue: 'published',
+          options: [
+            { label: 'Draft', value: 'draft' },
+            { label: 'Published', value: 'published' },
+          ],
+        }),
+        focusKeyword: fields.text({ label: 'Focus-Keyword' }),
+        intro: fields.text({ label: 'Intro (Teaser unter Hero)', multiline: true }),
+        steckbrief: fields.array(
+          fields.object({
+            label: fields.text({ label: 'Label' }),
+            value: fields.text({ label: 'Wert' }),
+          }),
+          { label: 'Steckbrief', itemLabel: (props) => props.fields.label.value },
+        ),
+        bio: fields.markdoc({ label: 'Bio (ausführlich)' }),
+        featuredImage: fields.image({
+          label: 'Personenbild',
+          directory: 'public/images/persons',
+          publicPath: '/images/persons/',
+        }),
+        featuredImageAlt: fields.text({ label: 'Alt-Text Personenbild' }),
+        featuredImageCredit: fields.text({ label: 'Bild-Credit' }),
+        author: fields.relationship({ label: 'Autor', collection: 'authors' }),
+        faqItems: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Frage' }),
+            answer: fields.text({ label: 'Antwort', multiline: true }),
+          }),
+          { label: 'FAQ', itemLabel: (props) => props.fields.question.value },
+        ),
+        takeaways: fields.array(fields.text({ label: 'Punkt' }), { label: 'Das Wichtigste' }),
+        seoTitle: fields.text({ label: 'SEO Titel' }),
+        seoDescription: fields.text({ label: 'SEO Beschreibung', multiline: true }),
+        publishedAt: fields.date({ label: 'Veröffentlicht am' }),
+      },
+    }),
+
     regional: collection({
       label: 'Regional',
       slugField: 'title',

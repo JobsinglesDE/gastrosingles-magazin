@@ -1,16 +1,17 @@
 import type { MetadataRoute } from 'next';
 import { reader } from '@/lib/keystatic';
-import { getArticleUrl } from '@/lib/routes';
+import { getArticleUrl, getPersonHubUrl } from '@/lib/routes';
 import { ALL_HUBS } from '@/lib/hubs';
 
 const BASE = 'https://gastrosingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, stories, kochvereine] = await Promise.all([
+  const [articles, regional, stories, kochvereine, persons] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all().catch(() => []),
     reader.collections.stories.all(),
     reader.collections.kochvereine.all(),
+    reader.collections.persons.all().catch(() => []),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -68,7 +69,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
     }));
 
-  const all = [...staticPages, ...articlePages, ...storyPages, ...regionalPages, ...vereinBundeslandPages, ...vereinPages];
+  // Koch-Personen-Hubs
+  const koechePages: MetadataRoute.Sitemap = (persons || [])
+    .filter((p) => p.entry.status !== 'draft')
+    .map((p) => ({
+      url: `${BASE}${getPersonHubUrl(p.slug)}`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    }));
+  const koecheIndex: MetadataRoute.Sitemap = [
+    { url: `${BASE}/koeche`, priority: 0.8, changeFrequency: 'weekly' as const },
+  ];
+
+  const all = [...staticPages, ...koecheIndex, ...koechePages, ...articlePages, ...storyPages, ...regionalPages, ...vereinBundeslandPages, ...vereinPages];
   // Dedupe nach URL (SINGLE_HUB taucht in staticPages + ALL_HUBS auf)
   const seen = new Set<string>();
   return all.filter((e) => (seen.has(e.url) ? false : (seen.add(e.url), true)));

@@ -71,6 +71,27 @@ export function articleJsonLd({
   };
 }
 
+export function personJsonLd({
+  name,
+  role,
+  image,
+  url,
+}: {
+  name: string;
+  role?: string;
+  image?: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name,
+    ...(role ? { jobTitle: role } : {}),
+    ...(image ? { image } : {}),
+    url,
+  };
+}
+
 export function faqJsonLd(items: readonly { readonly question: string; readonly answer: string }[]) {
   return {
     '@context': 'https://schema.org',

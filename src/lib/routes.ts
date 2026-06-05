@@ -1,5 +1,10 @@
 import { SHOW_HUBS } from './hubs';
 
+/** Personen-Hub-URL (Köche). Sektion-agnostisch, da Köche show-übergreifend auftreten. */
+export function getPersonHubUrl(slug: string): string {
+  return `/koeche/${slug}`;
+}
+
 /**
  * Kanonische Artikel-URL aus der Sektion (category).
  * - tv-koch-shows + show → /tv-koch-shows/{show}/{slug}

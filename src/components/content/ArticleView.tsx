@@ -5,6 +5,7 @@ import { ArticleBody } from '@/components/content/ArticleBody';
 import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
+import { ChefBacklinkCard } from '@/components/content/ChefBacklinkCard';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -216,6 +217,9 @@ export default async function ArticleView({ slug }: { slug: string }) {
         {article.specialization && ['kueche', 'service', 'bar', 'hotel', 'management'].includes(article.specialization) && (
           <PillarBacklinkCard specialization={article.specialization || undefined} />
         )}
+
+        {/* Koch-Hub Backlink (Spoke → Hub) */}
+        {article.person && <ChefBacklinkCard personSlug={article.person} />}
       </div>
 
       {/* Related Articles Carousel */}
