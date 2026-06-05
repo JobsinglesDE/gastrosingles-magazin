@@ -137,7 +137,7 @@ export async function PersonHubPage({ slug }: { slug: string }) {
         )}
 
         <div className="text-center py-8">
-          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin-kochhub">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

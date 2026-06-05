@@ -163,7 +163,7 @@ export default async function HomePage() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Singles in der Gastronomie — Köche, Sommeliers, Service und Hotelfach — warten auf dich.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

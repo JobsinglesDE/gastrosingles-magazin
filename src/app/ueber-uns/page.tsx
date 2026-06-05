@@ -179,7 +179,7 @@ export default function UeberUns() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Gastronomie-Singles warten auf dich.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

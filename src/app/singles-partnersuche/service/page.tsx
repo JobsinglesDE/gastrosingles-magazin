@@ -189,7 +189,7 @@ export default async function ServicePillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin-service">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -233,7 +233,7 @@ export default async function ServicePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Service- und Hotelfach-Singles finden
               </p>
-              <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin-service">
+              <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -284,7 +284,7 @@ export default async function ServicePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Service-Singles in deiner Region warten — Menschen, die deinen Tresen-Rhythmus kennen.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin-service">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

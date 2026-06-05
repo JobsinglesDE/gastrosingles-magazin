@@ -26,7 +26,7 @@ export async function ChefBacklinkCard({ personSlug }: { personSlug: string }) {
         >
           Zum {person.name}-Hub →
         </Link>
-        <HeartButton href="https://gastrosingles.de/?AID=GastroMagazin-chefback">
+        <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
           Jetzt mitmachen
         </HeartButton>
       </div>
