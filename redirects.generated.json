@@ -65,6 +65,11 @@
     "permanent": true
   },
   {
+    "source": "/cornelia-poletto-palazzo",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-palazzo",
+    "permanent": true
+  },
+  {
     "source": "/cornelia-poletto-restaurant",
     "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-restaurant",
     "permanent": true
@@ -187,6 +192,11 @@
   {
     "source": "/frank-rosin-familie",
     "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-familie",
+    "permanent": true
+  },
+  {
+    "source": "/frank-rosin-gastronomie-fazit",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-gastronomie-fazit",
     "permanent": true
   },
   {
@@ -340,6 +350,11 @@
     "permanent": true
   },
   {
+    "source": "/nelson-mueller-rezepte",
+    "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-rezepte",
+    "permanent": true
+  },
+  {
     "source": "/nelson-mueller-vermoegen",
     "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-vermoegen",
     "permanent": true
@@ -435,8 +450,23 @@
     "permanent": true
   },
   {
+    "source": "/steffen-henssler-pfanne",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-pfanne",
+    "permanent": true
+  },
+  {
     "source": "/steffen-henssler-privat",
     "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-privat",
+    "permanent": true
+  },
+  {
+    "source": "/steffen-henssler-restaurants",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-restaurants",
+    "permanent": true
+  },
+  {
+    "source": "/steffen-henssler-sommer-special-2026",
+    "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-sommer-special-2026",
     "permanent": true
   },
   {
@@ -457,6 +487,11 @@
   {
     "source": "/tim-maelzer-auszeit-kitchen-impossible-2026",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-auszeit-kitchen-impossible-2026",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-eis",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-eis",
     "permanent": true
   },
   {
@@ -497,6 +532,11 @@
   {
     "source": "/tim-raue-restaurant",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-sphere",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-sphere",
     "permanent": true
   },
   {
