@@ -60,6 +60,11 @@
     "permanent": true
   },
   {
+    "source": "/cornelia-poletto-kitchen-impossible-team-edition-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/cornelia-poletto-kitchen-impossible-team-edition-2026",
+    "permanent": true
+  },
+  {
     "source": "/cornelia-poletto-mann",
     "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-mann",
     "permanent": true
@@ -487,6 +492,11 @@
   {
     "source": "/tim-maelzer-auszeit-kitchen-impossible-2026",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-auszeit-kitchen-impossible-2026",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-best-friends-kitchen-impossible-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-best-friends-kitchen-impossible-2026",
     "permanent": true
   },
   {
