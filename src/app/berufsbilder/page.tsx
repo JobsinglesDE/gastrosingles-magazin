@@ -58,6 +58,7 @@ const GROUPS = [
       { slug: 'maitre-d-hotel', kurz: 'Restaurant-Repräsentation · 3.000–5.500 €' },
       { slug: 'restaurantfachfrau', kurz: 'IHK-Service · 2.100–3.800 €' },
       { slug: 'restaurantfachmann', kurz: 'IHK-Service · 2.100–3.800 €' },
+      { slug: 'kellner', kurz: 'Service angelernt + Trinkgeld · 2.270–2.730 €' },
     ],
   },
   {
@@ -66,6 +67,7 @@ const GROUPS = [
     berufe: [
       { slug: 'hotelfachfrau', kurz: 'Rezeption + Etage · 2.100–4.500 €' },
       { slug: 'hotelfachmann', kurz: 'Front Office + F&B · 2.100–4.500 €' },
+      { slug: 'restaurantleiter', kurz: 'Service-Leitung + Umsatz · 2.800–4.500 €' },
       { slug: 'wirt', kurz: 'Selbständiger Gastronom · sehr variabel' },
     ],
   },
