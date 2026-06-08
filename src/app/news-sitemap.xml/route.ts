@@ -1,4 +1,5 @@
 import { reader } from '@/lib/keystatic';
+import { articleHref } from '@/lib/routes';
 
 const BASE = 'https://gastrosingles.de/magazin';
 
@@ -23,7 +24,7 @@ export async function GET() {
     if (pubDate < twoDaysAgo) continue;
 
     newsEntries.push({
-      url: `${BASE}/${a.slug}`,
+      url: `${BASE}${articleHref(a)}`,
       title: a.entry.title,
       date: pubDate.toISOString(),
     });
