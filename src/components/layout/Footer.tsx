@@ -105,7 +105,7 @@ export function Footer() {
                 <a href="https://gastrosingles.de/hilfe/" className="text-sm text-white/75 hover:text-white transition-colors">
                   Hilfe & Support
                 </a>
-                <a href="https://gastrosingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-white transition-colors">
+                <a href="https://gastrosingles.de/kontakt/k%C3%BCndigen/" rel="nofollow" className="text-sm text-white/75 hover:text-white transition-colors">
                   Premium-Mitgliedschaft kündigen
                 </a>
                 <a href="https://gastrosingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-white transition-colors">
