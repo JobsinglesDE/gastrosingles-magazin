@@ -35,6 +35,11 @@
     "permanent": true
   },
   {
+    "source": "/christian-rach-abschied-grill-den-henssler",
+    "destination": "/tv-koch-shows/promi-koeche/christian-rach-abschied-grill-den-henssler",
+    "permanent": true
+  },
+  {
     "source": "/christian-rach-frau",
     "destination": "/tv-koch-shows/promi-koeche/christian-rach-frau",
     "permanent": true
@@ -205,6 +210,11 @@
     "permanent": true
   },
   {
+    "source": "/frank-rosin-promi-taste-2026",
+    "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-promi-taste-2026",
+    "permanent": true
+  },
+  {
     "source": "/frank-rosin-restaurant",
     "destination": "/tv-koch-shows/rosins-restaurants/frank-rosin-restaurant",
     "permanent": true
@@ -227,6 +237,11 @@
   {
     "source": "/gastro-vision",
     "destination": "/berufsbilder/gastro-vision",
+    "permanent": true
+  },
+  {
+    "source": "/gehalt-gastronomie",
+    "destination": "/berufsbilder/gehalt-gastronomie",
     "permanent": true
   },
   {
@@ -300,6 +315,11 @@
     "permanent": true
   },
   {
+    "source": "/kellner",
+    "destination": "/berufsbilder/kellner",
+    "permanent": true
+  },
+  {
     "source": "/kennenlernen-online-dating-gastronomie",
     "destination": "/singles-partnersuche/kennenlernen-online-dating-gastronomie",
     "permanent": true
@@ -317,6 +337,11 @@
   {
     "source": "/lea-linster-restaurant",
     "destination": "/tv-koch-shows/promi-koeche/lea-linster-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/lea-linster-sohn-louis-zwei-michelin-sterne",
+    "destination": "/tv-koch-shows/promi-koeche/lea-linster-sohn-louis-zwei-michelin-sterne",
     "permanent": true
   },
   {
@@ -407,6 +432,11 @@
   {
     "source": "/restaurantfachmann",
     "destination": "/berufsbilder/restaurantfachmann",
+    "permanent": true
+  },
+  {
+    "source": "/restaurantleiter",
+    "destination": "/berufsbilder/restaurantleiter",
     "permanent": true
   },
   {
@@ -507,6 +537,11 @@
   {
     "source": "/tim-maelzer-familie",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-familie",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-kitchen-impossible-vegan-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-kitchen-impossible-vegan-2026",
     "permanent": true
   },
   {
