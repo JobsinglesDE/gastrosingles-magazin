@@ -1,5 +1,3 @@
-import { SHOW_HUBS } from './hubs';
-
 /** Personen-Hub-URL (Köche). Sektion-agnostisch, da Köche show-übergreifend auftreten. */
 export function getPersonHubUrl(slug: string): string {
   return `/koeche/${slug}`;
@@ -19,7 +17,10 @@ export function getArticleUrl(
 ): string {
   switch (category) {
     case 'tv-koch-shows': {
-      const show = opts?.show && SHOW_HUBS[opts.show] ? opts.show : '';
+      // Artikel-Route ist immer [show]/[slug] (generateStaticParams nestet JEDEN show,
+      // auch Shows ohne eigene Hub-Seite wie 'the-taste'). show daher IMMER ins URL-Segment
+      // ziehen — sonst zeigt die URL auf die nicht existierende flache [slug]-Route → 404.
+      const show = opts?.show ?? '';
       return show ? `/tv-koch-shows/${show}/${slug}` : `/tv-koch-shows/${slug}`;
     }
     case 'berufsbilder':
