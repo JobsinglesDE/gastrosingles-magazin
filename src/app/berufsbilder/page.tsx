@@ -85,7 +85,7 @@ export default async function BerufsbilderHub() {
 
   const items = groupArticles.flatMap((g) => g.berufe).map((a) => ({
     name: a.entry.title,
-    url: `https://gastrosingles.de/magazin/${a.slug}`,
+    url: `https://gastrosingles.de/magazin${articleHref(a)}`,
   }));
 
   return (

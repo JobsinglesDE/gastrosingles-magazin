@@ -35,7 +35,7 @@ export default async function HomePage() {
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
     excerpt: article.entry.excerpt,
-    href: `/${article.slug}`,
+    href: articleHref(article),
     image: article.entry.featuredImage || undefined,
     category: article.entry.category,
   }));

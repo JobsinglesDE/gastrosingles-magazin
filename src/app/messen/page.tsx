@@ -49,7 +49,7 @@ export default async function MessenHub() {
 
   const items = messenArticles.map((a) => ({
     name: a.entry.title,
-    url: `https://gastrosingles.de/magazin/${a.slug}`,
+    url: `https://gastrosingles.de/magazin${articleHref(a)}`,
   }));
 
   return (

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { reader } from '@/lib/keystatic';
+import { articleHref } from '@/lib/routes';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +12,7 @@ export async function GET() {
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt || '',
-      url: `https://gastrosingles.de/magazin/${a.slug}/`,
+      url: `https://gastrosingles.de/magazin${articleHref(a)}/`,
       image: a.entry.featuredImage
         ? `https://gastrosingles.de/magazin${a.entry.featuredImage}`
         : '',
