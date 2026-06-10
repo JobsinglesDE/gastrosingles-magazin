@@ -115,9 +115,10 @@ export function MatchQuiz() {
             <p className="text-foreground/70 mb-6">{result.text}</p>
             <div className="flex gap-3 justify-center">
               <a
-                href="https://gastrosingles.de/?AID=GastrosinglesMagazin"
+                href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin"
                 className="px-6 py-3 bg-[#429A45] text-white font-bold rounded-full hover:shadow-lg transition-all"
-              >
+            rel="nofollow noopener"
+          >
                 Jetzt Match finden
               </a>
               <button

@@ -44,7 +44,7 @@ export function PillarBacklinkCard({ specialization }: { specialization?: Specia
         >
           {pillar.cta}
         </Link>
-        <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
+        <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
           Jetzt mitmachen
         </HeartButton>
       </div>

@@ -87,7 +87,7 @@ export default async function KochvereinBundeslandPage({ params }: { params: Pro
               Pages für {blName} sind in Vorbereitung. Während wir die Recherche finalisieren —
               Gastrosingles.de wartet nicht.
             </p>
-            <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
+            <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -133,7 +133,7 @@ export default async function KochvereinBundeslandPage({ params }: { params: Pro
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Lokale Gastro-Singles auf Gastrosingles.de finden.
           </p>
-          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
