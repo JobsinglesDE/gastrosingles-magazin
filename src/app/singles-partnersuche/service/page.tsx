@@ -2,6 +2,7 @@ import { reader } from '@/lib/keystatic';
 import { articleHref } from '@/lib/routes';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
@@ -49,9 +50,12 @@ const testimonials = [
   },
 ];
 
+// Eine durchgehende A–E-Struktur (TOC-Anker = id); Mittel-CTA wird nach Sektion C eingeschoben
 const SECTIONS = [
   {
-    title: '🍷 Grundlagen Service & Hotelfach',
+    id: 'grundlagen',
+    letter: 'A',
+    title: 'Grundlagen: Partnersuche im Service & Hotelfach',
     intro: 'Restaurantfach, Hotelfach, Sommelier, Bar. Warum klassische Dating-Apps für Service-Berufe nicht greifen.',
     slugs: [
       'partnersuche-restaurantfachkraft',
@@ -60,27 +64,9 @@ const SECTIONS = [
     ],
   },
   {
-    title: '👤 Position & Lebenslage',
-    intro: 'Jede Position im Service hat eigene Realitäten. Vom Frühdienst-Hotelfach bis zur Late-Night-Bar.',
-    slugs: [
-      'hotelfachfrau-sucht-mann',
-      'barkeeperin-sucht-mann',
-      'sous-chef-sucht-frau',
-    ],
-  },
-  {
-    title: '🍸 Date-Ideen für Service & Sommelier',
-    intro: 'Weinprobe, freier Vormittag, Café zwischen den Schichten — wo Service-Kräfte Dates wirklich unterbringen.',
-    slugs: [
-      'weinprobe-als-erstes-date',
-      'erstes-date-gastronomie-schichten',
-    ],
-  },
-];
-
-const SECTIONS_AFTER_CTA = [
-  {
-    title: '💬 Online-Dating für Service-Profis',
+    id: 'online-dating',
+    letter: 'B',
+    title: 'Online kennenlernen: Dating-Strategien für Service-Profis',
     intro: 'Profil-Tipps, erste Nachricht und warum branchen-interne Matches die Erklärungs-Hürde halbieren.',
     slugs: [
       'kennenlernen-online-dating-gastronomie',
@@ -88,7 +74,19 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
-    title: '❤️ Beziehung & Alltag im Service',
+    id: 'erstes-date',
+    letter: 'C',
+    title: 'Erstes Date & Date-Ideen für Service & Sommelier',
+    intro: 'Weinprobe, freier Vormittag, Café zwischen den Schichten — wo Service-Kräfte Dates wirklich unterbringen.',
+    slugs: [
+      'weinprobe-als-erstes-date',
+      'erstes-date-gastronomie-schichten',
+    ],
+  },
+  {
+    id: 'beziehung',
+    letter: 'D',
+    title: 'Beziehung & Alltag im Service',
     intro: 'Nachtbar, Hotel-Schichten, Sonntagsmarkt — wie Service-Paare den Rhythmus halten.',
     slugs: [
       'beziehung-mit-koch-realitaet',
@@ -96,7 +94,19 @@ const SECTIONS_AFTER_CTA = [
       'hochzeit-im-restaurant',
     ],
   },
+  {
+    id: 'positionen',
+    letter: 'E',
+    title: 'Positionen & Lebenslagen: Hotelfach, Bar & Brigade',
+    intro: 'Jede Position im Service hat eigene Realitäten. Vom Frühdienst-Hotelfach bis zur Late-Night-Bar.',
+    slugs: [
+      'hotelfachfrau-sucht-mann',
+      'barkeeperin-sucht-mann',
+      'sous-chef-sucht-frau',
+    ],
+  },
 ];
+const CTA_AFTER_INDEX = 2; // Mittel-CTA nach Sektion C
 
 export default async function ServicePillar() {
   const articles = await reader.collections.articles.all();
@@ -107,14 +117,16 @@ export default async function ServicePillar() {
       .filter(Boolean) as typeof articles;
   }
 
-  const allSectionSlugs = [...SECTIONS, ...SECTIONS_AFTER_CTA].flatMap((s) => s.slugs);
+  const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://gastrosingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin${articleHref(a!)}`,
     }));
+
+  const tocItems = SECTIONS.map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
 
   return (
     <>
@@ -187,6 +199,12 @@ export default async function ServicePillar() {
         </section>
       </ScrollReveal>
 
+      {/* Inhaltsverzeichnis + Top CTA */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
       <ScrollReveal>
         <section className="text-center py-6 px-6">
           <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
@@ -195,80 +213,53 @@ export default async function ServicePillar() {
         </section>
       </ScrollReveal>
 
-      {SECTIONS.map((section) => {
+      {/* Themen-Sektionen A–E (Mittel-CTA nach Sektion C) */}
+      {SECTIONS.map((section, idx) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
-          <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
-              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
-              </h2>
-              {section.intro && (
-                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sectionArticles.map((article) => (
-                  <ArticleCard
-                    key={article.slug}
-                    title={article.entry.title}
-                    excerpt={article.entry.excerpt}
-                    href={articleHref(article)}
-                    image={article.entry.featuredImage || undefined}
-                    imageAlt={article.entry.featuredImageAlt || undefined}
-                    category={article.entry.category}
-                    date={article.entry.publishedAt || undefined}
-                  />
-                ))}
-              </div>
-            </section>
-          </ScrollReveal>
-        );
-      })}
-
-      <ScrollReveal>
-        <section className="max-w-xl mx-auto px-6 py-10 text-center">
-          <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
-            <div className="bg-background rounded-xl p-8 flex flex-col items-center gap-4">
-              <p className="text-lg font-semibold">
-                Jetzt Service- und Hotelfach-Singles finden
-              </p>
-              <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
-                Jetzt kostenlos registrieren
-              </HeartButton>
-            </div>
-          </AnimatedGradientBorder>
-        </section>
-      </ScrollReveal>
-
-      {SECTIONS_AFTER_CTA.map((section) => {
-        const sectionArticles = getSectionArticles(section.slugs);
-        if (sectionArticles.length === 0) return null;
-        return (
-          <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
-              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
-              </h2>
-              {section.intro && (
-                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sectionArticles.map((article) => (
-                  <ArticleCard
-                    key={article.slug}
-                    title={article.entry.title}
-                    excerpt={article.entry.excerpt}
-                    href={articleHref(article)}
-                    image={article.entry.featuredImage || undefined}
-                    imageAlt={article.entry.featuredImageAlt || undefined}
-                    category={article.entry.category}
-                    date={article.entry.publishedAt || undefined}
-                  />
-                ))}
-              </div>
-            </section>
-          </ScrollReveal>
+          <div key={section.id}>
+            <ScrollReveal>
+              <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+                  {section.letter}. {section.title}
+                </h2>
+                {section.intro && (
+                  <p className="text-foreground/70 mb-8 leading-relaxed max-w-3xl">{section.intro}</p>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {sectionArticles.map((article) => (
+                    <ArticleCard
+                      key={article.slug}
+                      title={article.entry.title}
+                      excerpt={article.entry.excerpt}
+                      href={articleHref(article)}
+                      image={article.entry.featuredImage || undefined}
+                      imageAlt={article.entry.featuredImageAlt || undefined}
+                      category={article.entry.category}
+                      date={article.entry.publishedAt || undefined}
+                    />
+                  ))}
+                </div>
+              </section>
+            </ScrollReveal>
+            {idx === CTA_AFTER_INDEX && (
+              <ScrollReveal>
+                <section className="max-w-xl mx-auto px-6 py-10 text-center">
+                  <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
+                    <div className="bg-background rounded-xl p-8 flex flex-col items-center gap-4">
+                      <p className="text-lg font-semibold">
+                        Jetzt Service- und Hotelfach-Singles finden
+                      </p>
+                      <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+                        Jetzt kostenlos registrieren
+                      </HeartButton>
+                    </div>
+                  </AnimatedGradientBorder>
+                </section>
+              </ScrollReveal>
+            )}
+          </div>
         );
       })}
 

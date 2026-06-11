@@ -6,6 +6,8 @@ import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
 import { ChefBacklinkCard } from '@/components/content/ChefBacklinkCard';
+import { HubBacklinkCard } from '@/components/content/HubBacklinkCard';
+import { BerufIntentNav } from '@/components/content/BerufIntentNav';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -84,7 +86,7 @@ export async function buildArticleMetadata(slug: string) {
   };
 }
 
-export default async function ArticleView({ slug }: { slug: string }) {
+export default async function ArticleView({ slug, afterBody }: { slug: string; afterBody?: React.ReactNode }) {
   const article = await reader.collections.articles.read(slug, { resolveLinkedFiles: true });
   if (!article) notFound();
 
@@ -146,6 +148,16 @@ export default async function ArticleView({ slug }: { slug: string }) {
           { label: article.title, href: canonicalPath },
         ]} />
 
+        {article.category === 'berufsbilder' && !slug.startsWith('dehoga') && (
+          <BerufIntentNav
+            beruf={article.type === 'berufsbild' ? slug : article.position || ''}
+            activeSlug={slug}
+            availableSlugs={allArticles
+              .filter((a) => a.entry.category === 'berufsbilder' && a.entry.status === 'published')
+              .map((a) => a.slug)}
+          />
+        )}
+
         <ArticleByline publishedAt={article.publishedAt || undefined} />
 
         <TableOfContents items={extractH2s(article.content)} />
@@ -170,6 +182,8 @@ export default async function ArticleView({ slug }: { slug: string }) {
             </AnimatedGradientBorder>
           }
         />
+
+        {afterBody}
 
         {/* CTA Stopper nach Content */}
         <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-12">
@@ -213,9 +227,51 @@ export default async function ArticleView({ slug }: { slug: string }) {
           />
         )}
 
-        {/* Pillar Backlink */}
-        {article.specialization && ['kueche', 'service', 'bar', 'hotel', 'management'].includes(article.specialization) && (
-          <PillarBacklinkCard specialization={article.specialization || undefined} />
+        {/* Pillar Backlink — NUR Partnersuche-Cluster → koeche/service-Guide */}
+        {article.category === 'partnersuche' &&
+          article.specialization &&
+          ['kueche', 'service', 'bar', 'hotel', 'management'].includes(article.specialization) && (
+            <PillarBacklinkCard specialization={article.specialization || undefined} />
+          )}
+
+        {/* DEHOGA-Cluster → DEHOGA-Pillar; DEHOGA-Pillar → Berufsbilder-Übersicht */}
+        {article.category === 'berufsbilder' && slug.startsWith('dehoga') && (
+          <HubBacklinkCard
+            {...(slug === 'dehoga'
+              ? {
+                  heading: 'Alle Berufsbilder der Gastronomie',
+                  text: 'Koch, Sommelier, Hotelfach & Co.: 18 Gastro-Berufe mit Aufgaben, Gehalt und Karrierewegen im Überblick.',
+                  href: '/berufsbilder',
+                  cta: 'Zur Berufsbilder-Übersicht →',
+                }
+              : {
+                  heading: 'DEHOGA: Der Branchenverband im Überblick',
+                  text: 'Bundesverband, Tarifverträge, Ausbildung und alle 16 Landesverbände — der komplette DEHOGA-Guide.',
+                  href: '/berufsbilder/dehoga',
+                  cta: 'Zum DEHOGA-Überblick →',
+                })}
+          />
+        )}
+
+        {/* Berufsbilder: Spokes → Beruf-Hub, Beruf-Hubs → Übersicht */}
+        {article.category === 'berufsbilder' && !slug.startsWith('dehoga') && (
+          <HubBacklinkCard
+            {...(article.type !== 'berufsbild' && article.position && allArticles.some((a) => a.slug === article.position)
+              ? {
+                  heading: allArticles.find((a) => a.slug === article.position)!.entry.title,
+                  text:
+                    allArticles.find((a) => a.slug === article.position)!.entry.excerpt ||
+                    'Das komplette Berufsbild mit Aufgaben, Gehalt und Karrierewegen.',
+                  href: `/berufsbilder/${article.position}`,
+                  cta: 'Zum kompletten Berufsbild →',
+                }
+              : {
+                  heading: 'Alle Berufsbilder der Gastronomie',
+                  text: 'Koch, Sommelier, Hotelfach & Co.: 18 Gastro-Berufe mit Aufgaben, Gehalt und Karrierewegen im Überblick.',
+                  href: '/berufsbilder',
+                  cta: 'Zur Berufsbilder-Übersicht →',
+                })}
+          />
         )}
 
         {/* Koch-Hub Backlink (Spoke → Hub) */}

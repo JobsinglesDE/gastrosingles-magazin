@@ -86,6 +86,8 @@ export default config({
             { label: 'Chef de Rang', value: 'chef-de-rang' },
             { label: 'Maître d\'Hôtel', value: 'maitre-d-hotel' },
             { label: 'Restaurantleiter', value: 'restaurantleiter' },
+            { label: 'Kellner', value: 'kellner' },
+            { label: 'Wirt', value: 'wirt' },
             // Bar
             { label: 'Barkeeper', value: 'barkeeper' },
             { label: 'Barkeeperin', value: 'barkeeperin' },

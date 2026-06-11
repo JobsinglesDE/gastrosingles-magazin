@@ -2,6 +2,7 @@ import { reader } from '@/lib/keystatic';
 import { articleHref } from '@/lib/routes';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
@@ -49,9 +50,12 @@ const testimonials = [
   },
 ];
 
+// Eine durchgehende A–H-Struktur (TOC-Anker = id); Mittel-CTA wird nach Sektion C eingeschoben
 const SECTIONS = [
   {
-    title: '🍳 Grundlagen & Realität',
+    id: 'grundlagen',
+    letter: 'A',
+    title: 'Grundlagen: Partnersuche in der Gastronomie',
     intro: 'Warum Partnersuche in der Gastronomie anders läuft. Schichtdienst, Adrenalin-Abfall, Sonntage am Pass.',
     slugs: [
       'partnersuche-koeche',
@@ -60,26 +64,9 @@ const SECTIONS = [
     ],
   },
   {
-    title: '💬 Position & Lebenslage',
-    intro: 'Sous Chef, Sommelier, Wirt. Jede Position in der Brigade hat eigene Dating-Realitäten.',
-    slugs: [
-      'sous-chef-sucht-frau',
-      'sommelier-sucht-frau',
-      'wirt-sucht-frau',
-    ],
-  },
-  {
-    title: '💍 Hochzeit & Familie in der Gastronomie',
-    intro: 'Wenn Gastronomen heiraten, läuft das anders. Restaurant-Hochzeit, Familienbetrieb, Schichtplan mit Kind.',
-    slugs: [
-      'hochzeit-im-restaurant',
-    ],
-  },
-];
-
-const SECTIONS_AFTER_CTA = [
-  {
-    title: '💬 Online-Dating-Strategien',
+    id: 'online-dating',
+    letter: 'B',
+    title: 'Online kennenlernen: Dating-Apps & Profil-Strategien',
     intro: 'Für Köche und Service-Kräfte ist Online-Dating die effizienteste Methode. Profil, erste Nachricht, Diskretion am eigenen Arbeitsplatz.',
     slugs: [
       'dating-profil-gastronomie',
@@ -89,7 +76,9 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
-    title: '☕ Erstes Date & Kennenlernen',
+    id: 'erstes-date',
+    letter: 'C',
+    title: 'Erstes Date & Date-Ideen für den Gastro-Rhythmus',
     intro: 'Wenn dein freier Vormittag die einzige Quality-Time ist, brauchen erste Dates ein anderes Drehbuch.',
     slugs: [
       'erstes-date-gastronomie-schichten',
@@ -99,7 +88,9 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
-    title: '❤️ Beziehung & Alltag im Gastro-Beruf',
+    id: 'beziehung',
+    letter: 'D',
+    title: 'Beziehung & Alltag im Gastro-Beruf',
     intro: 'Der Beruf sitzt als dritter Partner am Tisch. Wie Paare den Schichtrhythmus halten, ohne sich gegenseitig zu verlieren.',
     slugs: [
       'beziehung-mit-koch-realitaet',
@@ -109,7 +100,29 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
-    title: '🎓 Netzwerke & Branchen-Treffs',
+    id: 'positionen',
+    letter: 'E',
+    title: 'Positionen & Lebenslagen: Sous Chef, Sommelier, Wirt',
+    intro: 'Jede Position in der Brigade hat eigene Dating-Realitäten — vom Stellvertreter bis zur Wirtin mit eigenem Haus.',
+    slugs: [
+      'sous-chef-sucht-frau',
+      'sommelier-sucht-frau',
+      'wirt-sucht-frau',
+    ],
+  },
+  {
+    id: 'hochzeit-familie',
+    letter: 'F',
+    title: 'Hochzeit & Familie in der Gastronomie',
+    intro: 'Wenn Gastronomen heiraten, läuft das anders. Restaurant-Hochzeit, Familienbetrieb, Schichtplan mit Kind.',
+    slugs: [
+      'hochzeit-im-restaurant',
+    ],
+  },
+  {
+    id: 'netzwerke',
+    letter: 'G',
+    title: 'Netzwerke & Branchen-Treffs: Messen, DEHOGA & Vereine',
     intro: 'INTERNORGA, INTERGASTRA, DEHOGA-Landesverbände, Kochvereine. Wo Gastro-Singles sich abseits von Apps begegnen.',
     slugs: [
       'internorga-hamburg-singles-networking',
@@ -119,7 +132,9 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
-    title: '❓ Häufige Fragen',
+    id: 'haeufige-fragen',
+    letter: 'H',
+    title: 'Häufige Fragen zur Partnersuche als Koch',
     intro: 'Die Fragen, die jeder Koch beim Thema Dating einmal hat. Kompakt beantwortet.',
     slugs: [
       'faq-partnersuche-gastronomie',
@@ -129,6 +144,7 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
 ];
+const CTA_AFTER_INDEX = 2; // Mittel-CTA nach Sektion C
 
 export default async function KoechePillar() {
   const articles = await reader.collections.articles.all();
@@ -139,14 +155,16 @@ export default async function KoechePillar() {
       .filter(Boolean) as typeof articles;
   }
 
-  const allSectionSlugs = [...SECTIONS, ...SECTIONS_AFTER_CTA].flatMap((s) => s.slugs);
+  const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://gastrosingles.de/magazin/${a!.slug}`,
+      url: `https://gastrosingles.de/magazin${articleHref(a!)}`,
     }));
+
+  const tocItems = SECTIONS.map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
 
   return (
     <>
@@ -221,7 +239,12 @@ export default async function KoechePillar() {
         </section>
       </ScrollReveal>
 
-      {/* Top CTA */}
+      {/* Inhaltsverzeichnis + Top CTA */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
       <ScrollReveal>
         <section className="text-center py-6 px-6">
           <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
@@ -230,83 +253,53 @@ export default async function KoechePillar() {
         </section>
       </ScrollReveal>
 
-      {/* Thematic Sections — before middle CTA */}
-      {SECTIONS.map((section) => {
+      {/* Themen-Sektionen A–H (Mittel-CTA nach Sektion C) */}
+      {SECTIONS.map((section, idx) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
-          <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
-              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
-              </h2>
-              {section.intro && (
-                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sectionArticles.map((article) => (
-                  <ArticleCard
-                    key={article.slug}
-                    title={article.entry.title}
-                    excerpt={article.entry.excerpt}
-                    href={articleHref(article)}
-                    image={article.entry.featuredImage || undefined}
-                    imageAlt={article.entry.featuredImageAlt || undefined}
-                    category={article.entry.category}
-                    date={article.entry.publishedAt || undefined}
-                  />
-                ))}
-              </div>
-            </section>
-          </ScrollReveal>
-        );
-      })}
-
-      {/* Middle CTA */}
-      <ScrollReveal>
-        <section className="max-w-xl mx-auto px-6 py-10 text-center">
-          <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
-            <div className="bg-background rounded-xl p-8 flex flex-col items-center gap-4">
-              <p className="text-lg font-semibold">
-                Jetzt Gastro-Singles in deiner Region finden
-              </p>
-              <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
-                Jetzt kostenlos registrieren
-              </HeartButton>
-            </div>
-          </AnimatedGradientBorder>
-        </section>
-      </ScrollReveal>
-
-      {/* Thematic Sections — after middle CTA */}
-      {SECTIONS_AFTER_CTA.map((section) => {
-        const sectionArticles = getSectionArticles(section.slugs);
-        if (sectionArticles.length === 0) return null;
-        return (
-          <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
-              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
-              </h2>
-              {section.intro && (
-                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sectionArticles.map((article) => (
-                  <ArticleCard
-                    key={article.slug}
-                    title={article.entry.title}
-                    excerpt={article.entry.excerpt}
-                    href={articleHref(article)}
-                    image={article.entry.featuredImage || undefined}
-                    imageAlt={article.entry.featuredImageAlt || undefined}
-                    category={article.entry.category}
-                    date={article.entry.publishedAt || undefined}
-                  />
-                ))}
-              </div>
-            </section>
-          </ScrollReveal>
+          <div key={section.id}>
+            <ScrollReveal>
+              <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+                  {section.letter}. {section.title}
+                </h2>
+                {section.intro && (
+                  <p className="text-foreground/70 mb-8 leading-relaxed max-w-3xl">{section.intro}</p>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {sectionArticles.map((article) => (
+                    <ArticleCard
+                      key={article.slug}
+                      title={article.entry.title}
+                      excerpt={article.entry.excerpt}
+                      href={articleHref(article)}
+                      image={article.entry.featuredImage || undefined}
+                      imageAlt={article.entry.featuredImageAlt || undefined}
+                      category={article.entry.category}
+                      date={article.entry.publishedAt || undefined}
+                    />
+                  ))}
+                </div>
+              </section>
+            </ScrollReveal>
+            {idx === CTA_AFTER_INDEX && (
+              <ScrollReveal>
+                <section className="max-w-xl mx-auto px-6 py-10 text-center">
+                  <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
+                    <div className="bg-background rounded-xl p-8 flex flex-col items-center gap-4">
+                      <p className="text-lg font-semibold">
+                        Jetzt Gastro-Singles in deiner Region finden
+                      </p>
+                      <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+                        Jetzt kostenlos registrieren
+                      </HeartButton>
+                    </div>
+                  </AnimatedGradientBorder>
+                </section>
+              </ScrollReveal>
+            )}
+          </div>
         );
       })}
 
