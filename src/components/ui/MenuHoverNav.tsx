@@ -36,6 +36,7 @@ const NAV_ITEMS: NavItem[] = [
     href: '/singles-regional',
     dropdown: [
       { label: 'Kochvereine', href: '/singles-regional/kochvereine', description: 'VKD-Zweigvereine nach Bundesland' },
+      { label: 'Kochkurs für Singles', href: '/singles-regional/kochkurse', description: 'Gemeinsam kochen in 14 Großstädten' },
     ],
   },
   { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },

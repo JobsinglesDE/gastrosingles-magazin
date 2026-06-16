@@ -71,6 +71,9 @@ export function Footer() {
                 <Link href="/singles-regional/kochvereine" className="text-sm text-white/75 hover:text-white transition-colors">
                   Kochvereine (VKD)
                 </Link>
+                <Link href="/singles-regional/kochkurse" className="text-sm text-white/75 hover:text-white transition-colors">
+                  Kochkurs für Singles
+                </Link>
                 <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-white transition-colors">
                   Erfolgsgeschichten
                 </Link>
