@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, kochkursPlaceJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, kochkursPlaceJsonLd } from '@/components/seo/JsonLd';
 import { CityStats } from '@/components/staedte/CityStats';
 import { CitySources } from '@/components/staedte/CitySources';
 import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
@@ -114,17 +114,12 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
           url,
           image: e.featuredImage ? `${BASE_URL}${e.featuredImage}` : undefined,
           datePublished: e.publishedAt || undefined,
+          dateModified: e.publishedAt || undefined,
           authorName: author?.name,
         })}
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Kochkurse für Singles', url: `${BASE_URL}/singles-regional/kochkurse` },
-          { name: cityName, url },
-        ])}
-      />
+      {/* BreadcrumbList wird von der <Breadcrumbs>-Komponente emittiert (inkl. Magazin-Root) — kein doppelter Block hier. */}
       <JsonLd
         data={kochkursPlaceJsonLd({
           stadt: cityName,

@@ -91,7 +91,10 @@ export function articleJsonLd({
       '@type': 'Organization',
       '@id': ORG_ID,
       name: 'Gastrosingles Magazin',
-      logo: `${SITE_BASE}/logos/jobsingles-logo.png`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_BASE}/logos/jobsingles-logo.png`,
+      },
     },
     isPartOf: { '@id': WEBSITE_ID },
     inLanguage: 'de-DE',
