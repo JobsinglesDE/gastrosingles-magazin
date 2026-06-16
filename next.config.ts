@@ -29,7 +29,12 @@ const nextConfig: NextConfig = {
     qualities: [60, 75, 85],
   },
   async redirects() {
-    return [...generatedRedirects];
+    return [
+      ...generatedRedirects,
+      // Nie existierende „Partnersuche in der Gastronomie"-Pillar — in ~115 Artikeln verlinkt
+      // (404, von 50+ Seiten). Auf den echten Partnersuche-Pillar leiten. (basePath /magazin auto)
+      { source: '/partnersuche-gastronomie', destination: '/singles-partnersuche', permanent: true },
+    ];
   },
   async headers() {
     const securityHeaders = [
