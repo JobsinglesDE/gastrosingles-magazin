@@ -236,10 +236,10 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
           />
         )}
 
-        {neighborSlugs.length > 0 && (
-          <section className="mt-16">
+        {/* Übersicht-/Pillar-Rücklink IMMER (auch ohne Nachbarn) — Pflicht: jeder Cluster-Spoke verlinkt auf die Pillar */}
+        <section className="mt-16">
             <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
-              Kochkurse für Singles in der Nähe
+              Mehr Kochkurse für Singles
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {neighborSlugs.map((n) => {
@@ -264,7 +264,6 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
               </Link>
             </div>
           </section>
-        )}
       </div>
 
       {/* Bottom CTA */}

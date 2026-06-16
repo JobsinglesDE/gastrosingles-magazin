@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Kochkurs für Singles — gemeinsam kochen, leichter verlieben',
-    description: 'Warum gemeinsames Kochen das ehrlichste erste Date ist — plus Kochkurs-für-Singles-Guides für 14 Großstädte.',
+    description: 'Warum gemeinsames Kochen das ehrlichste erste Date ist — plus Kochkurs-für-Singles-Guides für über 20 Großstädte.',
     url: PILLAR_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',

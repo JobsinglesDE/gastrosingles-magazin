@@ -71,6 +71,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
     }));
 
+  // Kochkurse-Spokes (DYNAMISCH — jeder published Spoke automatisch in der Sitemap,
+  // damit Live-Content nie wieder die Sitemap verpasst; QC-Regel feedback_sitemap_pflicht)
+  const kochkursePages: MetadataRoute.Sitemap = kochkurse
+    .filter((a) => a.entry.status === 'published')
+    .map((a) => ({
+      url: `${BASE}/singles-regional/kochkurse/${a.entry.stadt}`,
+      priority: 0.6,
+      changeFrequency: 'monthly' as const,
+    }));
+
   // Koch-Personen-Hubs
   const koechePages: MetadataRoute.Sitemap = (persons || [])
     .filter((p) => p.entry.status !== 'draft')
@@ -83,7 +93,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/koeche`, priority: 0.8, changeFrequency: 'weekly' as const },
   ];
 
-  const all = [...staticPages, ...koecheIndex, ...koechePages, ...articlePages, ...storyPages, ...regionalPages, ...vereinBundeslandPages, ...vereinPages];
+  const all = [...staticPages, ...koecheIndex, ...koechePages, ...articlePages, ...storyPages, ...regionalPages, ...vereinBundeslandPages, ...vereinPages, ...kochkursePages];
   // Dedupe nach URL (SINGLE_HUB taucht in staticPages + ALL_HUBS auf)
   const seen = new Set<string>();
   return all.filter((e) => (seen.has(e.url) ? false : (seen.add(e.url), true)));
