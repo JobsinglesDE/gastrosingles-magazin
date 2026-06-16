@@ -128,7 +128,7 @@ export default async function ArticleView({ slug, afterBody }: { slug: string; a
         <JsonLd data={faqJsonLd(article.faqItems)} />
       )}
       {ytEmbed && (
-        <JsonLd data={videoJsonLd({ name: article.title, description: article.excerpt, videoId: ytEmbed.videoId, uploadDate: article.publishedAt || '2026-05-30' })} />
+        <JsonLd data={videoJsonLd({ name: article.title, description: article.excerpt, videoId: ytEmbed.videoId, uploadDate: article.publishedAt || undefined })} />
       )}
 
       <ClusterHero
