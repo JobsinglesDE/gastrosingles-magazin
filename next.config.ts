@@ -19,7 +19,8 @@ const nextConfig: NextConfig = {
     // OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED) → neue Bilder wurden site-weit nicht
     // mehr ausgeliefert. Da alle Hero-/Artikel-Bilder bereits als WebP in passender
     // Größe vorliegen, liefern wir sie direkt aus (kein Vendor-Lock-in, keine Quota).
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',
