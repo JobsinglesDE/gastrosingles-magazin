@@ -35,7 +35,7 @@ export function siteGraphJsonLd() {
         '@id': ORG_ID,
         name: 'Gastrosingles Magazin',
         url: SITE_BASE,
-        logo: `${SITE_BASE}/logos/jobsingles-logo.png`,
+        logo: `${SITE_BASE}/logos/jobsingles-logo.webp`,
         sameAs: ['https://www.facebook.com/thomashonold1/'],
       },
     ],
@@ -93,7 +93,7 @@ export function articleJsonLd({
       name: 'Gastrosingles Magazin',
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_BASE}/logos/jobsingles-logo.png`,
+        url: `${SITE_BASE}/logos/jobsingles-logo.webp`,
       },
     },
     isPartOf: { '@id': WEBSITE_ID },

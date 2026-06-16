@@ -62,7 +62,7 @@ export async function buildArticleMetadata(slug: string) {
   const url = `${BASE_URL}${getArticleUrl(slug, article.category, { show: article.show, position: article.position })}`;
   const image = article.featuredImage
     ? `${BASE_URL}${article.featuredImage}`
-    : `${BASE_URL}/logos/jobsingles-logo.png`;
+    : `${BASE_URL}/logos/jobsingles-logo.webp`;
 
   return {
     title,
