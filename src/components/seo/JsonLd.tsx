@@ -284,6 +284,7 @@ export function vereinOrgJsonLd({
   url,
   webseite,
   address,
+  ort,
   bundesland,
   mitgliederzahl,
   mutterverband,
@@ -292,6 +293,7 @@ export function vereinOrgJsonLd({
   url: string;
   webseite?: string;
   address?: string;
+  ort?: string;
   bundesland: string;
   mitgliederzahl?: string;
   mutterverband?: string;
@@ -307,12 +309,14 @@ export function vereinOrgJsonLd({
       address: {
         '@type': 'PostalAddress',
         streetAddress: address,
+        ...(ort ? { addressLocality: ort } : {}),
         addressRegion: bundesland,
         addressCountry: 'DE',
       },
     } : {
       address: {
         '@type': 'PostalAddress',
+        ...(ort ? { addressLocality: ort } : {}),
         addressRegion: bundesland,
         addressCountry: 'DE',
       },

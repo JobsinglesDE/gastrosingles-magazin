@@ -88,6 +88,8 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
 
   const e = entry.entry;
   const blName = bundeslandName(bundesland);
+  // Stadt-Name für lokales Entity-Signal (addressLocality) aus dem standardisierten Titel "Kochverein {Stadt}: …"
+  const ortName = (e.title.match(/^Kochverein\s+(.+?)\s*:/)?.[1] || '').trim() || undefined;
   const url = `${BASE_URL}/singles-regional/kochvereine/${bundesland}/${stadt}`;
   const tocItems = extractH2s(e.content);
 
@@ -122,6 +124,7 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
           url,
           webseite: e.webseite || undefined,
           address: e.sitzAdresse || undefined,
+          ort: ortName,
           bundesland: blName,
           mitgliederzahl: e.mitgliederzahl || undefined,
           mutterverband: e.mutterverband || undefined,
