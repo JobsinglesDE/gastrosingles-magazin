@@ -4,11 +4,12 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://gastrosingles.de/magazin';
 
 export async function GET() {
-  const [articles, regional, series, stories] = await Promise.all([
+  const [articles, regional, series, stories, kochkurse] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
     reader.collections.stories.all(),
+    reader.collections.kochkurse.all().catch(() => []),
   ]);
 
   const published = {
@@ -16,6 +17,8 @@ export async function GET() {
     regional,
     series: series.filter((s) => s.entry.status !== 'draft'),
     stories,
+    // DYNAMISCH — neue Spokes erscheinen automatisch in llms.txt (Regel: llms.txt immer aktuell)
+    kochkurse: kochkurse.filter((k) => k.entry.status === 'published'),
   };
 
   const lines: string[] = [];
@@ -51,6 +54,18 @@ export async function GET() {
     lines.push(`- [${r.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
   }
   lines.push('');
+
+  if (published.kochkurse.length > 0) {
+    lines.push('## Kochkurse für Singles (Städte-Guides)');
+    lines.push('');
+    lines.push(`- [Übersicht: Kochkurs für Singles](${BASE}/singles-regional/kochkurse): Pillar mit allen Städten`);
+    for (const k of published.kochkurse) {
+      const url = `${BASE}/singles-regional/kochkurse/${k.entry.stadt}`;
+      const desc = k.entry.excerpt || k.entry.seoDescription || '';
+      lines.push(`- [${k.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
+    }
+    lines.push('');
+  }
 
   lines.push('## Erfolgsgeschichten');
   lines.push('');
