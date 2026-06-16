@@ -5,7 +5,7 @@ import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS, bundeslandName, bundeslandEmoji } from '@/lib/bundeslaender';
 
 export async function generateStaticParams() {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
     title: `Kochverein ${name} — Singles-Networking für Gastro-Profis`,
     description: `Kochvereine in ${name}: Mitgliederzahlen, Top-Events, wie Gastro-Singles diese für Networking nutzen.`,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
+    openGraph: { url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de_DE' },
   };
 }
 
@@ -49,14 +49,6 @@ export default async function KochvereinBundeslandPage({ params }: { params: Pro
             url: `https://gastrosingles.de/magazin/singles-regional/kochvereine/${bundesland}/${a.entry.stadt}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://gastrosingles.de/magazin/singles-regional' },
-          { name: 'Kochvereine', url: 'https://gastrosingles.de/magazin/singles-regional/kochvereine' },
-          { name: blName, url },
-        ])}
       />
 
       <section className="relative overflow-hidden min-h-[280px] md:min-h-[360px] flex items-center">

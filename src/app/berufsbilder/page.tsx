@@ -6,7 +6,7 @@ import { TableOfContents } from '@/components/content/TableOfContents';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
 import { SECTION_HUBS } from '@/lib/hubs';
 
@@ -23,7 +23,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -124,13 +124,6 @@ export default async function BerufsbilderHub() {
           url: HUB_URL,
           items,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Gastro-News', url: 'https://gastrosingles.de/magazin/gastro-news' },
-          { name: 'Berufsbilder', url: HUB_URL },
-        ])}
       />
 
       <PillarHero

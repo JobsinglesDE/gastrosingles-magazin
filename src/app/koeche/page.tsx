@@ -15,7 +15,7 @@ export async function generateMetadata() {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
+    openGraph: { title, description, url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de_DE' },
   };
 }
 

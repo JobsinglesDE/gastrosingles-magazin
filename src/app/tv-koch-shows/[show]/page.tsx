@@ -6,7 +6,7 @@ import { SHOW_HUBS } from '@/lib/hubs';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
 
 const BASE = 'https://gastrosingles.de/magazin';
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ show: str
     title: hub.seoTitle,
     description: hub.seoDescription,
     alternates: { canonical: url },
-    openGraph: { title: hub.seoTitle, description: hub.seoDescription, url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
+    openGraph: { title: hub.seoTitle, description: hub.seoDescription, url, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de_DE' },
   };
 }
 
@@ -45,11 +45,6 @@ export default async function ShowHub({ params }: { params: Promise<{ show: stri
   return (
     <>
       <JsonLd data={collectionPageJsonLd({ name: hub.title, description: hub.description, url, items: articles.map((a) => ({ name: a.entry.title, url: `${BASE}${getArticleUrl(a.slug, a.entry.category, { show: a.entry.show, position: a.entry.position })}` })) })} />
-      <JsonLd data={breadcrumbJsonLd([
-        { name: 'Magazin', url: BASE },
-        { name: 'TV & Koch-Shows', url: `${BASE}/tv-koch-shows` },
-        { name: hub.title.split(' ❤️')[0], url },
-      ])} />
 
       <PillarHero
         title={hub.title}

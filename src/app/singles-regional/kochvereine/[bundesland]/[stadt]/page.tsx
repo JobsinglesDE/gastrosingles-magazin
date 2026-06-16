@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, vereinOrgJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, vereinOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
@@ -126,15 +126,6 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
           mitgliederzahl: e.mitgliederzahl || undefined,
           mutterverband: e.mutterverband || undefined,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: BASE_URL },
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Kochvereine', url: `${BASE_URL}/singles-regional/kochvereine` },
-          { name: blName, url: `${BASE_URL}/singles-regional/kochvereine/${bundesland}` },
-          { name: e.title, url },
-        ])}
       />
 
       <ClusterHero

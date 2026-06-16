@@ -6,7 +6,7 @@ import { ArticleCard } from '@/components/content/ArticleCard';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { SINGLE_HUB } from '@/lib/hubs';
 
 const HUB_URL = 'https://gastrosingles.de/magazin/singles-partnersuche';
@@ -21,7 +21,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -73,12 +73,6 @@ export default async function SinglesPartnersuche() {
           url: HUB_URL,
           items: pillarItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: HUB_URL },
-        ])}
       />
 
       <PillarHero

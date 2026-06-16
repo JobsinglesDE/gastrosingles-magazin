@@ -8,7 +8,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 
 const SERVICE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/service';
 
@@ -22,7 +22,7 @@ export const metadata = {
     url: SERVICE_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -137,13 +137,6 @@ export default async function ServicePillar() {
           url: SERVICE_URL,
           items: schemaItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
-          { name: 'Für Service & Hotelfach', url: SERVICE_URL },
-        ])}
       />
       <PillarHero
         title="Service Singles"

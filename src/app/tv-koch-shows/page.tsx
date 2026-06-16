@@ -4,7 +4,7 @@ import { SHOW_HUBS, SECTION_HUBS } from '@/lib/hubs';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
 
 const BASE = 'https://gastrosingles.de/magazin';
@@ -15,7 +15,7 @@ export const metadata = {
   title: HUB.seoTitle,
   description: HUB.seoDescription,
   alternates: { canonical: URL },
-  openGraph: { title: HUB.seoTitle, description: HUB.seoDescription, url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de-DE' },
+  openGraph: { title: HUB.seoTitle, description: HUB.seoDescription, url: URL, type: 'website', siteName: 'Gastrosingles Magazin', locale: 'de_DE' },
 };
 
 export default async function TvKochShowsIndex() {
@@ -29,10 +29,6 @@ export default async function TvKochShowsIndex() {
   return (
     <>
       <JsonLd data={collectionPageJsonLd({ name: HUB.title, description: HUB.description, url: URL, items: shows.map((s) => ({ name: s.hub.title, url: `${BASE}/${s.hub.slug}` })) })} />
-      <JsonLd data={breadcrumbJsonLd([
-        { name: 'Magazin', url: BASE },
-        { name: 'TV & Koch-Shows', url: URL },
-      ])} />
 
       <PillarHero
         title={HUB.title}

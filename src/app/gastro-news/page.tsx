@@ -4,7 +4,7 @@ import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
 
 const HUB_URL = 'https://gastrosingles.de/magazin/gastro-news';
@@ -19,7 +19,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -96,12 +96,6 @@ export default async function GastroNewsHub() {
           url: HUB_URL,
           items: clusterItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Gastro-News', url: HUB_URL },
-        ])}
       />
 
       <PillarHero

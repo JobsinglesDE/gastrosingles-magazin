@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ koch: str
       url,
       type: 'profile',
       siteName: 'Gastrosingles Magazin',
-      locale: 'de-DE',
+      locale: 'de_DE',
       images: person.featuredImage ? [person.featuredImage] : [],
     },
   };

@@ -8,7 +8,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 
 const KOECHE_URL = 'https://gastrosingles.de/magazin/singles-partnersuche/koeche';
 
@@ -22,7 +22,7 @@ export const metadata = {
     url: KOECHE_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -175,13 +175,6 @@ export default async function KoechePillar() {
           url: KOECHE_URL,
           items: schemaItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://gastrosingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://gastrosingles.de/magazin/singles-partnersuche' },
-          { name: 'Für Köche', url: KOECHE_URL },
-        ])}
       />
       <PillarHero
         title="Köche Singles"
