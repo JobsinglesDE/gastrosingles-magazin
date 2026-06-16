@@ -6,11 +6,12 @@ import { ALL_HUBS } from '@/lib/hubs';
 const BASE = 'https://gastrosingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, stories, kochvereine, persons] = await Promise.all([
+  const [articles, regional, stories, kochvereine, kochkurse, persons] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all().catch(() => []),
     reader.collections.stories.all(),
     reader.collections.kochvereine.all(),
+    reader.collections.kochkurse.all().catch(() => []),
     reader.collections.persons.all().catch(() => []),
   ]);
 
@@ -21,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/singles-partnersuche/service`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${BASE}/singles-regional`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/kochvereine`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/kochkurse`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/ueber-uns`, priority: 0.5, changeFrequency: 'monthly' },
     { url: `${BASE}/kontakt`, priority: 0.5, changeFrequency: 'monthly' },

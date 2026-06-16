@@ -511,6 +511,84 @@ export default config({
     }),
 
 
+    kochkurse: collection({
+      label: 'Kochkurse für Singles (Singles Regional)',
+      slugField: 'title',
+      path: 'content/kochkurse/*',
+      columns: ['publishedAt', 'title', 'stadt'],
+      format: { contentField: 'content' },
+      schema: {
+        title: fields.slug({ name: { label: 'Titel' } }),
+        focusKeyword: fields.text({
+          label: 'Focus-Keyword',
+          description: 'z.B. "kochkurs für singles berlin".',
+        }),
+        stadt: fields.text({
+          label: 'Stadt (Slug-Form, ASCII!)',
+          description: 'NUR ASCII: "muenchen", "koeln", "duesseldorf". Muss zu KOCHKURS_CITIES passen.',
+        }),
+        bundesland: fields.select({
+          label: 'Bundesland (für Schema)',
+          defaultValue: 'berlin',
+          options: [
+            { label: 'Baden-Württemberg', value: 'baden-wuerttemberg' },
+            { label: 'Bayern', value: 'bayern' },
+            { label: 'Berlin', value: 'berlin' },
+            { label: 'Bremen', value: 'bremen' },
+            { label: 'Hamburg', value: 'hamburg' },
+            { label: 'Hessen', value: 'hessen' },
+            { label: 'Niedersachsen', value: 'niedersachsen' },
+            { label: 'Nordrhein-Westfalen', value: 'nordrhein-westfalen' },
+            { label: 'Sachsen', value: 'sachsen' },
+          ],
+        }),
+        lat: fields.text({ label: 'Latitude', description: 'z.B. "52.5200" (für Place-Geo-Schema)' }),
+        lng: fields.text({ label: 'Longitude', description: 'z.B. "13.4050"' }),
+        stadtteile: fields.array(fields.text({ label: 'Stadtteil' }), {
+          label: 'Stadtteile / Quartiere (optional, Local-Color)',
+        }),
+        anbieter: fields.array(
+          fields.object({
+            name: fields.text({ label: 'Anbieter-Name' }),
+            url: fields.url({ label: 'Webseite (extern, wird nofollow)' }),
+            note: fields.text({ label: 'Kurz-Notiz (was/wo)', multiline: true }),
+          }),
+          { label: 'Kochkurs-Anbieter (echt, recherchiert)', itemLabel: (props) => props.fields.name.value }
+        ),
+        excerpt: fields.text({ label: 'Auszug', multiline: true }),
+        featuredImage: fields.image({
+          label: 'Hero-Bild',
+          directory: 'public/images/kochkurse',
+          publicPath: '/images/kochkurse/',
+        }),
+        featuredImageAlt: fields.text({ label: 'Alt-Text', description: 'Stadt-Bezug + gemeinsames Kochen, keine realen Personen' }),
+        featuredImageCredit: fields.text({ label: 'Bild-Credit', defaultValue: 'Gastrosingles Magazin 2026 / AI Composite (FLUX.2-pro)' }),
+        calloutQuestion: fields.text({ label: 'Callout Frage' }),
+        calloutAnswer: fields.text({ label: 'Callout Antwort', multiline: true }),
+        content: fields.markdoc({ label: 'Inhalt' }),
+        faqItems: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Frage' }),
+            answer: fields.text({ label: 'Antwort', multiline: true }),
+          }),
+          { label: 'FAQ', itemLabel: (props) => props.fields.question.value }
+        ),
+        takeaways: fields.array(fields.text({ label: 'Punkt' }), { label: 'Das Wichtigste' }),
+        tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags' }),
+        seoTitle: fields.text({ label: 'SEO Titel' }),
+        seoDescription: fields.text({ label: 'SEO Beschreibung' }),
+        status: fields.select({
+          label: 'Status',
+          defaultValue: 'draft',
+          options: [
+            { label: 'Draft', value: 'draft' },
+            { label: 'Published', value: 'published' },
+          ],
+        }),
+        publishedAt: fields.date({ label: 'Veröffentlicht am' }),
+      },
+    }),
+
 
     authors: collection({
       label: 'Autoren',

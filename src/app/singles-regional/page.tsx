@@ -6,8 +6,8 @@ import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 const BASE_URL = 'https://gastrosingles.de/magazin';
 
 export const metadata = {
-  title: 'Singles Regional: Kochvereine nach Bundesland',
-  description: 'Regionale Gastronomie-Netzwerke: VKD-Zweigvereine, Landesverbände der Köche und Branchen-Treffs sortiert nach Bundesland.',
+  title: 'Singles Regional: Kochvereine & Kochkurse für Singles',
+  description: 'Regionale Gastronomie-Netzwerke und Kochkurse für Singles: VKD-Zweigvereine nach Bundesland plus Kochkurs-Guides für 14 Großstädte.',
   alternates: { canonical: `${BASE_URL}/singles-regional` },
   openGraph: {
     title: 'Singles Regional — Gastronomie-Netzwerke',
@@ -35,7 +35,10 @@ export default async function SinglesRegionalHub() {
           name: 'Singles Regional — Gastronomie-Netzwerke',
           description: 'VKD-Kochvereine, Landesverbände der Köche und Branchen-Treffs nach Bundesland.',
           url: `${BASE_URL}/singles-regional`,
-          items: [{ name: 'Kochvereine', url: `${BASE_URL}/singles-regional/kochvereine` }],
+          items: [
+            { name: 'Kochvereine', url: `${BASE_URL}/singles-regional/kochvereine` },
+            { name: 'Kochkurse für Singles', url: `${BASE_URL}/singles-regional/kochkurse` },
+          ],
         })}
       />
 
@@ -62,6 +65,21 @@ export default async function SinglesRegionalHub() {
             className="inline-block px-6 py-3 rounded-lg bg-brand-orange text-white font-semibold hover:bg-brand-orange/90 transition"
           >
             Zu den Kochvereinen
+          </Link>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">Kochkurs für Singles — Stadt für Stadt</h2>
+          <p className="text-foreground/70 mb-8 leading-relaxed max-w-3xl">
+            Gemeinsam kochen ist das ehrlichste erste Date. In 14 Großstädten zeigen wir, wo Singles
+            am Herd zusammenfinden, welche Anbieter es gibt und wie aus dem Kochkurs ein echtes Treffen
+            wird — von Berlin über München bis Köln.
+          </p>
+          <Link
+            href="/singles-regional/kochkurse"
+            className="inline-block px-6 py-3 rounded-lg bg-brand-orange text-white font-semibold hover:bg-brand-orange/90 transition"
+          >
+            Zu den Kochkursen für Singles
           </Link>
         </section>
 

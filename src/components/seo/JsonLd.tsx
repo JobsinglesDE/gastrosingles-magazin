@@ -272,6 +272,43 @@ export function placeJsonLd({
   };
 }
 
+/**
+ * Place-Node mit geo {latitude, longitude} für die Kochkurs-Stadt-Spokes (DE).
+ * Ehrlich: KEIN Course/Event-Schema (wir betreiben keine Kurse) — nur ein
+ * geografisches Place-Signal, das den Article lokal verankert (addressLocality +
+ * areaServed City). Wird neben articleJsonLd + faqJsonLd emittiert.
+ */
+export function kochkursPlaceJsonLd({
+  stadt,
+  bundesland,
+  lat,
+  lng,
+  url,
+}: {
+  stadt: string;
+  bundesland: string;
+  lat?: number;
+  lng?: number;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    name: `Kochkurse für Singles in ${stadt}`,
+    url,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: stadt,
+      addressRegion: bundesland,
+      addressCountry: 'DE',
+    },
+    ...(typeof lat === 'number' && typeof lng === 'number'
+      ? { geo: { '@type': 'GeoCoordinates', latitude: lat, longitude: lng } }
+      : {}),
+    containedInPlace: { '@type': 'Country', name: 'Deutschland' },
+  };
+}
+
 function parseIntFromText(s?: string): number | undefined {
   if (!s) return undefined;
   const m = s.replace(/\./g, '').match(/(\d{2,7})/);
