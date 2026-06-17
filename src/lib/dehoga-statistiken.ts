@@ -18,9 +18,10 @@ export interface GehaltRow {
 }
 
 export interface DehogaTarif {
-  einstiegStundenlohn?: string; // z.B. "13,32 €"
+  einstiegStundenlohn?: string; // z.B. "13,32 €" — nur wenn gültiger Tarif belegt
   laufzeitBis?: string; // z.B. "31.05.2026"
   tarifpartner?: string; // z.B. "DEHOGA NRW / NGG NRW"
+  tarifHinweis?: string; // Hinweis bei ausgelaufenem/fehlendem Tarif (z.B. Mindestlohn-Untergrenze)
   quelle?: string;
 }
 
@@ -65,7 +66,7 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehoga-nrw.de', sitz: 'Neuss', aktualisiert: '2026-06-17',
     beschaeftigte: '312.000', umsatzMrd: '21', mitgliedsbetriebe: '30.000', bezugsjahr: '2023',
     statQuelle: 'IT.NRW (Gastgewerbe NRW, 2023), DEHOGA NRW',
-    tarif: { einstiegStundenlohn: '13,32 €', tarifpartner: 'DEHOGA NRW / NGG NRW', quelle: 'tarifregister.nrw.de / DEHOGA NRW' },
+    tarif: { tarifpartner: 'DEHOGA NRW / NGG NRW', tarifHinweis: 'Branchentarifvertrag zum 31.05.2026 ausgelaufen, Neuverhandlung läuft — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'DEHOGA NRW / NGG NRW, Tarifregister NRW (Stand 06/2026)' },
   },
   'baden-wuerttemberg': {
     name: 'Baden-Württemberg', kurz: 'BW',
@@ -105,7 +106,7 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehoga-hamburg.de', sitz: 'Hamburg', aktualisiert: '2026-06-17',
     mitgliedsbetriebe: '5.000–7.000',
     statQuelle: 'DEHOGA Hamburg',
-    tarif: { einstiegStundenlohn: '13,93 €', laufzeitBis: '31.12.2026', tarifpartner: 'DEHOGA Hamburg / NGG', quelle: 'DEHOGA Hamburg / NGG' },
+    tarif: { laufzeitBis: '31.12.2026', tarifpartner: 'DEHOGA Hamburg / NGG', tarifHinweis: 'Aktueller Stufen-Stundenlohn (ab 01/2026) nicht offiziell veröffentlicht; gesetzlicher Mindestlohn 13,90 €/Std gilt als Untergrenze.', quelle: 'DEHOGA Hamburg / NGG' },
   },
   hessen: {
     name: 'Hessen',
@@ -118,7 +119,7 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehoga-mv.de', aktualisiert: '2026-06-17',
     beschaeftigte: '48.000', mitgliedsbetriebe: '4.000–5.500', bezugsjahr: '2022',
     statQuelle: 'Statistisches Amt MV (Gastgewerbe 2022), DEHOGA MV',
-    tarif: { einstiegStundenlohn: '13,32 €', laufzeitBis: '31.03.2027', tarifpartner: 'DEHOGA MV / NGG', quelle: 'Tarifregister MV / DEHOGA MV' },
+    tarif: { einstiegStundenlohn: '14,40 €', laufzeitBis: '31.03.2027', tarifpartner: 'DEHOGA MV / NGG', quelle: 'Entgelttarifvertrag DEHOGA MV / NGG — Mindestlohn 13,90 € + 0,50 € Tarifaufschlag (ab 01.01.2026)' },
   },
   niedersachsen: {
     name: 'Niedersachsen',
@@ -132,7 +133,7 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehoga-rlp.de', sitz: 'Bad Kreuznach', aktualisiert: '2026-06-17',
     beschaeftigte: '47.100', mitgliedsbetriebe: '8.000–10.000', bezugsjahr: '2023',
     statQuelle: 'Bundesagentur für Arbeit (svB Gastgewerbe RLP, 2023), DEHOGA Rheinland-Pfalz',
-    tarif: { einstiegStundenlohn: '13,46 €', tarifpartner: 'DEHOGA RLP / NGG', quelle: 'dehoga-rlp.de' },
+    tarif: { tarifpartner: 'DEHOGA RLP / NGG Südwest', tarifHinweis: 'Kein gültiger Branchentarifvertrag (Verhandlungen 03/2026 gescheitert) — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'DEHOGA Rheinland-Pfalz / NGG Südwest (Stand 06/2026)' },
   },
   saarland: {
     name: 'Saarland',
@@ -160,14 +161,14 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehoga-sh.de', sitz: 'Kiel', aktualisiert: '2026-06-17',
     beschaeftigte: '80.000', mitgliedsbetriebe: '6.000', bezugsjahr: '2025',
     statQuelle: 'Landesregierung Schleswig-Holstein (Gastgewerbe-Geltungsbereich, 2025), DEHOGA SH',
-    tarif: { einstiegStundenlohn: '14,97 €', laufzeitBis: '30.06.2026', tarifpartner: 'DEHOGA SH / NGG', quelle: 'Landesregierung SH / DEHOGA SH' },
+    tarif: { einstiegStundenlohn: '14,97 €', laufzeitBis: '30.06.2026', tarifpartner: 'DEHOGA SH / NGG', tarifHinweis: 'Laufzeit endet 30.06.2026, Folgetarif in Verhandlung.', quelle: 'Landesregierung SH (Allgemeinverbindlicherklärung 03/2025) / DEHOGA SH' },
   },
   thueringen: {
     name: 'Thüringen',
     offizielleUrl: 'https://www.dehoga-thueringen.de', sitz: 'Erfurt', aktualisiert: '2026-06-17',
     mitgliedsbetriebe: '3.500',
     statQuelle: 'DEHOGA Thüringen',
-    tarif: { einstiegStundenlohn: '13,70 €', laufzeitBis: '30.04.2027', tarifpartner: 'DEHOGA Thüringen / NGG', quelle: 'dehoga-thueringen.de / NGG' },
+    tarif: { einstiegStundenlohn: '15,40 €', laufzeitBis: '30.04.2027', tarifpartner: 'DEHOGA Thüringen / NGG', quelle: 'NGG / DEHOGA Thüringen — Tarifstufe ab 01.07.2026 (Laufzeit bis 30.04.2027)' },
   },
 };
 

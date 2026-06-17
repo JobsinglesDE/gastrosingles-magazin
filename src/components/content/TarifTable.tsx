@@ -8,7 +8,7 @@ import {
 
 export function TarifTable({ d }: { d: DehogaBundeslandData }) {
   const gehalt = d.gehalt ?? GASTRO_GEHALT_DE;
-  const hasTarif = Boolean(d.tarif?.einstiegStundenlohn || d.tarif?.laufzeitBis);
+  const hasTarif = Boolean(d.tarif?.einstiegStundenlohn || d.tarif?.laufzeitBis || d.tarif?.tarifHinweis);
   if (!hasTarif && gehalt.length === 0) return null;
   const kurz = d.kurz ?? d.name;
 
@@ -46,6 +46,9 @@ export function TarifTable({ d }: { d: DehogaBundeslandData }) {
               </div>
             )}
           </dl>
+          {d.tarif?.tarifHinweis && (
+            <p className="mt-3 text-xs text-foreground/70">{d.tarif.tarifHinweis}</p>
+          )}
           {d.tarif?.quelle && (
             <p className="mt-3 text-[11px] text-foreground/40">Quelle: {d.tarif.quelle}.</p>
           )}
