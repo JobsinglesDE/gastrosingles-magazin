@@ -25,14 +25,15 @@ export function BundeslandStats({ d }: { d: DehogaBundeslandData }) {
   if (d.tarif?.einstiegStundenlohn) cards.push({ value: d.tarif.einstiegStundenlohn, label: 'Tarif-Einstiegslohn/Std.' });
 
   if (cards.length === 0) return null;
+  const kurz = d.kurz ?? d.name;
 
   return (
     <section className="not-prose my-12 scroll-mt-24" id="dehoga-zahlen">
       <h2 className="text-2xl sm:text-3xl font-extrabold mb-1">
-        DEHOGA {d.name} in Zahlen
+        Gastgewerbe {kurz} in Zahlen
       </h2>
       <p className="text-foreground/60 mb-6 text-sm">
-        Gastgewerbe {d.name}{d.bezugsjahr ? ` (${d.bezugsjahr})` : ''} — die wichtigsten Branchen-Kennzahlen.
+        DEHOGA {kurz}: die wichtigsten Branchen-Kennzahlen{d.bezugsjahr ? ` (Stand ${d.bezugsjahr})` : ''}.
       </p>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
         {cards.map((c) => (

@@ -86,7 +86,17 @@ export async function buildArticleMetadata(slug: string) {
   };
 }
 
-export default async function ArticleView({ slug, afterBody }: { slug: string; afterBody?: React.ReactNode }) {
+export default async function ArticleView({
+  slug,
+  afterBody,
+  aboutEntity,
+  dateModified,
+}: {
+  slug: string;
+  afterBody?: React.ReactNode;
+  aboutEntity?: Record<string, unknown>;
+  dateModified?: string;
+}) {
   const article = await reader.collections.articles.read(slug, { resolveLinkedFiles: true });
   if (!article) notFound();
 
@@ -119,9 +129,11 @@ export default async function ArticleView({ slug, afterBody }: { slug: string; a
           url: `${BASE_URL}${canonicalPath}`,
           image: article.featuredImage ? `${BASE_URL}${article.featuredImage}` : undefined,
           datePublished: article.publishedAt || undefined,
+          dateModified: dateModified || undefined,
           authorName: author?.name,
           authorUrl: author?.socialLinks?.find((l) => l.platform === 'Website')?.url ?? undefined,
           isNews: article.isNews === true,
+          about: aboutEntity,
         })}
       />
       {article.faqItems && article.faqItems.length > 0 && (

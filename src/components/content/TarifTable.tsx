@@ -10,11 +10,12 @@ export function TarifTable({ d }: { d: DehogaBundeslandData }) {
   const gehalt = d.gehalt ?? GASTRO_GEHALT_DE;
   const hasTarif = Boolean(d.tarif?.einstiegStundenlohn || d.tarif?.laufzeitBis);
   if (!hasTarif && gehalt.length === 0) return null;
+  const kurz = d.kurz ?? d.name;
 
   return (
     <section className="not-prose my-12 scroll-mt-24" id="dehoga-tarif-gehalt">
       <h2 className="text-2xl sm:text-3xl font-extrabold mb-1">
-        Tarif &amp; Gehalt im Gastgewerbe {d.name}
+        DEHOGA {kurz}: Tarifvertrag &amp; Gehalt 2026
       </h2>
       <p className="text-foreground/60 mb-6 text-sm">
         Was Beschäftigte in {d.name} verdienen — Tarif-Eckdaten und Median-Gehälter nach Beruf.
@@ -23,7 +24,7 @@ export function TarifTable({ d }: { d: DehogaBundeslandData }) {
       {hasTarif && (
         <div className="mb-6 rounded-2xl border border-foreground/10 bg-surface p-5">
           <h3 className="text-sm font-bold uppercase tracking-wide text-brand-orange mb-3">
-            Tarifvertrag {d.name}
+            Tarifvertrag Gastgewerbe {kurz}
           </h3>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
             {d.tarif?.einstiegStundenlohn && (

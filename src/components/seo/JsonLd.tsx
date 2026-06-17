@@ -54,6 +54,7 @@ export function articleJsonLd({
   authorName,
   authorUrl,
   isNews,
+  about,
 }: {
   title: string;
   description: string;
@@ -64,6 +65,7 @@ export function articleJsonLd({
   authorName?: string;
   authorUrl?: string;
   isNews?: boolean;
+  about?: Record<string, unknown>;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -80,6 +82,7 @@ export function articleJsonLd({
     }),
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
+    ...(about && { about }),
     author: {
       '@type': 'Person',
       name: authorName || 'Tommy Honold',
@@ -449,6 +452,33 @@ export function dehogaDatasetJsonLd({ url, d }: { url: string; d: DehogaBundesla
     ...(d.bezugsjahr ? { temporalCoverage: d.bezugsjahr } : {}),
     creator: { '@id': ORG_ID },
     variableMeasured,
+  };
+}
+
+/** Organization-Node für den DEHOGA-Landesverband als Entität (für BlogPosting.about → AI-Citation). */
+export function dehogaOrgNode({ d, pageUrl }: { d: DehogaBundeslandData; pageUrl: string }) {
+  return {
+    '@type': 'Organization',
+    '@id': `${pageUrl}#verband`,
+    name: `DEHOGA ${d.name}`,
+    ...(d.kurz ? { alternateName: `DEHOGA ${d.kurz}` } : {}),
+    ...(d.offizielleUrl ? { url: d.offizielleUrl } : {}),
+    ...(d.sitz
+      ? {
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: d.sitz,
+            addressRegion: d.name,
+            addressCountry: 'DE',
+          },
+        }
+      : {}),
+    areaServed: { '@type': 'State', name: d.name },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'DEHOGA Bundesverband',
+      url: 'https://www.dehoga-bundesverband.de',
+    },
   };
 }
 

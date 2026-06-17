@@ -26,6 +26,11 @@ export interface DehogaTarif {
 
 export interface DehogaBundeslandData {
   name: string;
+  kurz?: string; // gängige Such-/Anzeigeform (z.B. "NRW"), default = name
+  // Verband-Entität (Organization-Schema + about)
+  offizielleUrl?: string; // offizielle Landesverband-Website
+  sitz?: string; // Sitz der Landesgeschäftsstelle
+  aktualisiert?: string; // Stand der Datenpflege (ISO) -> dateModified
   // Betriebszahlen (GEO-Signal, pro Bundesland)
   beschaeftigte?: string; // Gastgewerbe-Beschäftigte
   betriebe?: string; // Gastgewerbe-Betriebe
@@ -55,6 +60,10 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
   // --- Pilot: Nordrhein-Westfalen (2026-06-17) ---
   nrw: {
     name: 'Nordrhein-Westfalen',
+    kurz: 'NRW',
+    offizielleUrl: 'https://www.dehoga-nrw.de',
+    sitz: 'Neuss',
+    aktualisiert: '2026-06-17',
     beschaeftigte: '312.000',
     umsatzMrd: '21',
     mitgliedsbetriebe: '30.000',
