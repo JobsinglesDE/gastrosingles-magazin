@@ -18,7 +18,7 @@ export interface GehaltRow {
 }
 
 export interface DehogaTarif {
-  einstiegStundenlohn?: string; // z.B. "13,32 €" — nur wenn gültiger Tarif belegt
+  einstiegStundenlohn?: string; // z.B. "14,40 €" — nur wenn gültiger Tarif belegt
   laufzeitBis?: string; // z.B. "31.05.2026"
   tarifpartner?: string; // z.B. "DEHOGA NRW / NGG NRW"
   tarifHinweis?: string; // Hinweis bei ausgelaufenem/fehlendem Tarif (z.B. Mindestlohn-Untergrenze)
