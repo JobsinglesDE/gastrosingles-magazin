@@ -75,10 +75,15 @@ export const KOCHKURS_ZENSUS: Record<string, ZensusCity> = {
   kempten:     { einwohner: '65.050', ledigeAnzahl: '28.537', ledigeQuote: '43,9', maennerQuote: '48,8', durchschnittsalter: '43,8', geschlechterquote: '48,8 / 51,2' },
   erlangen:    { einwohner: '112.220', ledigeAnzahl: '55.001', ledigeQuote: '49,0', maennerQuote: '49,4', durchschnittsalter: '41,6', geschlechterquote: '49,4 / 50,6' },
   aschaffenburg: { einwohner: '71.692', ledigeAnzahl: '30.587', ledigeQuote: '42,7', maennerQuote: '48,8', durchschnittsalter: '43,9', geschlechterquote: '48,8 / 51,2' },
+  // --- Welle 6: 3 kreisfreie (Zensus-Puller 2026-06-17) ---
+  halle:       { einwohner: '226.586', ledigeAnzahl: '111.153', ledigeQuote: '49,1', maennerQuote: '48,1', durchschnittsalter: '44,3', geschlechterquote: '48,1 / 51,9' },
+  flensburg:   { einwohner: '95.015', ledigeAnzahl: '47.754', ledigeQuote: '50,3', maennerQuote: '49,3', durchschnittsalter: '42,2', geschlechterquote: '49,3 / 50,7' },
+  bayreuth:    { einwohner: '72.289', ledigeAnzahl: '34.036', ledigeQuote: '47,1', maennerQuote: '49,0', durchschnittsalter: '43,5', geschlechterquote: '49,0 / 51,0' },
   // Ohne Zensus-Stats (kreisangehörig/Verbund -> nicht stadt-isolierbar; Familienstand nur bis Kreis):
   // aachen (Staedteregion 05334), goettingen (LK 03159), saarbruecken (RV 10041),
   // tuebingen (LK 08416), marburg (LK 06534), paderborn (LK 05774), ludwigsburg (LK 08118),
-  // fulda (LK 06631). CityStats blendet aus, nie schaetzen (GESETZ).
+  // fulda (LK 06631), reutlingen (LK 08415), ravensburg (LK 08436), konstanz (LK 08335),
+  // aalen (Ostalbkreis 08136). CityStats blendet aus, nie schaetzen (GESETZ).
 };
 
 export function zensusFor(slug: string): ZensusCity | undefined {

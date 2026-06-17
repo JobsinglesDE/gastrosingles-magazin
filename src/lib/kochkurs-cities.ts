@@ -94,6 +94,15 @@ export const KOCHKURS_CITIES: Record<string, KochkursCity> = {
   kempten: { slug: 'kempten', name: 'Kempten (Allgäu)', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 47.7267, lng: 10.3168, volume: 260, neighbors: ['augsburg', 'ulm', 'muenchen'] },
   erlangen: { slug: 'erlangen', name: 'Erlangen', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 49.5897, lng: 11.0040, volume: 260, neighbors: ['nuernberg', 'bamberg', 'wuerzburg'] },
   aschaffenburg: { slug: 'aschaffenburg', name: 'Aschaffenburg', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 49.9769, lng: 9.1582, volume: 260, neighbors: ['frankfurt', 'wuerzburg', 'darmstadt'] },
+
+// --- Phase 3, Welle 6 (DFS-validiert, 210/mo) ---
+  halle: { slug: 'halle', name: 'Halle (Saale)', bundesland: 'sachsen-anhalt', bundeslandName: 'Sachsen-Anhalt', lat: 51.4825, lng: 11.9700, volume: 210, neighbors: ['leipzig', 'magdeburg', 'erfurt'] },
+  flensburg: { slug: 'flensburg', name: 'Flensburg', bundesland: 'schleswig-holstein', bundeslandName: 'Schleswig-Holstein', lat: 54.7937, lng: 9.4469, volume: 210, neighbors: ['kiel', 'luebeck', 'rostock'] },
+  reutlingen: { slug: 'reutlingen', name: 'Reutlingen', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 48.4914, lng: 9.2043, volume: 210, neighbors: ['tuebingen', 'stuttgart', 'ulm'] },
+  ravensburg: { slug: 'ravensburg', name: 'Ravensburg', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 47.7811, lng: 9.6122, volume: 210, neighbors: ['ulm', 'kempten', 'konstanz'] },
+  konstanz: { slug: 'konstanz', name: 'Konstanz', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 47.6603, lng: 9.1758, volume: 210, neighbors: ['freiburg', 'ravensburg', 'ulm'] },
+  bayreuth: { slug: 'bayreuth', name: 'Bayreuth', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 49.9456, lng: 11.5713, volume: 210, neighbors: ['bamberg', 'nuernberg', 'erlangen'] },
+  aalen: { slug: 'aalen', name: 'Aalen', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 48.8378, lng: 10.0933, volume: 210, neighbors: ['ulm', 'heilbronn', 'stuttgart'] },
 };
 
 /** Slugs in Launch-Reihenfolge (nach Volumen absteigend). */
