@@ -181,7 +181,7 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
           insertElement={
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
-                <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
+                <p className="text-sm text-foreground/70 mb-3">Du kochst gern und suchst jemanden, der den Geschmack teilt?</p>
                 <HeartButton href={`https://gastrosingles.de/registration/?AID=GastrosinglesMagazin`}>
                   Jetzt kostenfrei anmelden
                 </HeartButton>
