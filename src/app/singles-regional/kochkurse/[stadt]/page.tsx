@@ -103,7 +103,7 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
   const publishedSlugs = new Set(
     allKurse.filter((k) => k.entry.status === 'published').map((k) => k.entry.stadt)
   );
-  const neighborSlugs = (city?.neighbors || []).filter((n) => publishedSlugs.has(n)).slice(0, 3);
+  const neighborSlugs = (city?.neighbors || []).filter((n) => publishedSlugs.has(n)).slice(0, 6);
 
   return (
     <>
