@@ -1,3 +1,5 @@
+import type { DehogaBundeslandData, GehaltRow } from '@/lib/dehoga-statistiken';
+
 interface JsonLdProps {
   data: Record<string, unknown>;
 }
@@ -414,5 +416,75 @@ export function organizationJsonLd({
       sameAs: 'https://www.wikidata.org/wiki/Q183',
     },
     ...(memberOf.length ? { memberOf } : {}),
+  };
+}
+
+// --- DEHOGA-Bundesland: GEO-Schema für Betriebszahlen + Gehälter (AI-Citation) ---
+function eurToNumber(v?: string): number | null {
+  if (!v) return null;
+  const n = parseInt(v.replace(/[^0-9]/g, ''), 10);
+  return Number.isFinite(n) ? n : null;
+}
+
+/** Dataset mit den Gastgewerbe-Kennzahlen eines Bundeslands (variableMeasured). */
+export function dehogaDatasetJsonLd({ url, d }: { url: string; d: DehogaBundeslandData }) {
+  const variableMeasured: Record<string, unknown>[] = [];
+  if (d.beschaeftigte)
+    variableMeasured.push({ '@type': 'PropertyValue', name: 'Beschäftigte im Gastgewerbe', value: d.beschaeftigte });
+  if (d.mitgliedsbetriebe)
+    variableMeasured.push({ '@type': 'PropertyValue', name: 'DEHOGA-Mitgliedsbetriebe', value: d.mitgliedsbetriebe });
+  if (d.umsatzMrd)
+    variableMeasured.push({ '@type': 'PropertyValue', name: 'Gastgewerbe-Umsatz (Mrd. EUR/Jahr)', value: d.umsatzMrd, unitText: 'Mrd. EUR' });
+  if (d.betriebe)
+    variableMeasured.push({ '@type': 'PropertyValue', name: 'Gastgewerbe-Betriebe', value: d.betriebe });
+  if (d.tarif?.einstiegStundenlohn)
+    variableMeasured.push({ '@type': 'PropertyValue', name: 'Tarif-Einstiegslohn (EUR/Std.)', value: d.tarif.einstiegStundenlohn });
+  if (variableMeasured.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: `Gastgewerbe-Kennzahlen ${d.name}`,
+    description: `Betriebszahlen, Beschäftigte und Tarif-Eckdaten des Gastgewerbes in ${d.name} (DEHOGA ${d.name}).`,
+    url,
+    ...(d.bezugsjahr ? { temporalCoverage: d.bezugsjahr } : {}),
+    creator: { '@id': ORG_ID },
+    variableMeasured,
+  };
+}
+
+/** ItemList aus Occupation + MonetaryAmountDistribution für die Median-Gehälter (Google-Job/Salary-Schema). */
+export function dehogaSalaryJsonLd({ gehalt }: { gehalt: GehaltRow[] }) {
+  const items = gehalt
+    .map((g, i) => {
+      const median = eurToNumber(g.median);
+      if (median === null) return null;
+      const dist: Record<string, unknown> = {
+        '@type': 'MonetaryAmountDistribution',
+        currency: 'EUR',
+        duration: 'P1M',
+        median,
+      };
+      const p25 = eurToNumber(g.q1);
+      const p75 = eurToNumber(g.q3);
+      if (p25 !== null) dist.percentile25 = p25;
+      if (p75 !== null) dist.percentile75 = p75;
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Occupation',
+          name: g.beruf,
+          occupationLocation: { '@type': 'Country', name: 'Deutschland' },
+          estimatedSalary: dist,
+        },
+      };
+    })
+    .filter(Boolean);
+  if (items.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Median-Gehälter im Gastgewerbe',
+    itemListElement: items,
   };
 }
