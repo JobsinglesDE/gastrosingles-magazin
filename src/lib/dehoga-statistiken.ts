@@ -183,3 +183,16 @@ export function hasDehogaData(d: DehogaBundeslandData | null): boolean {
     d.beschaeftigte || d.betriebe || d.umsatzMrd || d.mitgliedsbetriebe || d.tarif,
   );
 }
+
+/** Bundesland-Slug (bundeslaender.ts) → DEHOGA-Artikel-Slug. NRW-Sonderfall (Key 'nrw'). */
+export function dehogaSlugForBundesland(bundeslandSlug: string): string {
+  return bundeslandSlug === 'nordrhein-westfalen' ? 'dehoga-nrw' : `dehoga-${bundeslandSlug}`;
+}
+
+/** DEHOGA-Artikel-Slug → Bundesland-Slug (bundeslaender.ts). Umkehr von dehogaSlugForBundesland.
+ *  Für Nicht-Bundesland-Spokes (z.B. dehoga-nordrhein) liefert es einen Nicht-BUNDESLAENDER-Key
+ *  → Aufrufer muss gegen BUNDESLAENDER prüfen. */
+export function bundeslandSlugForDehoga(articleSlug: string): string {
+  const key = articleSlug.replace(/^dehoga-/, '');
+  return key === 'nrw' ? 'nordrhein-westfalen' : key;
+}

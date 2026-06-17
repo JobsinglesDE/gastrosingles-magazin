@@ -17,6 +17,7 @@ import { JsonLd, articleJsonLd, faqJsonLd, kochkursPlaceJsonLd } from '@/compone
 import { CityStats } from '@/components/staedte/CityStats';
 import { CitySources } from '@/components/staedte/CitySources';
 import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
+import { DehogaHubUplink } from '@/components/content/DehogaHubUplink';
 import { zensusFor } from '@/lib/kochkurs-zensus';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
@@ -264,6 +265,10 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
               </Link>
             </div>
           </section>
+
+        {city?.bundesland && (
+          <DehogaHubUplink bundeslandSlug={city.bundesland} bundeslandName={city.bundeslandName} />
+        )}
       </div>
 
       {/* Bottom CTA */}

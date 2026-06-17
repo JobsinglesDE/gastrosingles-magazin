@@ -3,7 +3,10 @@ import ArticleView, { buildArticleMetadata } from '@/components/content/ArticleV
 import { BundeslandStats } from '@/components/content/BundeslandStats';
 import { TarifTable } from '@/components/content/TarifTable';
 import { JsonLd, dehogaDatasetJsonLd, dehogaSalaryJsonLd, dehogaOrgNode } from '@/components/seo/JsonLd';
-import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE } from '@/lib/dehoga-statistiken';
+import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE, bundeslandSlugForDehoga } from '@/lib/dehoga-statistiken';
+import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
+import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
+import { DehogaRegionalDownlinks } from '@/components/content/DehogaRegionalDownlinks';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
 
@@ -33,11 +36,37 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const salary = dehogaSalaryJsonLd({ gehalt: dehoga.gehalt ?? GASTRO_GEHALT_DE });
     const orgNode = dehogaOrgNode({ d: dehoga, pageUrl: url });
     const kurz = dehoga.kurz ?? dehoga.name;
+
+    // Down-Links auf Regional-Cluster (Kochkurse/Kochvereine) derselben Region — Unterfutter,
+    // GESETZ 14 bidirektional. Nur für die 16 echten Bundesländer (nicht Regional-Spokes wie dehoga-nordrhein).
+    const blSlug = bundeslandSlugForDehoga(slug);
+    let regionalDownlinks: React.ReactNode = null;
+    if (BUNDESLAENDER[blSlug]) {
+      const blName = bundeslandName(blSlug);
+      const kochkurse = Object.values(KOCHKURS_CITIES)
+        .filter((c) => c.bundesland === blSlug)
+        .sort((a, b) => b.volume - a.volume)
+        .slice(0, 6)
+        .map((c) => ({ href: getKochkursUrl(c.slug), label: `Kochkurs ${c.name}` }));
+      const allKv = await reader.collections.kochvereine.all();
+      const kochvereine = allKv
+        .filter((k) => k.entry.status === 'published' && k.entry.bundesland === blSlug)
+        .slice(0, 6)
+        .map((k) => {
+          const ort = k.entry.title?.match(/^Kochverein\s+(.+?)\s*:/)?.[1]?.trim() || k.entry.stadt;
+          return { href: `/singles-regional/kochvereine/${blSlug}/${k.entry.stadt}`, label: `Kochverein ${ort}` };
+        });
+      regionalDownlinks = (
+        <DehogaRegionalDownlinks bundeslandName={blName} kochkurse={kochkurse} kochvereine={kochvereine} />
+      );
+    }
+
     return (
       <ArticleView
         slug={slug}
         aboutEntity={orgNode}
         dateModified={dehoga.aktualisiert}
+        afterBody={regionalDownlinks}
         beforeBody={
           <>
             {dataset && <JsonLd data={dataset} />}

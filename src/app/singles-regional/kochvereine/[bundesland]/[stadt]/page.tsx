@@ -15,6 +15,7 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, articleJsonLd, faqJsonLd, vereinOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
+import { DehogaHubUplink } from '@/components/content/DehogaHubUplink';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
 type Params = Promise<{ bundesland: string; stadt: string }>;
@@ -241,6 +242,8 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
             </div>
           </section>
         )}
+
+        <DehogaHubUplink bundeslandSlug={bundesland} bundeslandName={blName} />
       </div>
 
       {/* Bottom CTA */}
