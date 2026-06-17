@@ -121,6 +121,8 @@ export default async function ArticleView({
   const canonicalPath = getArticleUrl(slug, article.category, { show: article.show, position: article.position });
   const crumb = sectionCrumb(article.category);
   const ytEmbed = extractYoutubeEmbed(article.content);
+  // Mid-Text-CTA: dynamisch in die echte Textmitte (nach dem mittleren H2) statt fix nach H2 #2.
+  const midH2 = Math.max(1, Math.round(extractH2s(article.content).length / 2));
 
   return (
     <>
@@ -187,7 +189,7 @@ export default async function ArticleView({
 
         <ArticleBody
           content={article.content}
-          insertAfterH2={2}
+          insertAfterH2={midH2}
           insertElement={
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
