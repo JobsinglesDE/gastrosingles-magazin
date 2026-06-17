@@ -84,6 +84,16 @@ export const KOCHKURS_CITIES: Record<string, KochkursCity> = {
   tuebingen: { slug: 'tuebingen', name: 'Tübingen', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 48.5216, lng: 9.0576, volume: 260, neighbors: ['stuttgart', 'ulm', 'heilbronn'] },
   trier: { slug: 'trier', name: 'Trier', bundesland: 'rheinland-pfalz', bundeslandName: 'Rheinland-Pfalz', lat: 49.7596, lng: 6.6442, volume: 260, neighbors: ['saarbruecken', 'koblenz', 'bonn'] },
   marburg: { slug: 'marburg', name: 'Marburg', bundesland: 'hessen', bundeslandName: 'Hessen', lat: 50.8021, lng: 8.7665, volume: 260, neighbors: ['kassel', 'frankfurt', 'wiesbaden'] },
+
+// --- Phase 3, Welle 5 (DFS-validiert, >= 260/mo, ueber Welle-4-Floor) ---
+  paderborn: { slug: 'paderborn', name: 'Paderborn', bundesland: 'nordrhein-westfalen', bundeslandName: 'Nordrhein-Westfalen', lat: 51.7189, lng: 8.7575, volume: 590, neighbors: ['bielefeld', 'kassel', 'osnabrueck'] },
+  ludwigsburg: { slug: 'ludwigsburg', name: 'Ludwigsburg', bundesland: 'baden-wuerttemberg', bundeslandName: 'Baden-Württemberg', lat: 48.8974, lng: 9.1916, volume: 390, neighbors: ['stuttgart', 'heilbronn', 'karlsruhe'] },
+  fulda: { slug: 'fulda', name: 'Fulda', bundesland: 'hessen', bundeslandName: 'Hessen', lat: 50.5558, lng: 9.6808, volume: 320, neighbors: ['kassel', 'wuerzburg', 'frankfurt'] },
+  rosenheim: { slug: 'rosenheim', name: 'Rosenheim', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 47.8561, lng: 12.1289, volume: 320, neighbors: ['muenchen', 'augsburg', 'ingolstadt'] },
+  landshut: { slug: 'landshut', name: 'Landshut', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 48.5372, lng: 12.1517, volume: 260, neighbors: ['muenchen', 'regensburg', 'ingolstadt'] },
+  kempten: { slug: 'kempten', name: 'Kempten (Allgäu)', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 47.7267, lng: 10.3168, volume: 260, neighbors: ['augsburg', 'ulm', 'muenchen'] },
+  erlangen: { slug: 'erlangen', name: 'Erlangen', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 49.5897, lng: 11.0040, volume: 260, neighbors: ['nuernberg', 'bamberg', 'wuerzburg'] },
+  aschaffenburg: { slug: 'aschaffenburg', name: 'Aschaffenburg', bundesland: 'bayern', bundeslandName: 'Bayern', lat: 49.9769, lng: 9.1582, volume: 260, neighbors: ['frankfurt', 'wuerzburg', 'darmstadt'] },
 };
 
 /** Slugs in Launch-Reihenfolge (nach Volumen absteigend). */

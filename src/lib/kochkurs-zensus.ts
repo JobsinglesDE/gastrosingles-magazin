@@ -69,9 +69,16 @@ export const KOCHKURS_ZENSUS: Record<string, ZensusCity> = {
   krefeld: { einwohner: '230.666', ledigeAnzahl: '93.936', ledigeQuote: '40,7', maennerQuote: '48,9', durchschnittsalter: '44,2', geschlechterquote: '48,9 / 51,1' },
   duisburg: { einwohner: '501.415', ledigeAnzahl: '208.972', ledigeQuote: '41,7', maennerQuote: '49,5', durchschnittsalter: '42,8', geschlechterquote: '49,5 / 50,5' },
   trier: { einwohner: '102.727', ledigeAnzahl: '49.683', ledigeQuote: '48,4', maennerQuote: '48,7', durchschnittsalter: '42,0', geschlechterquote: '48,7 / 51,3' },
+  // --- Welle 5: 5 kreisfreie (Zensus-Puller 2026-06-17) ---
+  rosenheim:   { einwohner: '63.284', ledigeAnzahl: '28.224', ledigeQuote: '44,6', maennerQuote: '49,0', durchschnittsalter: '42,8', geschlechterquote: '49,0 / 51,0' },
+  landshut:    { einwohner: '67.880', ledigeAnzahl: '29.916', ledigeQuote: '44,1', maennerQuote: '48,7', durchschnittsalter: '43,3', geschlechterquote: '48,7 / 51,3' },
+  kempten:     { einwohner: '65.050', ledigeAnzahl: '28.537', ledigeQuote: '43,9', maennerQuote: '48,8', durchschnittsalter: '43,8', geschlechterquote: '48,8 / 51,2' },
+  erlangen:    { einwohner: '112.220', ledigeAnzahl: '55.001', ledigeQuote: '49,0', maennerQuote: '49,4', durchschnittsalter: '41,6', geschlechterquote: '49,4 / 50,6' },
+  aschaffenburg: { einwohner: '71.692', ledigeAnzahl: '30.587', ledigeQuote: '42,7', maennerQuote: '48,8', durchschnittsalter: '43,9', geschlechterquote: '48,8 / 51,2' },
   // Ohne Zensus-Stats (kreisangehörig/Verbund -> nicht stadt-isolierbar; Familienstand nur bis Kreis):
   // aachen (Staedteregion 05334), goettingen (LK 03159), saarbruecken (RV 10041),
-  // tuebingen (LK 08416), marburg (LK 06534). CityStats blendet aus, nie schaetzen (GESETZ).
+  // tuebingen (LK 08416), marburg (LK 06534), paderborn (LK 05774), ludwigsburg (LK 08118),
+  // fulda (LK 06631). CityStats blendet aus, nie schaetzen (GESETZ).
 };
 
 export function zensusFor(slug: string): ZensusCity | undefined {

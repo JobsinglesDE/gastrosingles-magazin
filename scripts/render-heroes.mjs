@@ -23,6 +23,16 @@ import sharp from 'sharp';
 
 const REPO = '/docker/projects/gastrosingles-magazin';
 const W = 1200, H = 640;
+
+// .env.local laden (Standalone-Node lädt Next-Env nicht automatisch)
+try {
+  const envRaw = fs.readFileSync(path.join(REPO, '.env.local'), 'utf-8');
+  for (const line of envRaw.split('\n')) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+} catch { /* optional */ }
+
 const TOGETHER_API_KEY = process.env.TOGETHER_API_KEY;
 const CONCURRENCY = parseInt(process.env.CONCURRENCY || '3', 10);
 
@@ -55,6 +65,9 @@ function buildPrompt(fm, collection) {
   const alt = fm.featuredImageAlt || '';
   const base = 'photorealistic, Canon R5 85mm f/1.4, natural skin texture with visible pores and subtle wrinkles, golden hour, shallow depth of field, no plastic look, documentary photography style';
 
+  if (collection === 'kochkurse') {
+    return `Group of 6-8 German adults (mid-20s to late-30s, mixed genders) cooking together in a bright modern cooking school in ${stadt}, Germany. Convivial cooking class atmosphere: some chopping vegetables, one stirring a pan, glasses of white wine on the steel counter, everyone laughing and engaged, warm pendant lighting, fresh ingredients on wooden boards. ${base}. No readable text, no logos, no chef hats, candid documentary feel.`;
+  }
   if (collection === 'unikliniken') {
     const klinik = fm.klinikName || 'Universitätsklinikum';
     return `Exterior architectural shot of ${klinik} hospital campus in ${stadt}, Germany. Modern German university hospital architecture, glass and concrete facade, medical staff in white coats walking past entrance, warm late-afternoon light, German urban or hillside setting. ${base}. Wide angle establishing shot, no signage text visible, no logos.`;
