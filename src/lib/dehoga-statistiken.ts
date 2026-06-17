@@ -203,6 +203,23 @@ export const DEHOGA_PARENT: Record<string, { slug: string; name: string }> = {
   westfalen: { slug: 'dehoga-nrw', name: 'NRW' },
 };
 
+/** DEHOGA-{Land}-Hub → Gastro-Messen der Region (Down-Link, GESETZ 14 bidirektional).
+ *  Key = bundeslaender.ts-Slug bzw. Region-Key (nordrhein). messe-Slug = Artikel in /messen/.
+ *  Eingestellte Messen (hogatec) bewusst NICHT verlinkt. */
+export const DEHOGA_MESSEN_MAP: Record<string, { slug: string; name: string }[]> = {
+  hamburg: [
+    { slug: 'internorga', name: 'INTERNORGA Hamburg' },
+    { slug: 'gastro-vision', name: '370GRAD Hamburg' },
+  ],
+  'nordrhein-westfalen': [{ slug: 'anuga', name: 'Anuga Köln' }],
+  nordrhein: [{ slug: 'anuga', name: 'Anuga Köln' }],
+  bayern: [{ slug: 'biofach', name: 'BIOFACH Nürnberg' }],
+  'baden-wuerttemberg': [
+    { slug: 'intergastra', name: 'INTERGASTRA Stuttgart' },
+    { slug: 'sueffa', name: 'SÜFFA Stuttgart' },
+  ],
+};
+
 export function dehogaStatsForSlug(slug: string): DehogaBundeslandData | null {
   const key = slug.replace(/^dehoga-/, '');
   return DEHOGA_STATS[key] ?? null;

@@ -3,7 +3,7 @@ import ArticleView, { buildArticleMetadata } from '@/components/content/ArticleV
 import { BundeslandStats } from '@/components/content/BundeslandStats';
 import { TarifTable } from '@/components/content/TarifTable';
 import { JsonLd, dehogaDatasetJsonLd, dehogaSalaryJsonLd, dehogaOrgNode } from '@/components/seo/JsonLd';
-import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE, bundeslandSlugForDehoga, DEHOGA_SUBREGIONS, DEHOGA_PARENT } from '@/lib/dehoga-statistiken';
+import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE, bundeslandSlugForDehoga, DEHOGA_SUBREGIONS, DEHOGA_PARENT, DEHOGA_MESSEN_MAP } from '@/lib/dehoga-statistiken';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
 import { DehogaRegionalDownlinks } from '@/components/content/DehogaRegionalDownlinks';
@@ -67,8 +67,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         href: getArticleUrl(r.slug, 'berufsbilder'),
         label: r.name,
       }));
+      const messen = (DEHOGA_MESSEN_MAP[blSlug] ?? []).map((m) => ({
+        href: getArticleUrl(m.slug, 'messen'),
+        label: m.name,
+      }));
       dehogaAfterBody = (
-        <DehogaRegionalDownlinks bundeslandName={blName} verbaende={verbaende} kochkurse={kochkurse} kochvereine={kochvereine} />
+        <DehogaRegionalDownlinks bundeslandName={blName} verbaende={verbaende} messen={messen} kochkurse={kochkurse} kochvereine={kochvereine} />
       );
     } else if (DEHOGA_PARENT[blSlug]) {
       const p = DEHOGA_PARENT[blSlug];

@@ -1,5 +1,13 @@
 {
   "redirects": [
+    { "source": "/magazin/berufsbilder/internorga", "destination": "/magazin/messen/internorga", "permanent": true },
+    { "source": "/magazin/berufsbilder/intergastra", "destination": "/magazin/messen/intergastra", "permanent": true },
+    { "source": "/magazin/berufsbilder/anuga", "destination": "/magazin/messen/anuga", "permanent": true },
+    { "source": "/magazin/berufsbilder/hogatec", "destination": "/magazin/messen/hogatec", "permanent": true },
+    { "source": "/magazin/berufsbilder/igeho", "destination": "/magazin/messen/igeho", "permanent": true },
+    { "source": "/magazin/berufsbilder/biofach", "destination": "/magazin/messen/biofach", "permanent": true },
+    { "source": "/magazin/berufsbilder/sueffa", "destination": "/magazin/messen/sueffa", "permanent": true },
+    { "source": "/magazin/berufsbilder/gastro-vision", "destination": "/magazin/messen/gastro-vision", "permanent": true },
     {
       "source": "/magazin/erfolgsgeschichten/ernst-65-ruth-55-beim-zweiten-mal-wussten-wir-was-zaehlt",
       "destination": "/magazin/erfolgsgeschichten/erfolgsgeschichte-ernst-ruth-blaulichtsingles",

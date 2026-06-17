@@ -50,6 +50,7 @@ function extractH2s(content: any): { label: string; id: string }[] {
 function sectionCrumb(category: string): { label: string; href: string } {
   if (category === 'tv-koch-shows') return { label: SECTION_HUBS['tv-koch-shows'].title.split(' ❤️')[0], href: '/tv-koch-shows' };
   if (category === 'berufsbilder') return { label: 'Berufsbilder', href: '/berufsbilder' };
+  if (category === 'messen') return { label: 'Messen', href: '/messen' };
   return { label: 'Singles & Partnersuche', href: `/${SINGLE_HUB.slug}` };
 }
 

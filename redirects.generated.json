@@ -1,7 +1,32 @@
 [
   {
+    "source": "/alexander-herrmann-krebs-hausarzt",
+    "destination": "/tv-koch-shows/promi-koeche/alexander-herrmann-krebs-hausarzt",
+    "permanent": true
+  },
+  {
+    "source": "/alexander-kumptner-privat",
+    "destination": "/tv-koch-shows/promi-koeche/alexander-kumptner-privat",
+    "permanent": true
+  },
+  {
+    "source": "/alfons-schuhbeck-krebs-freiheit-2026",
+    "destination": "/tv-koch-shows/promi-koeche/alfons-schuhbeck-krebs-freiheit-2026",
+    "permanent": true
+  },
+  {
+    "source": "/ali-guengoermues-michelin-stern",
+    "destination": "/tv-koch-shows/promi-koeche/ali-guengoermues-michelin-stern",
+    "permanent": true
+  },
+  {
     "source": "/anuga",
-    "destination": "/berufsbilder/anuga",
+    "destination": "/messen/anuga",
+    "permanent": true
+  },
+  {
+    "source": "/barkeeper-ausbildung",
+    "destination": "/berufsbilder/barkeeper-ausbildung",
     "permanent": true
   },
   {
@@ -21,7 +46,7 @@
   },
   {
     "source": "/biofach",
-    "destination": "/berufsbilder/biofach",
+    "destination": "/messen/biofach",
     "permanent": true
   },
   {
@@ -70,6 +95,11 @@
     "permanent": true
   },
   {
+    "source": "/cornelia-poletto-kochschule-duesseldorf",
+    "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-kochschule-duesseldorf",
+    "permanent": true
+  },
+  {
     "source": "/cornelia-poletto-mann",
     "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-mann",
     "permanent": true
@@ -82,6 +112,11 @@
   {
     "source": "/cornelia-poletto-restaurant",
     "destination": "/tv-koch-shows/promi-koeche/cornelia-poletto-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/cornelia-poletto-tim-maelzer-kitchen-impossible-mentoren-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/cornelia-poletto-tim-maelzer-kitchen-impossible-mentoren-2026",
     "permanent": true
   },
   {
@@ -145,6 +180,11 @@
     "permanent": true
   },
   {
+    "source": "/dehoga-nordrhein",
+    "destination": "/berufsbilder/dehoga-nordrhein",
+    "permanent": true
+  },
+  {
     "source": "/dehoga-nrw",
     "destination": "/berufsbilder/dehoga-nrw",
     "permanent": true
@@ -177,6 +217,11 @@
   {
     "source": "/dehoga-thueringen",
     "destination": "/berufsbilder/dehoga-thueringen",
+    "permanent": true
+  },
+  {
+    "source": "/dehoga-westfalen",
+    "destination": "/berufsbilder/dehoga-westfalen",
     "permanent": true
   },
   {
@@ -236,7 +281,7 @@
   },
   {
     "source": "/gastro-vision",
-    "destination": "/berufsbilder/gastro-vision",
+    "destination": "/messen/gastro-vision",
     "permanent": true
   },
   {
@@ -245,8 +290,18 @@
     "permanent": true
   },
   {
+    "source": "/grill-den-henssler-finale-rosin",
+    "destination": "/tv-koch-shows/grill-den-henssler/grill-den-henssler-finale-rosin",
+    "permanent": true
+  },
+  {
     "source": "/grill-den-henssler-restaurant",
     "destination": "/tv-koch-shows/grill-den-henssler/grill-den-henssler-restaurant",
+    "permanent": true
+  },
+  {
+    "source": "/hans-neuner-algarve-sternekoch",
+    "destination": "/tv-koch-shows/promi-koeche/hans-neuner-algarve-sternekoch",
     "permanent": true
   },
   {
@@ -256,7 +311,12 @@
   },
   {
     "source": "/hogatec",
-    "destination": "/berufsbilder/hogatec",
+    "destination": "/messen/hogatec",
+    "permanent": true
+  },
+  {
+    "source": "/hotelfachfrau-ausbildung",
+    "destination": "/berufsbilder/hotelfachfrau-ausbildung",
     "permanent": true
   },
   {
@@ -276,17 +336,22 @@
   },
   {
     "source": "/igeho",
-    "destination": "/berufsbilder/igeho",
+    "destination": "/messen/igeho",
     "permanent": true
   },
   {
     "source": "/intergastra",
-    "destination": "/berufsbilder/intergastra",
+    "destination": "/messen/intergastra",
     "permanent": true
   },
   {
     "source": "/internorga",
-    "destination": "/berufsbilder/internorga",
+    "destination": "/messen/internorga",
+    "permanent": true
+  },
+  {
+    "source": "/johann-lafer-fernsehgarten-2026",
+    "destination": "/tv-koch-shows/promi-koeche/johann-lafer-fernsehgarten-2026",
     "permanent": true
   },
   {
@@ -315,6 +380,11 @@
     "permanent": true
   },
   {
+    "source": "/kellner-ausbildung",
+    "destination": "/berufsbilder/kellner-ausbildung",
+    "permanent": true
+  },
+  {
     "source": "/kellner",
     "destination": "/berufsbilder/kellner",
     "permanent": true
@@ -322,6 +392,11 @@
   {
     "source": "/kennenlernen-online-dating-gastronomie",
     "destination": "/singles-partnersuche/kennenlernen-online-dating-gastronomie",
+    "permanent": true
+  },
+  {
+    "source": "/koch-ausbildung",
+    "destination": "/berufsbilder/koch-ausbildung",
     "permanent": true
   },
   {
@@ -365,8 +440,18 @@
     "permanent": true
   },
   {
+    "source": "/mirko-reeh-wildecker-herzbuben",
+    "destination": "/tv-koch-shows/promi-koeche/mirko-reeh-wildecker-herzbuben",
+    "permanent": true
+  },
+  {
     "source": "/nelson-mueller-herkunft",
     "destination": "/tv-koch-shows/promi-koeche/nelson-mueller-herkunft",
+    "permanent": true
+  },
+  {
+    "source": "/nelson-mueller-kuechenschlacht-xxl-2026",
+    "destination": "/tv-koch-shows/nelson-mueller-kuechenschlacht-xxl-2026",
     "permanent": true
   },
   {
@@ -410,6 +495,11 @@
     "permanent": true
   },
   {
+    "source": "/patissier-ausbildung",
+    "destination": "/berufsbilder/patissier-ausbildung",
+    "permanent": true
+  },
+  {
     "source": "/patissier-sucht-partnerin",
     "destination": "/singles-partnersuche/patissier-sucht-partnerin",
     "permanent": true
@@ -425,6 +515,16 @@
     "permanent": true
   },
   {
+    "source": "/ralf-zacherl-hochzeitstag-instagram",
+    "destination": "/tv-koch-shows/promi-koeche/ralf-zacherl-hochzeitstag-instagram",
+    "permanent": true
+  },
+  {
+    "source": "/restaurantfachfrau-ausbildung",
+    "destination": "/berufsbilder/restaurantfachfrau-ausbildung",
+    "permanent": true
+  },
+  {
     "source": "/restaurantfachfrau",
     "destination": "/berufsbilder/restaurantfachfrau",
     "permanent": true
@@ -437,6 +537,16 @@
   {
     "source": "/restaurantleiter",
     "destination": "/berufsbilder/restaurantleiter",
+    "permanent": true
+  },
+  {
+    "source": "/roland-trettl-first-dates-hotel-2026",
+    "destination": "/tv-koch-shows/promi-koeche/roland-trettl-first-dates-hotel-2026",
+    "permanent": true
+  },
+  {
+    "source": "/roland-trettl-kitchen-impossible-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/roland-trettl-kitchen-impossible-2026",
     "permanent": true
   },
   {
@@ -462,6 +572,21 @@
   {
     "source": "/saucier",
     "destination": "/berufsbilder/saucier",
+    "permanent": true
+  },
+  {
+    "source": "/sebastian-lege-privat-frau-besseresser",
+    "destination": "/tv-koch-shows/promi-koeche/sebastian-lege-privat-frau-besseresser",
+    "permanent": true
+  },
+  {
+    "source": "/silvia-lafer-krebs-interview-2026",
+    "destination": "/tv-koch-shows/promi-koeche/silvia-lafer-krebs-interview-2026",
+    "permanent": true
+  },
+  {
+    "source": "/sommelier-ausbildung",
+    "destination": "/berufsbilder/sommelier-ausbildung",
     "permanent": true
   },
   {
@@ -505,6 +630,11 @@
     "permanent": true
   },
   {
+    "source": "/steffen-henssler-the-taste-2026",
+    "destination": "/tv-koch-shows/steffen-henssler-the-taste-2026",
+    "permanent": true
+  },
+  {
     "source": "/steffen-henssler-vermoegen",
     "destination": "/tv-koch-shows/grill-den-henssler/steffen-henssler-vermoegen",
     "permanent": true
@@ -516,7 +646,12 @@
   },
   {
     "source": "/sueffa",
-    "destination": "/berufsbilder/sueffa",
+    "destination": "/messen/sueffa",
+    "permanent": true
+  },
+  {
+    "source": "/the-duc-ngo-wolt-omakase-bento",
+    "destination": "/tv-koch-shows/promi-koeche/the-duc-ngo-wolt-omakase-bento",
     "permanent": true
   },
   {
@@ -530,6 +665,11 @@
     "permanent": true
   },
   {
+    "source": "/tim-maelzer-boehmi-brutzelt-zdf-2026",
+    "destination": "/tv-koch-shows/promi-koeche/tim-maelzer-boehmi-brutzelt-zdf-2026",
+    "permanent": true
+  },
+  {
     "source": "/tim-maelzer-eis",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-eis",
     "permanent": true
@@ -540,8 +680,18 @@
     "permanent": true
   },
   {
+    "source": "/tim-maelzer-kitchen-impossible-staffelfinale-sieg-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-kitchen-impossible-staffelfinale-sieg-2026",
+    "permanent": true
+  },
+  {
     "source": "/tim-maelzer-kitchen-impossible-vegan-2026",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-kitchen-impossible-vegan-2026",
+    "permanent": true
+  },
+  {
+    "source": "/tim-maelzer-maelzers-meisterklasse",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-maelzers-meisterklasse",
     "permanent": true
   },
   {
@@ -560,6 +710,11 @@
     "permanent": true
   },
   {
+    "source": "/tim-maelzer-wm-fanfest-hamburg-2026",
+    "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer-wm-fanfest-hamburg-2026",
+    "permanent": true
+  },
+  {
     "source": "/tim-maelzer",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-maelzer",
     "permanent": true
@@ -575,6 +730,11 @@
     "permanent": true
   },
   {
+    "source": "/tim-raue-miami-wm-2026",
+    "destination": "/tv-koch-shows/promi-koeche/tim-raue-miami-wm-2026",
+    "permanent": true
+  },
+  {
     "source": "/tim-raue-restaurant",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-restaurant",
     "permanent": true
@@ -585,8 +745,18 @@
     "permanent": true
   },
   {
+    "source": "/tim-raue-the-taste-2026",
+    "destination": "/tv-koch-shows/tim-raue-the-taste-2026",
+    "permanent": true
+  },
+  {
     "source": "/tim-raue-vermoegen",
     "destination": "/tv-koch-shows/kitchen-impossible/tim-raue-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/tim-raue-xxxlutz-rangsdorf-2026",
+    "destination": "/tv-koch-shows/promi-koeche/tim-raue-xxxlutz-rangsdorf-2026",
     "permanent": true
   },
   {

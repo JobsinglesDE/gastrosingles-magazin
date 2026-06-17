@@ -4,18 +4,21 @@ import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, eventJsonLd } from '@/components/seo/JsonLd';
 import { withBasePath } from '@/lib/url';
+import { MESSE_STATS, hasMesseEvent, type MesseData } from '@/lib/messe-statistiken';
 
-const HUB_URL = 'https://gastrosingles.de/magazin/messen';
+const BASE = 'https://gastrosingles.de/magazin';
+const HUB_URL = `${BASE}/messen`;
 
 export const metadata = {
-  title: 'Gastro-Messen Deutschland — Übersicht',
-  description: 'Übersicht aller wichtigen Gastro-Messen: Internorga Hamburg, Intergastra Stuttgart, Anuga Köln, HOGATEC Düsseldorf, IGEHO Basel, BIOFACH Nürnberg, Süffa, Gastro-Vision.',
+  title: 'Gastro-Messen 2026 & 2027: Termine, Tickets & Übersicht',
+  description:
+    'Messekalender Gastronomie: INTERNORGA, Anuga, BIOFACH, INTERGASTRA & Co. — alle Termine, Orte und Tickets der wichtigsten Gastro- und Hotelmessen in Deutschland und der Schweiz.',
   alternates: { canonical: HUB_URL },
   openGraph: {
-    title: 'Gastro-Messen Deutschland — Übersicht',
-    description: 'Internorga, Intergastra, Anuga & Co. — alle wichtigen Gastro-Messen in DACH im Überblick.',
+    title: 'Gastro-Messen 2026 & 2027 — der Messekalender',
+    description: 'Alle wichtigen Gastronomie- und Hotellerie-Messen mit Terminen, Orten und Tickets im Überblick.',
     url: HUB_URL,
     type: 'website',
     siteName: 'Gastrosingles Magazin',
@@ -29,49 +32,77 @@ const HUB_COLORS = [
   { r: 255, g: 200, b: 70 },
 ];
 
-const MESSEN = [
-  { slug: 'internorga', kurz: 'Hamburg · jährlich März · Leitmesse Außer-Haus-Markt' },
-  { slug: 'intergastra', kurz: 'Stuttgart · alle 2 Jahre · Gastronomie + Hotellerie' },
-  { slug: 'anuga', kurz: 'Köln · alle 2 Jahre · Weltleitmesse Food + Beverage' },
-  { slug: 'hogatec', kurz: 'Düsseldorf · Gastronomie + Hotellerie + Catering' },
-  { slug: 'igeho', kurz: 'Basel · alle 2 Jahre · Schweizer Branchenleitmesse' },
-  { slug: 'biofach', kurz: 'Nürnberg · jährlich · Weltleitmesse Bio-Lebensmittel' },
-  { slug: 'sueffa', kurz: 'Stuttgart · alle 2 Jahre · Metzgerhandwerk + Fleischerei' },
-  { slug: 'gastro-vision', kurz: 'Hamburg · jährlich · Boutique-Messe Trendsetter' },
-];
+const MESSEN_SLUGS = ['internorga', 'intergastra', 'anuga', 'hogatec', 'igeho', 'biofach', 'sueffa', 'gastro-vision'];
+
+const MON = ['', 'Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sep.', 'Okt.', 'Nov.', 'Dez.'];
+function terminLabel(d?: MesseData): string {
+  if (!d) return '';
+  if (d.eingestellt) return 'eingestellt';
+  if (!d.startDate) return '';
+  const [y, m] = d.startDate.split('-').map(Number);
+  return `${MON[m]} ${y}`;
+}
+function sortKey(d?: MesseData): string {
+  if (!d || d.eingestellt) return '9999-99-99';
+  return d.startDate ?? '9998-99-99';
+}
 
 export default async function MessenHub() {
   const articles = await reader.collections.articles.all();
-  const messenArticles = MESSEN.map((m) => {
-    const a = articles.find((x) => x.slug === m.slug);
-    return a ? { ...a, kurz: m.kurz } : null;
-  }).filter(Boolean) as any[];
+  const messenArticles = MESSEN_SLUGS
+    .map((slug) => {
+      const a = articles.find((x) => x.slug === slug);
+      return a ? { ...a, stats: MESSE_STATS[slug] as MesseData | undefined } : null;
+    })
+    .filter(Boolean)
+    .sort((a: any, b: any) => sortKey(a.stats).localeCompare(sortKey(b.stats))) as any[];
 
   const items = messenArticles.map((a) => ({
     name: a.entry.title,
-    url: `https://gastrosingles.de/magazin${articleHref(a)}`,
+    url: `${BASE}${articleHref(a)}`,
   }));
+
+  // Event-Schema je terminierter Messe (GEO/AEO + Rich Results für „gastro messen 2026").
+  const events = messenArticles
+    .filter((a) => hasMesseEvent(a.stats))
+    .map((a) =>
+      eventJsonLd({
+        name: `${a.stats.name} ${a.stats.stadt} ${a.stats.jahr ?? ''}`.trim(),
+        startDate: a.stats.startDate,
+        endDate: a.stats.endDate,
+        venue: a.stats.venue,
+        venueAdresse: a.stats.venueAdresse,
+        stadt: a.stats.stadt,
+        veranstalter: a.stats.veranstalter,
+        url: `${BASE}${articleHref(a)}`,
+        image: `${BASE}${a.entry.featuredImage ?? ''}`,
+      }),
+    )
+    .filter(Boolean);
 
   return (
     <>
       <JsonLd
         data={collectionPageJsonLd({
-          name: 'Gastro-Messen Deutschland — Übersicht',
-          description: 'Übersicht der wichtigsten Gastronomie- und Hotellerie-Messen im DACH-Raum.',
+          name: 'Gastro-Messen 2026 & 2027 — Messekalender Gastronomie',
+          description: 'Übersicht der wichtigsten Gastronomie- und Hotellerie-Messen in Deutschland und der Schweiz mit Terminen, Orten und Tickets.',
           url: HUB_URL,
           items,
         })}
       />
+      {events.map((e, i) => (
+        <JsonLd key={i} data={e as Record<string, unknown>} />
+      ))}
 
       <PillarHero
-        title="Gastro-Messen"
+        title="Gastro-Messen 2026 & 2027"
         texts={[
-          'Internorga · Intergastra · Anuga',
-          '8 Branchen-Leitmessen',
-          'Termine & Trends',
-          'Hamburg · Stuttgart · Köln',
+          'INTERNORGA · Anuga · BIOFACH',
+          'Termine · Tickets · Aussteller',
+          'Der Messekalender Gastronomie',
+          'Hamburg · Köln · Nürnberg · Stuttgart',
         ]}
-        subtitle="Die wichtigsten Gastronomie- und Hotellerie-Messen in Deutschland, Österreich und der Schweiz im Überblick."
+        subtitle="Alle wichtigen Gastronomie- und Hotellerie-Messen in Deutschland und der Schweiz — mit Terminen, Orten und Tickets im Überblick."
         colors={HUB_COLORS}
       />
 
@@ -84,30 +115,43 @@ export default async function MessenHub() {
 
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-primary">8 Gastro-Messen im Überblick</h2>
+          <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-primary">
+            Gastro-Messen im Überblick — nach Termin
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {messenArticles.map((a) => (
-              <Link
-                key={a.slug}
-                href={articleHref(a)}
-                className="group block bg-surface rounded-2xl overflow-hidden border border-foreground/10 hover:border-primary/50 transition-colors"
-              >
-                {a.entry.featuredImage && (
-                  <img
-                    width="400" height="240"
-                    src={withBasePath(a.entry.featuredImage)}
-                    alt={a.entry.featuredImageAlt || a.entry.title}
-                    className="w-full aspect-[5/3] object-cover group-hover:scale-[1.02] transition-transform"
-                  />
-                )}
-                <div className="p-4">
-                  <h3 className="font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight">
-                    {a.entry.title}
-                  </h3>
-                  <p className="text-xs text-foreground/60 mt-2">{a.kurz}</p>
-                </div>
-              </Link>
-            ))}
+            {messenArticles.map((a) => {
+              const d: MesseData | undefined = a.stats;
+              const termin = terminLabel(d);
+              return (
+                <Link
+                  key={a.slug}
+                  href={articleHref(a)}
+                  className="group block bg-surface rounded-2xl overflow-hidden border border-foreground/10 hover:border-primary/50 transition-colors"
+                >
+                  {a.entry.featuredImage && (
+                    <img
+                      width="400" height="240"
+                      src={withBasePath(a.entry.featuredImage)}
+                      alt={a.entry.featuredImageAlt || a.entry.title}
+                      className="w-full aspect-[5/3] object-cover group-hover:scale-[1.02] transition-transform"
+                    />
+                  )}
+                  <div className="p-4">
+                    {termin && (
+                      <span className="inline-block text-[11px] font-bold uppercase tracking-wide text-brand-orange mb-1">
+                        {termin}{d?.stadt ? ` · ${d.stadt}` : ''}
+                      </span>
+                    )}
+                    <h3 className="font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight">
+                      {a.entry.title}
+                    </h3>
+                    {d?.turnus && !d.eingestellt && (
+                      <p className="text-xs text-foreground/60 mt-2 capitalize">{d.turnus}</p>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </ScrollReveal>

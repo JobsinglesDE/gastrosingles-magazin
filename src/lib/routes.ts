@@ -23,6 +23,8 @@ export function getArticleUrl(
       const show = opts?.show ?? '';
       return show ? `/tv-koch-shows/${show}/${slug}` : `/tv-koch-shows/${slug}`;
     }
+    case 'messen':
+      return `/messen/${slug}`;
     case 'berufsbilder':
       return `/berufsbilder/${slug}`;
     case 'partnersuche':

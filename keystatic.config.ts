@@ -29,6 +29,7 @@ export default config({
           options: [
             { label: 'TV & Koch-Shows', value: 'tv-koch-shows' },
             { label: 'Berufsbilder', value: 'berufsbilder' },
+            { label: 'Messen', value: 'messen' },
             { label: 'Partnersuche', value: 'partnersuche' },
           ],
         }),

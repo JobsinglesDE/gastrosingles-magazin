@@ -20,6 +20,7 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith('.mdoc'))) {
   const show = field(s, 'show');
   let dest;
   if (cat === 'tv-koch-shows') dest = SHOWS.has(show) ? `/tv-koch-shows/${show}/${slug}` : `/tv-koch-shows/${slug}`;
+  else if (cat === 'messen') dest = `/messen/${slug}`;
   else if (cat === 'berufsbilder') dest = `/berufsbilder/${slug}`;
   else dest = `/singles-partnersuche/${slug}`;
   if (dest !== `/${slug}`) out.push({ source: `/${slug}`, destination: dest, permanent: true });

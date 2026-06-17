@@ -281,6 +281,54 @@ export function placeJsonLd({
 }
 
 /**
+ * Event-Schema (JSON-LD) für die Messe-Spokes. Nur die NÄCHSTE terminierte Ausgabe
+ * (GESETZ: keine vergangenen/erfundenen Termine). Gibt null zurück, wenn kein startDate.
+ */
+export function eventJsonLd({
+  name,
+  startDate,
+  endDate,
+  venue,
+  venueAdresse,
+  stadt,
+  veranstalter,
+  url,
+  image,
+  description,
+}: {
+  name: string;
+  startDate?: string;
+  endDate?: string;
+  venue?: string;
+  venueAdresse?: string;
+  stadt: string;
+  veranstalter?: string;
+  url: string;
+  image?: string;
+  description?: string;
+}) {
+  if (!startDate) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name,
+    startDate,
+    ...(endDate ? { endDate } : {}),
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+      '@type': 'Place',
+      name: venue ?? stadt,
+      address: venueAdresse ?? stadt,
+    },
+    ...(veranstalter ? { organizer: { '@type': 'Organization', name: veranstalter } } : {}),
+    url,
+    ...(image ? { image } : {}),
+    ...(description ? { description } : {}),
+  };
+}
+
+/**
  * Place-Node mit geo {latitude, longitude} für die Kochkurs-Stadt-Spokes (DE).
  * Ehrlich: KEIN Course/Event-Schema (wir betreiben keine Kurse) — nur ein
  * geografisches Place-Signal, das den Article lokal verankert (addressLocality +

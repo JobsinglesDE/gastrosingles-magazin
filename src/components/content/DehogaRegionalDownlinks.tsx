@@ -12,13 +12,21 @@ export function DehogaRegionalDownlinks({
   kochkurse,
   kochvereine,
   verbaende = [],
+  messen = [],
 }: {
   bundeslandName: string;
   kochkurse: LinkItem[];
   kochvereine: LinkItem[];
   verbaende?: LinkItem[];
+  messen?: LinkItem[];
 }) {
-  if (kochkurse.length === 0 && kochvereine.length === 0 && verbaende.length === 0) return null;
+  if (
+    kochkurse.length === 0 &&
+    kochvereine.length === 0 &&
+    verbaende.length === 0 &&
+    messen.length === 0
+  )
+    return null;
   const chip =
     'inline-block rounded-full border border-foreground/15 bg-background px-4 py-1.5 text-sm font-semibold text-foreground hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors';
   return (
@@ -34,6 +42,20 @@ export function DehogaRegionalDownlinks({
           </h3>
           <div className="flex flex-wrap gap-2">
             {verbaende.map((l) => (
+              <Link key={l.href} href={l.href} className={chip}>
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+      {messen.length > 0 && (
+        <div className="mb-5">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-brand-orange mb-3">
+            Gastro-Messen in {bundeslandName}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {messen.map((l) => (
               <Link key={l.href} href={l.href} className={chip}>
                 {l.label}
               </Link>
