@@ -23,7 +23,7 @@ function parseGeschlecht(v?: string | null): { maenner: string; frauen: string }
 function Card({ children }: { children: ReactNode }) {
   return (
     <AnimatedGradientBorder borderRadius={18} borderWidth={2} className="h-full">
-      <div className="h-full rounded-2xl bg-surface p-5 text-center flex flex-col justify-center">{children}</div>
+      <div className="h-full rounded-2xl bg-surface p-4 text-center flex flex-col justify-center">{children}</div>
     </AnimatedGradientBorder>
   );
 }
@@ -40,8 +40,8 @@ export function CityStats({ name, e }: { name: string; e: CityStatFields }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
         {idx && (
           <AnimatedGradientBorder borderRadius={18} borderWidth={2} className="h-full">
-            <div className="h-full rounded-2xl bg-brand-orange text-white p-5 text-center flex flex-col justify-center">
-              <div className="text-4xl sm:text-5xl font-extrabold leading-tight">
+            <div className="h-full rounded-2xl bg-brand-orange text-white p-4 text-center flex flex-col justify-center">
+              <div className="text-4xl sm:text-5xl lg:text-3xl font-extrabold leading-tight">
                 {idx.score}
                 <span className="text-xl sm:text-2xl font-bold text-white/70">/100</span>
               </div>
@@ -56,14 +56,14 @@ export function CityStats({ name, e }: { name: string; e: CityStatFields }) {
 
         {e.ledigeAnzahl && (
           <Card>
-            <div className="text-4xl sm:text-5xl font-extrabold leading-tight text-foreground">{e.ledigeAnzahl}</div>
-            <div className="mt-1 text-xs uppercase tracking-wide text-foreground/50">Ledige in {name}</div>
+            <div className="text-4xl sm:text-5xl lg:text-2xl font-extrabold leading-tight tracking-tight tabular-nums text-foreground">{e.ledigeAnzahl}</div>
+            <div className="mt-1 text-xs uppercase tracking-wide text-foreground/50">Singles in {name}</div>
           </Card>
         )}
 
         {e.einwohner && (
           <Card>
-            <div className="text-4xl sm:text-5xl font-extrabold leading-tight text-foreground">{e.einwohner}</div>
+            <div className="text-4xl sm:text-5xl lg:text-2xl font-extrabold leading-tight tracking-tight tabular-nums text-foreground">{e.einwohner}</div>
             <div className="mt-1 text-xs uppercase tracking-wide text-foreground/50">Einwohner (Stadt)</div>
           </Card>
         )}
@@ -71,13 +71,13 @@ export function CityStats({ name, e }: { name: string; e: CityStatFields }) {
         {g && (
           <Card>
             <div className="grid grid-cols-2 divide-x divide-foreground/10">
-              <div className="px-2">
+              <div className="px-1">
                 <div className="text-xs uppercase tracking-wide text-foreground/50 mb-0.5">♀ Frauen</div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-foreground">{g.frauen}</div>
+                <div className="text-xl sm:text-2xl lg:text-xl font-extrabold tabular-nums text-foreground">{g.frauen}</div>
               </div>
-              <div className="px-2">
+              <div className="px-1">
                 <div className="text-xs uppercase tracking-wide text-foreground/50 mb-0.5">♂ Männer</div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-foreground">{g.maenner}</div>
+                <div className="text-xl sm:text-2xl lg:text-xl font-extrabold tabular-nums text-foreground">{g.maenner}</div>
               </div>
             </div>
             <div className="mt-2 text-[11px] uppercase tracking-wide text-foreground/40">in der Stadt</div>
