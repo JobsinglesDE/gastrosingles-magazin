@@ -194,7 +194,7 @@ export default async function ArticleView({
           insertElement={
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
-                <p className="text-sm text-foreground/70 mb-3">Du arbeitest in der Gastronomie?</p>
+                <p className="text-sm text-foreground/70 mb-3">Du suchst Singles aus der Gastronomie?</p>
                 <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
                   Jetzt kostenfrei anmelden
                 </HeartButton>
