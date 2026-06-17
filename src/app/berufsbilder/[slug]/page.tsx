@@ -32,15 +32,24 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const dataset = dehogaDatasetJsonLd({ url, d: dehoga });
     const salary = dehogaSalaryJsonLd({ gehalt: dehoga.gehalt ?? GASTRO_GEHALT_DE });
     const orgNode = dehogaOrgNode({ d: dehoga, pageUrl: url });
+    const kurz = dehoga.kurz ?? dehoga.name;
     return (
       <ArticleView
         slug={slug}
         aboutEntity={orgNode}
         dateModified={dehoga.aktualisiert}
-        afterBody={
+        beforeBody={
           <>
             {dataset && <JsonLd data={dataset} />}
             {salary && <JsonLd data={salary} />}
+            <nav
+              aria-label={`DEHOGA ${kurz} Themen`}
+              className="not-prose my-6 flex flex-wrap gap-2 text-sm font-semibold"
+            >
+              <a href="#dehoga-zahlen" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Betriebszahlen</a>
+              <a href="#dehoga-tarif-gehalt" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Tarifvertrag &amp; Gehalt</a>
+              <a href="#haeufige-fragen" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Häufige Fragen</a>
+            </nav>
             <BundeslandStats d={dehoga} />
             <TarifTable d={dehoga} />
           </>

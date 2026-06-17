@@ -20,7 +20,7 @@ export default async function DehogaPillar() {
   return (
     <ArticleView
       slug="dehoga"
-      afterBody={
+      beforeBody={
         <section id="landesverbaende" className="not-prose my-12 scroll-mt-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
             Alle 16 DEHOGA-Landesverbände im Überblick

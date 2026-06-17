@@ -89,11 +89,13 @@ export async function buildArticleMetadata(slug: string) {
 export default async function ArticleView({
   slug,
   afterBody,
+  beforeBody,
   aboutEntity,
   dateModified,
 }: {
   slug: string;
   afterBody?: React.ReactNode;
+  beforeBody?: React.ReactNode;
   aboutEntity?: Record<string, unknown>;
   dateModified?: string;
 }) {
@@ -180,6 +182,8 @@ export default async function ArticleView({
             {article.calloutAnswer}
           </CalloutBox>
         )}
+
+        {beforeBody}
 
         <ArticleBody
           content={article.content}
