@@ -11,12 +11,14 @@ export function DehogaRegionalDownlinks({
   bundeslandName,
   kochkurse,
   kochvereine,
+  verbaende = [],
 }: {
   bundeslandName: string;
   kochkurse: LinkItem[];
   kochvereine: LinkItem[];
+  verbaende?: LinkItem[];
 }) {
-  if (kochkurse.length === 0 && kochvereine.length === 0) return null;
+  if (kochkurse.length === 0 && kochvereine.length === 0 && verbaende.length === 0) return null;
   const chip =
     'inline-block rounded-full border border-foreground/15 bg-background px-4 py-1.5 text-sm font-semibold text-foreground hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors';
   return (
@@ -25,6 +27,20 @@ export function DehogaRegionalDownlinks({
       <p className="text-foreground/70 mb-6">
         Du arbeitest im Gastgewerbe in {bundeslandName} und suchst Anschluss? Lerne Gleichgesinnte kennen — beim Kochkurs für Singles oder im Kochverein deiner Region.
       </p>
+      {verbaende.length > 0 && (
+        <div className="mb-5">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-brand-orange mb-3">
+            Regionalverbände in {bundeslandName}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {verbaende.map((l) => (
+              <Link key={l.href} href={l.href} className={chip}>
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
       {kochkurse.length > 0 && (
         <div className="mb-5">
           <h3 className="text-sm font-bold uppercase tracking-wide text-brand-orange mb-3">

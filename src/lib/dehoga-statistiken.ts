@@ -170,6 +170,37 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     statQuelle: 'DEHOGA Thüringen',
     tarif: { einstiegStundenlohn: '15,40 €', laufzeitBis: '30.04.2027', tarifpartner: 'DEHOGA Thüringen / NGG', quelle: 'NGG / DEHOGA Thüringen — Tarifstufe ab 01.07.2026 (Laufzeit bis 30.04.2027)' },
   },
+  // --- NRW-Regionalverbände (eigene Sub-Pillars unter dehoga-nrw; eigene DFS-Terme:
+  //     "dehoga nordrhein" 590/mo, "dehoga westfalen" 210/mo — verschieden von "dehoga nrw" 480).
+  //     Beschäftigte/Umsatz sind NUR NRW-gesamt verfügbar (keine RB-Aufschlüsselung) → bewusst
+  //     weggelassen (GESETZ: nie eine regionsfremde Gesamtzahl als Regionswert ausweisen). ---
+  nordrhein: {
+    name: 'DEHOGA Nordrhein', kurz: 'Nordrhein',
+    offizielleUrl: 'https://www.dehoga-nordrhein.de', sitz: 'Neuss', aktualisiert: '2026-06-17',
+    mitgliedsbetriebe: '5.800',
+    statQuelle: 'DEHOGA Nordrhein (Regierungsbezirke Düsseldorf + Köln)',
+    tarif: { tarifpartner: 'DEHOGA NRW / NGG NRW', tarifHinweis: 'Branchentarifvertrag zum 31.05.2026 ausgelaufen, Neuverhandlung läuft — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'DEHOGA NRW / NGG NRW, Tarifregister NRW (Stand 06/2026)' },
+  },
+  westfalen: {
+    name: 'DEHOGA Westfalen', kurz: 'Westfalen',
+    offizielleUrl: 'https://www.dehoga-westfalen.de', sitz: 'Hamm', aktualisiert: '2026-06-17',
+    statQuelle: 'DEHOGA Westfalen (Regierungsbezirke Arnsberg + Münster)',
+    tarif: { tarifpartner: 'DEHOGA NRW / NGG NRW', tarifHinweis: 'Branchentarifvertrag zum 31.05.2026 ausgelaufen, Neuverhandlung läuft — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'DEHOGA NRW / NGG NRW, Tarifregister NRW (Stand 06/2026)' },
+  },
+};
+
+/** NRW-Sub-Pillar → ihre Regionalverbände (Down-Link). Key = bundeslaender.ts-Slug. */
+export const DEHOGA_SUBREGIONS: Record<string, { slug: string; name: string }[]> = {
+  'nordrhein-westfalen': [
+    { slug: 'dehoga-nordrhein', name: 'DEHOGA Nordrhein' },
+    { slug: 'dehoga-westfalen', name: 'DEHOGA Westfalen' },
+  ],
+};
+
+/** Regionalverband-Spoke → Eltern-Landesverband (Up-Link). Key = DEHOGA_STATS-Region-Key. */
+export const DEHOGA_PARENT: Record<string, { slug: string; name: string }> = {
+  nordrhein: { slug: 'dehoga-nrw', name: 'NRW' },
+  westfalen: { slug: 'dehoga-nrw', name: 'NRW' },
 };
 
 export function dehogaStatsForSlug(slug: string): DehogaBundeslandData | null {

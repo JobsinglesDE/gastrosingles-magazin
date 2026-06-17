@@ -3,10 +3,12 @@ import ArticleView, { buildArticleMetadata } from '@/components/content/ArticleV
 import { BundeslandStats } from '@/components/content/BundeslandStats';
 import { TarifTable } from '@/components/content/TarifTable';
 import { JsonLd, dehogaDatasetJsonLd, dehogaSalaryJsonLd, dehogaOrgNode } from '@/components/seo/JsonLd';
-import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE, bundeslandSlugForDehoga } from '@/lib/dehoga-statistiken';
+import { dehogaStatsForSlug, hasDehogaData, GASTRO_GEHALT_DE, bundeslandSlugForDehoga, DEHOGA_SUBREGIONS, DEHOGA_PARENT } from '@/lib/dehoga-statistiken';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
 import { DehogaRegionalDownlinks } from '@/components/content/DehogaRegionalDownlinks';
+import { HubBacklinkCard } from '@/components/content/HubBacklinkCard';
+import { getArticleUrl } from '@/lib/routes';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
 
@@ -37,10 +39,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const orgNode = dehogaOrgNode({ d: dehoga, pageUrl: url });
     const kurz = dehoga.kurz ?? dehoga.name;
 
-    // Down-Links auf Regional-Cluster (Kochkurse/Kochvereine) derselben Region — Unterfutter,
-    // GESETZ 14 bidirektional. Nur für die 16 echten Bundesländer (nicht Regional-Spokes wie dehoga-nordrhein).
+    const hasStats = Boolean(
+      dehoga.beschaeftigte || dehoga.mitgliedsbetriebe || dehoga.umsatzMrd || dehoga.betriebe || dehoga.tarif?.einstiegStundenlohn,
+    );
+
+    // afterBody: 16 Bundesländer → Down-Links (Regionalverbände + Kochkurse/Kochvereine als Unterfutter);
+    // Regionalverband-Spokes (dehoga-nordrhein/-westfalen) → Up-Link auf den Eltern-Landesverband.
+    // Beides bidirektional (GESETZ 14).
     const blSlug = bundeslandSlugForDehoga(slug);
-    let regionalDownlinks: React.ReactNode = null;
+    let dehogaAfterBody: React.ReactNode = null;
     if (BUNDESLAENDER[blSlug]) {
       const blName = bundeslandName(blSlug);
       const kochkurse = Object.values(KOCHKURS_CITIES)
@@ -56,8 +63,22 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           const ort = k.entry.title?.match(/^Kochverein\s+(.+?)\s*:/)?.[1]?.trim() || k.entry.stadt;
           return { href: `/singles-regional/kochvereine/${blSlug}/${k.entry.stadt}`, label: `Kochverein ${ort}` };
         });
-      regionalDownlinks = (
-        <DehogaRegionalDownlinks bundeslandName={blName} kochkurse={kochkurse} kochvereine={kochvereine} />
+      const verbaende = (DEHOGA_SUBREGIONS[blSlug] ?? []).map((r) => ({
+        href: getArticleUrl(r.slug, 'berufsbilder'),
+        label: r.name,
+      }));
+      dehogaAfterBody = (
+        <DehogaRegionalDownlinks bundeslandName={blName} verbaende={verbaende} kochkurse={kochkurse} kochvereine={kochvereine} />
+      );
+    } else if (DEHOGA_PARENT[blSlug]) {
+      const p = DEHOGA_PARENT[blSlug];
+      dehogaAfterBody = (
+        <HubBacklinkCard
+          heading={`DEHOGA ${p.name}: der Landesverband im Überblick`}
+          text={`${dehoga.name} ist ein Regionalverband im DEHOGA-Landesverband ${p.name}. Den kompletten Überblick — Betriebszahlen, Tarifvertrag und Median-Gehälter für ganz ${p.name} — gibt es auf der Landesverbands-Seite.`}
+          href={getArticleUrl(p.slug, 'berufsbilder')}
+          cta={`Zu DEHOGA ${p.name} →`}
+        />
       );
     }
 
@@ -66,7 +87,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         slug={slug}
         aboutEntity={orgNode}
         dateModified={dehoga.aktualisiert}
-        afterBody={regionalDownlinks}
+        afterBody={dehogaAfterBody}
         beforeBody={
           <>
             {dataset && <JsonLd data={dataset} />}
@@ -75,7 +96,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               aria-label={`DEHOGA ${kurz} Themen`}
               className="not-prose my-6 flex flex-wrap gap-2 text-sm font-semibold"
             >
-              <a href="#dehoga-zahlen" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Betriebszahlen</a>
+              {hasStats && <a href="#dehoga-zahlen" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Betriebszahlen</a>}
               <a href="#dehoga-tarif-gehalt" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Tarifvertrag &amp; Gehalt</a>
               <a href="#haeufige-fragen" className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">Häufige Fragen</a>
             </nav>
