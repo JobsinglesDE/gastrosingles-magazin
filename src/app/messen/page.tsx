@@ -74,6 +74,7 @@ export default async function MessenHub() {
         venueAdresse: a.stats.venueAdresse,
         stadt: a.stats.stadt,
         veranstalter: a.stats.veranstalter,
+        organizerUrl: a.stats.offizielleUrl,
         url: `${BASE}${articleHref(a)}`,
         image: `${BASE}${a.entry.featuredImage ?? ''}`,
       }),

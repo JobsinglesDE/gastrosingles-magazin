@@ -37,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         venueAdresse: d.venueAdresse,
         stadt: d.stadt,
         veranstalter: d.veranstalter,
+        organizerUrl: d.offizielleUrl,
         url,
         image: `${BASE_URL}/images/articles/${slug}/${slug}.webp`,
       })

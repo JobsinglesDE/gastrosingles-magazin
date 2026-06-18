@@ -292,6 +292,7 @@ export function eventJsonLd({
   venueAdresse,
   stadt,
   veranstalter,
+  organizerUrl,
   url,
   image,
   description,
@@ -303,11 +304,16 @@ export function eventJsonLd({
   venueAdresse?: string;
   stadt: string;
   veranstalter?: string;
+  organizerUrl?: string;
   url: string;
   image?: string;
   description?: string;
 }) {
   if (!startDate) return null;
+  // GSC-Empfehlung: description immer setzen. Aus echten Feldern ableiten (nie erfinden),
+  // falls die Call-Site keine uebergibt. offers/performer bleiben weg: bei Fachmessen
+  // inhaltlich N/A (kein Performer, keine einheitlichen Ticket-Offers) -> nicht faken.
+  const desc = description ?? `${name} – Fachmesse in ${venue ?? stadt}. Termine und Anfahrt im Überblick.`;
   return {
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -321,10 +327,12 @@ export function eventJsonLd({
       name: venue ?? stadt,
       address: venueAdresse ?? stadt,
     },
-    ...(veranstalter ? { organizer: { '@type': 'Organization', name: veranstalter } } : {}),
+    ...(veranstalter
+      ? { organizer: { '@type': 'Organization', name: veranstalter, ...(organizerUrl ? { url: organizerUrl } : {}) } }
+      : {}),
     url,
     ...(image ? { image } : {}),
-    ...(description ? { description } : {}),
+    description: desc,
   };
 }
 
