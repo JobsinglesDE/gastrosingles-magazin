@@ -30,7 +30,7 @@ export function StickyCTA() {
           className="fixed bottom-20 md:bottom-6 right-4 md:right-8 z-40"
         >
           <a
-            href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin"
+            href="https://gastrosingles.de/?AID=GastrosinglesMagazin"
             className="pulse-cta inline-flex items-center gap-2 px-5 py-3 bg-[#429A45] text-white text-sm font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             rel="nofollow noopener"
           >

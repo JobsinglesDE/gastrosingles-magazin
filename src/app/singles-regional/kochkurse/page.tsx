@@ -89,7 +89,7 @@ export default async function KochkursePillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -161,7 +161,7 @@ export default async function KochkursePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Kochbegeisterte Singles aus ganz Deutschland — auf Gastrosingles.de.
           </p>
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

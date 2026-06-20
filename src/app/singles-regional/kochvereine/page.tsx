@@ -89,7 +89,7 @@ export default async function KochvereinePillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -164,7 +164,7 @@ export default async function KochvereinePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Gastro-Singles aus jedem Bundesland — auf Gastrosingles.de.
           </p>
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

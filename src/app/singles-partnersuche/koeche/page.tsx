@@ -240,7 +240,7 @@ export default async function KoechePillar() {
       </ScrollReveal>
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -284,7 +284,7 @@ export default async function KoechePillar() {
                       <p className="text-lg font-semibold">
                         Jetzt Gastro-Singles in deiner Region finden
                       </p>
-                      <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+                      <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
                         Jetzt kostenlos registrieren
                       </HeartButton>
                     </div>
@@ -310,7 +310,7 @@ export default async function KoechePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Gastro-Singles warten. Menschen, die deinen Service-Rhythmus kennen.
           </p>
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

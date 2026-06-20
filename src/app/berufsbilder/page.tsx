@@ -252,7 +252,7 @@ export default async function BerufsbilderHub() {
               Partnersuche-Guide für die Gastronomie
             </Link>.
           </p>
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

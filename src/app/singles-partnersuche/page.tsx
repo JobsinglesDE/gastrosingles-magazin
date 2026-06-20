@@ -139,7 +139,7 @@ export default async function SinglesPartnersuche() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Singles in der Gastronomie warten auf dich. Köche, Sommeliers, Wirte und Service-Kräfte.
           </p>
-          <HeartButton href="https://gastrosingles.de/registration/?AID=GastrosinglesMagazin">
+          <HeartButton href="https://gastrosingles.de/?AID=GastrosinglesMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
