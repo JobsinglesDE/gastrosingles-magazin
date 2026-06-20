@@ -16,6 +16,8 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, articleJsonLd, faqJsonLd, vereinOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 import { DehogaHubUplink } from '@/components/content/DehogaHubUplink';
+import { IconyActivityWidget } from '@/components/content/IconyActivityWidget';
+import { plzForCity } from '@/lib/city-plz';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
 type Params = Promise<{ bundesland: string; stadt: string }>;
@@ -174,6 +176,9 @@ export default async function KochvereinStadtPage({ params }: { params: Params }
         {e.calloutQuestion && (
           <CalloutBox question={e.calloutQuestion}>{e.calloutAnswer}</CalloutBox>
         )}
+
+        {/* ICONY Aktivitäts-Widget — oberes Drittel, stadt-spezifische PLZ (kein City-Mismatch) */}
+        <IconyActivityWidget plz={plzForCity(stadt)} stadtName={ortName || e.title} />
 
         <ArticleBody
           content={e.content}
