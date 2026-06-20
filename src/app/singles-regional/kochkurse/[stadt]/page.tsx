@@ -19,6 +19,8 @@ import { CitySources } from '@/components/staedte/CitySources';
 import { KOCHKURS_CITIES, getKochkursUrl } from '@/lib/kochkurs-cities';
 import { DehogaHubUplink } from '@/components/content/DehogaHubUplink';
 import { zensusFor } from '@/lib/kochkurs-zensus';
+import { IconyActivityWidget } from '@/components/content/IconyActivityWidget';
+import { plzForCity } from '@/lib/city-plz';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
 type Params = Promise<{ stadt: string }>;
@@ -157,6 +159,9 @@ export default async function KochkursStadtPage({ params }: { params: Params }) 
         {e.calloutQuestion && (
           <CalloutBox question={e.calloutQuestion}>{e.calloutAnswer}</CalloutBox>
         )}
+
+        {/* ICONY Aktivitäts-Widget — oberes Drittel, stadt-spezifische PLZ (kein City-Mismatch) */}
+        <IconyActivityWidget plz={plzForCity(stadt)} stadtName={cityName} />
 
         {zensus && <CityStats name={cityName} e={zensus} />}
 

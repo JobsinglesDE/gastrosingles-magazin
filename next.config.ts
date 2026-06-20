@@ -57,7 +57,7 @@ const nextConfig: NextConfig = {
           "img-src 'self' data: https: blob:",
           "font-src 'self' data:",
           "connect-src 'self' https: wss:",
-          "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com",
+          "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com https://js.icony.com",
           "frame-ancestors 'self'",
           "base-uri 'self'",
           "form-action 'self'",
