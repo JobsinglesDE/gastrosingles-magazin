@@ -13,4 +13,3 @@ Gebaut mit [Next.js](https://nextjs.org/) und [Keystatic](https://keystatic.com/
 © 2026 Jobsingles Network (Tommy Honold). Alle Rechte vorbehalten.
 
 Inhalte (Texte, Bilder, redaktionelle Beiträge) sind urheberrechtlich geschützt und dürfen ohne ausdrückliche Genehmigung nicht vervielfältigt oder weiterverwendet werden. Verwendete Pressebilder unterliegen den Rechten der jeweiligen Sender und Fotografen (siehe Bildnachweis am Artikel).
-test
