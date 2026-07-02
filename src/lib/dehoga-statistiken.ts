@@ -91,28 +91,31 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
   },
   brandenburg: {
     name: 'Brandenburg',
-    offizielleUrl: 'https://www.dehoga-brandenburg.de', sitz: 'Potsdam', aktualisiert: '2026-06-17',
+    offizielleUrl: 'https://www.dehoga-brandenburg.de', sitz: 'Potsdam', aktualisiert: '2026-07-02',
     beschaeftigte: '29.763', mitgliedsbetriebe: '3.500–5.000', bezugsjahr: '2024',
     statQuelle: 'Bundesagentur für Arbeit (svB Gastgewerbe Brandenburg, 09/2024), DEHOGA Brandenburg',
+    tarif: { tarifpartner: 'DEHOGA Brandenburg / NGG', tarifHinweis: 'Kein aktuell allgemeinverbindlicher regionaler Entgelttarifvertrag (ausgelaufen/in Neuverhandlung) — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'DEHOGA Brandenburg / NGG (Stand 07/2026)' },
   },
   bremen: {
     name: 'Bremen',
     offizielleUrl: 'https://www.dehoga-bremen.de', sitz: 'Bremen', aktualisiert: '2026-07-02',
     beschaeftigte: '9.384', mitgliedsbetriebe: '1.200–1.800', bezugsjahr: '2022',
     statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Bremen',
+    tarif: { tarifpartner: 'DEHOGA Bremen / NGG Nord', tarifHinweis: 'Vorheriger Entgelttarifvertrag zum 31.03.2025 ausgelaufen; Folgeabschluss in Verhandlung — gesetzlicher Mindestlohn 13,90 €/Std (seit 01.01.2026) gilt als Untergrenze.', quelle: 'NGG Nord / DEHOGA Bremen (Stand 07/2026)' },
   },
   hamburg: {
     name: 'Hamburg',
     offizielleUrl: 'https://www.dehoga-hamburg.de', sitz: 'Hamburg', aktualisiert: '2026-07-02',
     beschaeftigte: '37.544', mitgliedsbetriebe: '5.000–7.000', bezugsjahr: '2022',
     statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Hamburg',
-    tarif: { laufzeitBis: '31.12.2026', tarifpartner: 'DEHOGA Hamburg / NGG', tarifHinweis: 'Aktueller Stufen-Stundenlohn (ab 01/2026) nicht offiziell veröffentlicht; gesetzlicher Mindestlohn 13,90 €/Std gilt als Untergrenze.', quelle: 'DEHOGA Hamburg / NGG' },
+    tarif: { laufzeitBis: '31.12.2026', tarifpartner: 'DEHOGA Hamburg / NGG', tarifHinweis: 'Dreistufiger Abschluss 07/2024: unterste Tarifstufe 13,93 €/Std ab 08/2024 (2.410 €/Monat), +5,1% ab 08/2025, +4,9% 2026 — unterste Gruppe liegt auf/über Mindestlohn 13,90 €/Std.', quelle: 'DEHOGA Hamburg / NGG (Tarifabschluss 07/2024)' },
   },
   hessen: {
     name: 'Hessen',
     offizielleUrl: 'https://www.dehoga-hessen.de', sitz: 'Wiesbaden', aktualisiert: '2026-07-02',
     beschaeftigte: '80.931', mitgliedsbetriebe: '12.000–14.000', bezugsjahr: '2022',
     statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Hessen',
+    tarif: { tarifpartner: 'DEHOGA Hessen / NGG', tarifHinweis: 'Tarifverhandlungen 2026 laufen (1. Runde 12.01.2026 ohne Ergebnis: NGG fordert 7,5% + 300 € Gesundheitszuschuss, Arbeitgeber boten 1% auf 30 Monate) — gesetzlicher Mindestlohn 13,90 €/Std gilt als Untergrenze.', quelle: 'NGG Südwest / DGB-Tarifmeldung (01/2026)' },
   },
   'mecklenburg-vorpommern': {
     name: 'Mecklenburg-Vorpommern', kurz: 'MV',
@@ -140,7 +143,7 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
     offizielleUrl: 'https://www.dehogasaar.de', sitz: 'Saarbrücken', aktualisiert: '2026-07-02',
     beschaeftigte: '10.084', mitgliedsbetriebe: '1.500–2.500', bezugsjahr: '2022',
     statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Saarland',
-    tarif: { laufzeitBis: '30.09.2026', tarifpartner: 'DEHOGA Saarland / NGG', quelle: 'dehogasaar.de / NGG' },
+    tarif: { laufzeitBis: '30.09.2026', tarifpartner: 'DEHOGA Saarland / NGG', tarifHinweis: 'Abschluss 09/2024, zwei Entgeltstufen (+5,7% ab 10/2024, weitere Stufe ab 09/2025) — unterste Gruppe liegt auf/über Mindestlohn 13,90 €/Std.', quelle: 'DEHOGA Saarland / NGG (Stand 07/2026)' },
   },
   sachsen: {
     name: 'Sachsen',
