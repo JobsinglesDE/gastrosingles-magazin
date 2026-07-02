@@ -97,22 +97,22 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
   },
   bremen: {
     name: 'Bremen',
-    offizielleUrl: 'https://www.dehoga-bremen.de', sitz: 'Bremen', aktualisiert: '2026-06-17',
-    mitgliedsbetriebe: '1.200–1.800',
-    statQuelle: 'DEHOGA Bremen',
+    offizielleUrl: 'https://www.dehoga-bremen.de', sitz: 'Bremen', aktualisiert: '2026-07-02',
+    beschaeftigte: '9.384', mitgliedsbetriebe: '1.200–1.800', bezugsjahr: '2022',
+    statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Bremen',
   },
   hamburg: {
     name: 'Hamburg',
-    offizielleUrl: 'https://www.dehoga-hamburg.de', sitz: 'Hamburg', aktualisiert: '2026-06-17',
-    mitgliedsbetriebe: '5.000–7.000',
-    statQuelle: 'DEHOGA Hamburg',
+    offizielleUrl: 'https://www.dehoga-hamburg.de', sitz: 'Hamburg', aktualisiert: '2026-07-02',
+    beschaeftigte: '37.544', mitgliedsbetriebe: '5.000–7.000', bezugsjahr: '2022',
+    statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Hamburg',
     tarif: { laufzeitBis: '31.12.2026', tarifpartner: 'DEHOGA Hamburg / NGG', tarifHinweis: 'Aktueller Stufen-Stundenlohn (ab 01/2026) nicht offiziell veröffentlicht; gesetzlicher Mindestlohn 13,90 €/Std gilt als Untergrenze.', quelle: 'DEHOGA Hamburg / NGG' },
   },
   hessen: {
     name: 'Hessen',
-    offizielleUrl: 'https://www.dehoga-hessen.de', sitz: 'Wiesbaden', aktualisiert: '2026-06-17',
-    mitgliedsbetriebe: '12.000–14.000',
-    statQuelle: 'DEHOGA Hessen',
+    offizielleUrl: 'https://www.dehoga-hessen.de', sitz: 'Wiesbaden', aktualisiert: '2026-07-02',
+    beschaeftigte: '80.931', mitgliedsbetriebe: '12.000–14.000', bezugsjahr: '2022',
+    statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Hessen',
   },
   'mecklenburg-vorpommern': {
     name: 'Mecklenburg-Vorpommern', kurz: 'MV',
@@ -137,9 +137,9 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
   },
   saarland: {
     name: 'Saarland',
-    offizielleUrl: 'https://www.dehogasaar.de', sitz: 'Saarbrücken', aktualisiert: '2026-06-17',
-    mitgliedsbetriebe: '1.500–2.500',
-    statQuelle: 'DEHOGA Saarland',
+    offizielleUrl: 'https://www.dehogasaar.de', sitz: 'Saarbrücken', aktualisiert: '2026-07-02',
+    beschaeftigte: '10.084', mitgliedsbetriebe: '1.500–2.500', bezugsjahr: '2022',
+    statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Saarland',
     tarif: { laufzeitBis: '30.09.2026', tarifpartner: 'DEHOGA Saarland / NGG', quelle: 'dehogasaar.de / NGG' },
   },
   sachsen: {
@@ -165,9 +165,9 @@ export const DEHOGA_STATS: Record<string, DehogaBundeslandData> = {
   },
   thueringen: {
     name: 'Thüringen',
-    offizielleUrl: 'https://www.dehoga-thueringen.de', sitz: 'Erfurt', aktualisiert: '2026-06-17',
-    mitgliedsbetriebe: '3.500',
-    statQuelle: 'DEHOGA Thüringen',
+    offizielleUrl: 'https://www.dehoga-thueringen.de', sitz: 'Erfurt', aktualisiert: '2026-07-02',
+    beschaeftigte: '21.900', mitgliedsbetriebe: '3.500', bezugsjahr: '2022',
+    statQuelle: 'Statistik der Bundesagentur für Arbeit (svB Gastgewerbe, Stichtag 30.6.2022; Branchenanalyse Gastgewerbe, Schmid/Stracke/Böckler), DEHOGA Thüringen',
     tarif: { einstiegStundenlohn: '15,40 €', laufzeitBis: '30.04.2027', tarifpartner: 'DEHOGA Thüringen / NGG', quelle: 'NGG / DEHOGA Thüringen — Tarifstufe ab 01.07.2026 (Laufzeit bis 30.04.2027)' },
   },
   // --- NRW-Regionalverbände (eigene Sub-Pillars unter dehoga-nrw; eigene DFS-Terme:
