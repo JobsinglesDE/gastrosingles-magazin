@@ -11,6 +11,7 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { articleHref, getPersonHubUrl } from '@/lib/routes';
+import { ChefMoneyLinks } from '@/components/content/ChefMoneyLinks';
 
 const BASE = 'https://gastrosingles.de/magazin';
 
@@ -115,6 +116,9 @@ export async function PersonHubPage({ slug }: { slug: string }) {
             </div>
           </section>
         )}
+
+        {/* Motor → Money: Koch-Hub leitet Link-Equity auf Gehalt-/Branchen-Seiten */}
+        <ChefMoneyLinks />
 
         {hasFaq && (
           <>
