@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { reader } from '@/lib/keystatic';
 import ArticleView, { buildArticleMetadata } from '@/components/content/ArticleView';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { JsonLd, collectionPageJsonLd, SITE_BASE } from '@/components/seo/JsonLd';
 
 export async function generateMetadata() {
   return buildArticleMetadata('dehoga');
@@ -17,10 +18,23 @@ export default async function DehogaPillar() {
     .filter((a) => a.slug.startsWith('dehoga-') && a.entry.status === 'published')
     .sort((a, b) => a.entry.title.localeCompare(b.entry.title, 'de'));
 
+  const collectionSchema = collectionPageJsonLd({
+    name: 'DEHOGA-Landesverbände im Überblick',
+    description:
+      'Alle 16 DEHOGA-Landesverbände mit Tarifabschlüssen, Beschäftigtenzahlen und Branchendaten — Porträts pro Bundesland.',
+    url: `${SITE_BASE}/berufsbilder/dehoga`,
+    items: landesverbaende.map((a) => ({
+      name: a.entry.title,
+      url: `${SITE_BASE}/berufsbilder/${a.slug}`,
+    })),
+  });
+
   return (
     <ArticleView
       slug="dehoga"
       beforeBody={
+        <>
+          <JsonLd data={collectionSchema} />
         <section id="landesverbaende" className="not-prose my-12 scroll-mt-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
             Alle 16 DEHOGA-Landesverbände im Überblick
@@ -55,6 +69,7 @@ export default async function DehogaPillar() {
             </Link>.
           </p>
         </section>
+        </>
       }
     />
   );
