@@ -19,7 +19,8 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { StickyTOC } from '@/components/content/StickyTOC';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
-import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, dehogaSalaryJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
+import { GASTRO_GEHALT_DE } from '@/lib/dehoga-statistiken';
 import { SECTION_HUBS, SINGLE_HUB } from '@/lib/hubs';
 
 const BASE_URL = 'https://gastrosingles.de/magazin';
@@ -147,6 +148,9 @@ export default async function ArticleView({
       {ytEmbed && (
         <JsonLd data={videoJsonLd({ name: article.title, description: article.excerpt, videoId: ytEmbed.videoId, uploadDate: article.publishedAt || undefined })} />
       )}
+      {/* Salary-Schema (Occupation + estimatedSalary) für die nationale Gastro-Gehalt-Pillar —
+          belegte Median/Quartil-Zahlen aus dehoga-statistiken.ts (AEO/Rich-Results). */}
+      {slug === 'gehalt-gastronomie' && (() => { const s = dehogaSalaryJsonLd({ gehalt: GASTRO_GEHALT_DE }); return s ? <JsonLd data={s} /> : null; })()}
 
       <ClusterHero
         title={article.title}
