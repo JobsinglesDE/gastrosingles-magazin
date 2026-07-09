@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/magazin/tv-koch-shows/promi-koeche/roland-trettl-miriam-hoeller-nachwuchs-2026", "destination": "/magazin/tv-koch-shows/promi-koeche", "permanent": false },
     { "source": "/magazin/berufsbilder/internorga", "destination": "/magazin/messen/internorga", "permanent": true },
     { "source": "/magazin/berufsbilder/intergastra", "destination": "/magazin/messen/intergastra", "permanent": true },
     { "source": "/magazin/berufsbilder/anuga", "destination": "/magazin/messen/anuga", "permanent": true },
