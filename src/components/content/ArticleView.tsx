@@ -102,7 +102,14 @@ export default async function ArticleView({
   dateModified?: string;
 }) {
   const article = await reader.collections.articles.read(slug, { resolveLinkedFiles: true });
-  if (!article) notFound();
+  // `status: draft` hielt den Artikel bisher nur aus Sitemap + Listings raus — die Detailseite
+  // rendete trotzdem, öffentlich erreichbar und sogar mit `index, follow`. Damit war "Draft"
+  // kein Review-Zustand, sondern nur "unverlinkt": ungeprüfter Content war live, sobald der
+  // Agent gepusht hatte. Gefunden 2026-07-16, als zwei Drafts mit AI-Symbolbildern unter
+  // echten Personennamen (Max Strohe, Sarah Wiener) trotz Zurückhaltung HTTP 200 lieferten.
+  // Draft heisst ab jetzt 404 — erst der keystatic-publisher (gate+verify+crosscheck)
+  // schaltet auf published.
+  if (!article || article.status !== 'published') notFound();
 
   const author = article.author
     ? await reader.collections.authors.read(article.author)
