@@ -32,6 +32,12 @@ export default async function HomePage() {
 
   const stories = [...allStories].sort(byDateDesc);
 
+  const datingAll = articles.filter((a) => a.entry.category === 'partnersuche');
+  const datingArticles = [
+    ...datingAll.filter((a) => a.entry.isFeatured),
+    ...datingAll.filter((a) => !a.entry.isFeatured),
+  ];
+
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
     excerpt: article.entry.excerpt,
@@ -107,6 +113,27 @@ export default async function HomePage() {
           </div>
         </section>
       </ScrollReveal>
+
+      {datingArticles.length > 0 && (
+        <ScrollReveal>
+          <section className="max-w-6xl mx-auto px-6 py-12">
+            <h2 className="text-3xl font-bold mb-6">Partnersuche in der Gastronomie</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {datingArticles.slice(0, 3).map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  title={article.entry.title}
+                  excerpt={article.entry.excerpt}
+                  href={articleHref(article)}
+                  image={article.entry.featuredImage || undefined}
+                  imageAlt={article.entry.featuredImageAlt || undefined}
+                  date={article.entry.publishedAt || undefined}
+                />
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       <ScrollReveal>
         <section className="max-w-4xl mx-auto px-6 py-12">
