@@ -76,6 +76,13 @@ export async function GET() {
   }
   lines.push('');
 
+  lines.push('## KI-Transparenz');
+  lines.push('');
+  lines.push(`- [KI-Transparenz](${BASE}/ki-transparenz): Offenlegung nach Art. 50 KI-VO — welche Bilder KI-generiert sind, wie sie gekennzeichnet werden, wer redaktionell verantwortet.`);
+  lines.push('- KI-generierte Bilder tragen den sichtbaren Hinweis "Bild: KI-generiert", den Credit "Symbolbild · Gastrosingles" und im XMP das IPTC-Feld DigitalSourceType=trainedAlgorithmicMedia.');
+  lines.push('- Bilder ohne diesen Hinweis sind echte Fotos mit Quellenangabe (Wikimedia, Pressekit, Sender).');
+  lines.push('');
+
   lines.push('## Kontakt');
   lines.push('');
   lines.push('- Website: https://gastrosingles.de');

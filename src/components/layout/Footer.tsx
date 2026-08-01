@@ -120,6 +120,9 @@ export function Footer() {
                 <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-white transition-colors">
                   Über uns
                 </Link>
+                <Link href="/ki-transparenz" className="text-sm text-white/75 hover:text-white transition-colors">
+                  KI-Transparenz
+                </Link>
                 <Link href="/kontakt" className="text-sm text-white/75 hover:text-white transition-colors">
                   Kontakt
                 </Link>

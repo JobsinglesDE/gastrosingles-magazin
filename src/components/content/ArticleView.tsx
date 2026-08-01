@@ -59,10 +59,18 @@ function sectionCrumb(category: string): { label: string; href: string } {
  * Echte Pressefotos erkennt man am Credit mit Quellenangabe. Sie duerfen NIE als
  * KI gekennzeichnet werden — das waere selbst irrefuehrend (§ 5 UWG) und entwertet
  * die Lizenzangabe des Rechteinhabers.
+ *
+ * Umgekehrt darf ein KI-Bild nie durchrutschen (Art. 50 Abs. 4 KI-VO). Darum
+ * schlaegt ein KI-Marker die Quellenangabe: "Foto: gastrosingles.de (Symbolbild)"
+ * ist ein KI-Bild, kein Pressefoto.
  */
+const KI_CREDIT = /Symbolbild|KI[- ]generiert|AI Composite|FLUX|Nano Banana|gastrosingles\.de/i;
+const PRESSE_CREDIT = /Foto:|Wikimedia|CC[- ]BY|GFDL|dpa|Getty|imago|ZDF|RTL|SRF|ARD|MDR|NDR|SWR|SAT\.1|ProSieben|VOX|Joyn|Verlag|Pressefoto|Autorenfoto|Instagram|[a-z0-9-]+\.(?:at|ch|com|net|org)\b/i;
+
 function istEchtesFoto(credit?: string | null): boolean {
   if (!credit) return false;
-  return /Foto:|Wikimedia|CC[- ]BY|GFDL|dpa|Getty|imago|ZDF|RTL|SRF|ARD|MDR|NDR|SWR|SAT\.1|ProSieben|VOX|Joyn|Verlag|Pressefoto|Autorenfoto/i.test(credit);
+  if (KI_CREDIT.test(credit)) return false;
+  return PRESSE_CREDIT.test(credit);
 }
 
 export async function buildArticleMetadata(slug: string) {
@@ -177,9 +185,9 @@ export default async function ArticleView({
         imageAlt={article.featuredImageAlt || undefined}
         imageCredit={article.featuredImageCredit || undefined}
         date={article.publishedAt || undefined}
-        /* News nutzen echte Pressebilder, alles andere ist KI-generiert
-           (Art. 50 Abs. 4 KI-VO). */
-        aiGenerated={!article.isNews && !istEchtesFoto(article.featuredImageCredit)}
+        /* Allein der Credit entscheidet (Art. 50 Abs. 4 KI-VO). Die frühere Annahme
+           "News = echtes Pressebild" ist widerlegt: 51 News tragen ein KI-Bild. */
+        aiGenerated={!istEchtesFoto(article.featuredImageCredit)}
       />
 
       <StickyTOC items={extractH2s(article.content)} />
