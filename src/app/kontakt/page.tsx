@@ -101,7 +101,9 @@ export default function KontaktPage() {
         Das Gastrosingles Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
         Partnersuche für Köche, Sommeliers, Wirte und Servicekräfte in der DACH-Region. Die Themen reichen von
         Dating-Tipps im Schichtdienst über psychologische Aspekte der Partnersuche bis zu Erfolgsgeschichten echter Paare,
-        die sich über die Plattform gefunden haben.
+        die sich über die Plattform gefunden haben. Wo wir bei Recherche und Bildern mit KI arbeiten und woran du das
+        erkennst, legen wir auf der Seite zur{' '}
+        <Link href="/ki-transparenz" className="text-brand-orange hover:underline">KI-Transparenz</Link> offen.
       </p>
 
       <h2 className="text-2xl font-bold mt-10 mb-3">Themenvorschläge willkommen</h2>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { JsonLd, faqJsonLd } from '@/components/seo/JsonLd';
@@ -37,6 +38,10 @@ const faqItems = [
   {
     question: 'Was kostet Gastrosingles.de?',
     answer: 'Die Registrierung und das Erstellen eines Profils sind kostenlos. Du kannst dich umschauen, Profile ansehen und erste Kontakte knüpfen, ohne etwas zu bezahlen. Für erweiterte Funktionen wie unbegrenztes Messaging gibt es Premium-Optionen.',
+  },
+  {
+    question: 'Arbeitet das Gastrosingles Magazin mit künstlicher Intelligenz?',
+    answer: 'Ja, bei der Recherche und bei Symbolbildern. Jedes KI-generierte Bild trägt den sichtbaren Hinweis „Bild: KI-generiert" und ist zusätzlich in den Bild-Metadaten als KI-Inhalt markiert. Zeigt ein Artikel eine real existierende Person, verwenden wir ein echtes, lizenziertes Foto. Texte werden vor der Veröffentlichung von Thomas Honold redaktionell geprüft. Details stehen auf unserer Seite zur KI-Transparenz.',
   },
 ];
 
@@ -169,6 +174,12 @@ export default function UeberUns() {
         <section className="max-w-3xl mx-auto px-6 py-12">
           <h2 id="haeufige-fragen" className="text-2xl font-bold mb-6 scroll-mt-24">Häufige Fragen</h2>
           <FAQAccordion items={faqItems} />
+          <p className="text-sm text-foreground/55 mt-6">
+            Wie wir im Magazin mit künstlicher Intelligenz arbeiten — welche Bilder KI-generiert
+            sind, wie sie gekennzeichnet werden und wer redaktionell verantwortet — steht auf der
+            Seite zur{' '}
+            <Link href="/ki-transparenz" className="text-brand-orange hover:underline">KI-Transparenz</Link>.
+          </p>
         </section>
       </ScrollReveal>
 
