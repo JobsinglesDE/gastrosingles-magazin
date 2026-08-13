@@ -40,6 +40,9 @@ const nextConfig: NextConfig = {
       // Nie existierende „Partnersuche in der Gastronomie"-Pillar — in ~115 Artikeln verlinkt
       // (404, von 50+ Seiten). Auf den echten Partnersuche-Pillar leiten. (basePath /magazin auto)
       { source: '/partnersuche-gastronomie', destination: '/singles-partnersuche', permanent: true },
+      // GSC 2026-08-13: rankte mit 14 Klicks / 372 Impressionen auf Position 6 — und lieferte 404.
+      // Die Show-Hub-URL heisst ohne Jahreszahl. (basePath /magazin wird automatisch ergaenzt)
+      { source: '/kitchen-impossible-2026', destination: '/tv-koch-shows/kitchen-impossible', permanent: true },
     ];
   },
   async headers() {
