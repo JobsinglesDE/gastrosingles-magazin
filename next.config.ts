@@ -5,6 +5,11 @@ import { readFileSync } from 'node:fs';
 // Erzeugt von scripts/gen-redirects.mjs.
 const generatedRedirects: { source: string; destination: string; permanent: boolean }[] =
   JSON.parse(readFileSync(new URL('./redirects.generated.json', import.meta.url), 'utf8'));
+// Depublizierte Artikel (Tommy 2026-08-20: Personen-News ohne echtes Pressebild + GESETZ-23-Themen
+// Vermoegen/Ehepartner/Familie/Gesundheit) → 301 auf den Show-Hub statt 404. Gepflegt von Hand;
+// ein Eintrag bleibt, solange der Artikel status: draft ist.
+const unpublishedRedirects: { source: string; destination: string; permanent: boolean }[] =
+  JSON.parse(readFileSync(new URL('./redirects.unpublished.json', import.meta.url), 'utf8'));
 
 const nextConfig: NextConfig = {
   basePath: '/magazin',
@@ -37,6 +42,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...generatedRedirects,
+      ...unpublishedRedirects,
       // Nie existierende „Partnersuche in der Gastronomie"-Pillar — in ~115 Artikeln verlinkt
       // (404, von 50+ Seiten). Auf den echten Partnersuche-Pillar leiten. (basePath /magazin auto)
       { source: '/partnersuche-gastronomie', destination: '/singles-partnersuche', permanent: true },
