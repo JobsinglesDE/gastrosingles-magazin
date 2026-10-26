@@ -12,7 +12,7 @@ import { AnimatedStats } from '@/components/ui/AnimatedCounter';
 import { MatchQuiz } from '@/components/ui/MatchQuiz';
 
 export const metadata = {
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://gastrosingles.de/magazin' },
   title: { absolute: 'Partnersuche in der Gastronomie ❤️' },
   description: 'Partnersuche für Köche, Sommeliers, Wirte und Servicekräfte. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Service-Alltag.',
 };
