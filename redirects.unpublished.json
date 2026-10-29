@@ -248,5 +248,25 @@
     "source": "/tv-koch-shows/promi-koeche/thomas-sampl-hobenkoeoek-schule-kita-hamburg-2026",
     "destination": "/tv-koch-shows/promi-koeche",
     "permanent": true
+  },
+  {
+    "source": "/tv-koch-shows/promi-koeche/max-stiegl-sautanz-schlachtverbot-gut-purbach",
+    "destination": "/tv-koch-shows/promi-koeche",
+    "permanent": true
+  },
+  {
+    "source": "/tv-koch-shows/promi-koeche/philip-rachinger-chef-of-the-year-2027-muehltalhof",
+    "destination": "/tv-koch-shows/promi-koeche",
+    "permanent": true
+  },
+  {
+    "source": "/tv-koch-shows/promi-koeche/robin-pietsch-sauerland-mein-lokal-dein-lokal",
+    "destination": "/tv-koch-shows/promi-koeche",
+    "permanent": true
+  },
+  {
+    "source": "/tv-koch-shows/promi-koeche/frank-rosin-orgelstuebchen-kornburg",
+    "destination": "/tv-koch-shows/promi-koeche",
+    "permanent": true
   }
 ]
