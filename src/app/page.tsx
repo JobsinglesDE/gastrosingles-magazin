@@ -30,15 +30,18 @@ export default async function HomePage() {
     .filter((a) => a.entry.status === 'published' && a.entry.type !== 'story')
     .sort(byDateDesc);
 
+  // News (TV-Koch-Shows) laufen aus und stehen nicht mehr auf der Startseite (Tommy 29.10.2026).
+  const evergreen = articles.filter((a) => a.entry.category !== 'tv-koch-shows');
+
   const stories = [...allStories].sort(byDateDesc);
 
-  const datingAll = articles.filter((a) => a.entry.category === 'partnersuche');
+  const datingAll = evergreen.filter((a) => a.entry.category === 'partnersuche');
   const datingArticles = [
     ...datingAll.filter((a) => a.entry.isFeatured),
     ...datingAll.filter((a) => !a.entry.isFeatured),
   ];
 
-  const carouselItems = articles.slice(0, 8).map((article) => ({
+  const carouselItems = evergreen.slice(0, 8).map((article) => ({
     title: article.entry.title,
     excerpt: article.entry.excerpt,
     href: articleHref(article),
@@ -92,7 +95,7 @@ export default async function HomePage() {
         <section className="max-w-6xl mx-auto px-6 pt-4 pb-12">
           <h2 className="text-3xl font-bold mb-6">Neueste Artikel</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {articles.slice(0, 3).map((article, i) => (
+            {evergreen.slice(0, 3).map((article, i) => (
               <ArticleCard
                 key={article.slug}
                 title={article.entry.title}
